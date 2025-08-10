@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SPN LAB</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Content-Language" content="zh-tw,en">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style type="text/css">
+
+			.tablink3 {
+			  background-color: gray;
+			  color: white;
+			  float: left;
+			  border: none;
+			  outline: none;
+			  cursor: pointer;
+			  padding: 14px 16px;
+			  font-size: 17px;
+			  width: 16.6666666667%;
+			}
+
+			.tablink3:hover {
+			  background-color:steelblue;
+			  color:white;
+			}
+
+			/* Style the tab content */
+			.tabcontent3 {
+			  margin-top: 16pt;
+			  color: black;
+			  display: none;
+			  /*padding: 50px;*/
+			  /*text-align: center;*/
+			}
+
+			/*--摺疊式--*/
+			.collapsible {
+			  border: none;
+			  background-color: #777;
+			  color: white;
+			  cursor: pointer;
+			  padding: 18px;
+			  width: 100%;
+			  border: none;
+			  text-align: left;
+			  outline: none;
+			  font-size: 15px;
+			}
+
+			.collapsible.active, .collapsible:hover {
+			  background-color: lightgray;
+			  color: black;
+			}
+
+			.collapsible:after {
+			  content: '\002B';
+			  color: black;
+			  font-weight: bold;
+			  float: right;
+			  margin-left: 5px;
+			}
+
+			.collapsible.active:after {
+			  content: "\2212";
+			}
+
+			.nmcontent{
+			  background-color: white;
+			}
+
+			.nmcontent h3{
+				text-align: left;
+			}
+
+			.nmcontent p{
+				padding:25px;
+				width: 50%;
+			}
+
+			.nmcontent img{			
+			  max-width: 50%;
+			  height: auto;
+			  max-height: 300px;		
+			  padding: 25px;	  
+			}
+
+			figcaption{
+				all:unset;
+				text-align: left;
+				width: 50%;
+				padding:25px;
+			}
+
+			@media only screen and (max-width: 800px){
+				.tablink3 {min-height: 150px;}				
+				.nmcontent p, .nmcontent img, figcaption{width: 100%;padding:2px;}
+				.nmcontent img{max-height: unset; max-width:unset; }
+			}
+
+	</style>
+</head>
+
+<link rel="stylesheet" type="text/css" href="style.css">
+
+
+<body>
+<div class="main">
+
+	<header id="main-header">
+		<div id="logo">
+		<h1><a href="index.html">感測與光觸媒奈米材料實驗室</a></h1>
+		<h3><a href="index.html">Sensing and Photocatalysis Nanomaterials Laboratory</a></h3>
+		</div>
+		<span class="openoverlaynav" onclick="openNav()"><a>&#9776;</a></span>
+	</header>
+
+	<div id="Big-myNav" class="Big-overlaynav">
+		<div class="Big-overlaynav-content">
+			<a href="news.html">最新消息</a>
+			<a href="introduction.html">實驗室簡介</a>
+			<a href="professor.html">指導教授</a>
+			<a href="paper.html">論文發表</a>
+			<a href="research.html">研究方向</a>
+			<a href="result.html">研究成果</a>
+			<a href="members.html">實驗室成員</a>
+			<a href="index.html">回到首頁</a>
+		</div>
+	</div>
+
+	<header id="sub-header">
+		<h5><a href="http://www.mse.nthu.edu.tw" target="_blank">&#10148 清大材料</a></h5>
+	</header>
+
+	<div id="myNav" class="overlaynav">
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		<div class="overlaynav-content">
+			<a href="news.html">最新消息</a>
+			<a href="introduction.html">實驗室簡介</a>
+			<a href="professor.html">指導教授</a>
+			<a href="paper.html">論文發表</a>
+			<a href="research.html">研究方向</a>
+			<a href="result.html">研究成果</a>
+			<a href="members.html">實驗室成員</a>
+			<a href="index.html">回到首頁</a>
+		</div>
+	</div>
+
+
+
+	<section>
+			<div>
+
+					<div class="content">
+						<h1>研究成果</h1>
+						<p>
+							由於科技的快速發展，材料製造技術尺寸已由微米、次微米、而逐漸發展到奈米級精密處理，因此「奈米材料及技術」的地位也日益重要，並且被公認為本世紀最重要的科技之一，世界各國都投入大量的心血和金錢從事其相關的研究。本實驗室致力於發展掃描探針顯微術 (SPM) 及相關奈米技術，目前研究成果如下：<strong>奈米材料</strong>、<strong>奈米感測</strong>、<strong>奈米檢測</strong>及<strong>奈米微影</strong>。
+						</p>
+
+
+					</div>
+
+				<button class="tablink3" onclick="openNano('nm_matr', this, 'steelblue')" id="defaultOpen">奈米材料</button>
+				<button class="tablink3" onclick="openNano('nm_sens', this, 'steelblue')">氣體感測</button>
+				<button class="tablink3" onclick="openNano('nm_UVsens', this, 'steelblue')">紫外光感測</button>
+				<button class="tablink3" onclick="openNano('nm_phcat', this, 'steelblue')">光觸媒</button>
+				<button class="tablink3" onclick="openNano('nm_chara', this, 'steelblue')">奈米檢測</button>
+				<button class="tablink3" onclick="openNano('nm_litho', this, 'steelblue')">奈米微影</button>
+
+
+				<div id="nm_matr" class="tabcontent3">
+							
+							<div  class="nmcontent">
+								<h2>氧化鋅奈米線</h2>
+									<h3>爐管法</h3>
+							  		<p>藉由三段升溫爐管成長，將處理好的基板置入中溫區段，將裝有鋅粉與碳粉的氧化鋁鉗鍋置入高溫區段，以機械幫浦抽真空數分鐘後通入氬氣與氧氣，藉由Thermal evaporation成長出氧化鋅奈米線。</p>
+							  		<img src="img/furnace.jpg">
+
+						  			<h4>爐管法結果</h4>
+						  			<img src="img/thermal-evap.jpg"><figcaption>SEM images of (a) as-grown, (b) Cu2O NPs modified, (c) Ag NPs modified, and (d) Cu2O and Ag NPs co-modified ZnO NWs. The insets are enlarged NWs images. (e) A TEM image of a co-modified NW. (f) A high resolution image of a single NP, which is a combination of a Cu2O and an Ag NPs. (g), (h) Fourier transform patterns of the two individual NPs.</figcaption>
+
+									<br>			
+
+
+						  			<h3>水溶液法</h3>
+							  		<p>先將醋酸鋅酒精溶液中加入適當量的氫氧化鈉調整pH值，放入烘箱內三小時，製得晶種液；接著把晶種液佈於基板上，放入硝酸鋅與HMTA混合水溶液中，在烘箱內反應七小時，即成長出氧化鋅奈米線。</p>
+							  		
+
+						  			<h4>水溶液法結果</h4>
+						  			<img src="img/hydrothermal.jpg"><figcaption>(a) ZnO NWs grown on 10 cm x 10 cm substrate. SEM images of (b) as-grown, and (c) Ag NPs modified by the solution method.</figcaption>
+						  			<hr>
+
+							</div>
+									
+					<div class="nmcontent" id="metalNR">
+						<h2>金屬奈米線</h2>
+					  		<p>利用原子力顯微鏡 (atomic force microscopy, AFM)的微影技術，以探針機械力加工方式，在鍍有PMMA薄膜的矽基板上，刻畫出奈米溝槽，再利用離子濺鍍或電子束蒸鍍，鍍上約20 nm厚的金屬，進行去阻劑製程 (lift-off) ，如此可得到金屬奈米線陣列。而以白光光源，在光學顯微鏡暗視野 (dark field) 模式下，可得到奈米線的散射光影像，也就是區域表面電漿共振 (localized surface plasmon resonance, LSPR) 的光學影像，並將散射光收集到光纖，送進光譜儀，分析其共振光譜特性 。</p>
+					  		<img src="img/gold_nr.jpg"><figcaption>Figure 1 單根金奈米線之(a)SEM影像, (b) 奈米線短軸斷面TEM影像. 單根金奈米線(寬度70 nm及厚度 22 nm)之(c) 光學暗視野影像及(d)其散射光譜, 峰值分別為490 nm(藍光)及628 nm (紅光)</figcaption>
+
+					  		<br>
+
+					  		<img src="img/gold_nr_pic2.jpg"><figcaption>Figure 2 於不同偏振方向入射光(相對奈米線長軸)之光學暗視野影像(a) 平行, alpha= 0 °及(b)垂直, alpha= 90°. (c)未偏振及偏振入射光下的散射光譜. 當入射光偏振時,散射強度於平行時最強,垂直時最弱(每隔15 °量測).</figcaption>						
+							
+					</div>
+										
+				</div>
+
+				<div id="nm_sens" class="tabcontent3">
+						<div class="nmcontent">
+							<h3>實驗材料</h3>
+							<p>本實驗利用氧化鋅奈米複合材料，作為氮氧化物感測元件，圖1、圖2顯示奈米材料成長在有電極之Si晶圓上及形貌。</p>
+							<img src="img/gas_1.jpg">
+							<figcaption>圖1：奈米材料成長在電極上的照片。</figcaption>
+
+							<br>
+							<img src="img/gas_2.jpg">
+							<figcaption>圖2：氮氧化物氣體感測奈米複合材料之SEM影像。</figcaption>
+
+							<br>
+							<h3>感測晶片測試</h3>
+							<p>將製備的三元奈米複合材料氣體感測晶片，放置在金屬腔體內，並照射LED光源，通入NO2氣體，量測其響應值的變化。</p>
+							<img src="img/gas_3.jpg">
+							<figcaption>圖3：氣體感測測試儀器相片，感測晶片在LED電路板下方。</figcaption>
+
+							<br>
+							<img src="img/gas_4.jpg">
+							<figcaption>圖4：氣體感測晶片在通入100 ppb NO2的電流對時間變化圖。</figcaption>
+						
+						
+
+							<h3>可攜式氮氧化物氣體感測器</h3>
+							<p>為了將此氮氧化物感測晶片應用在各個環境，本實驗室與國家研究院儀器科技研究中心共同開發可攜式氮氧化物氣體感測器，圖5為利用手持感測器所測量不同濃度之響應值，其解析度範圍為5ppb~1000ppb。</p>						
+							<img src="img/gas_5.jpg">
+							<figcaption>圖5：可攜式氮氧化物氣體感測器結合手機app。</figcaption>
+							
+
+							<br>
+							<img src="img/gas_6.jpg">
+							<figcaption>圖6：利用手持感測器所測量不同濃度之響應值。</figcaption>
+
+
+							
+						</div>
+				</div>
+
+
+				<div id="nm_UVsens" class="tabcontent3">
+						<div class="nmcontent">
+							<h3>紫外光感測</h3>
+							<p>半導體氧化物奈米材料具有特殊的物理與化學特性，有很多應用的可能性，以原子力顯微術奈米微影方法，可製作單一氧化鈦奈米點感測器。首先，製作單一鈦奈米線，並連接金電極。接著，再製作單一氧化鈦奈米點，以形成金屬－半導體－金屬結構，並應用於紫外光感測。感測原理是基於紫外光照射下，氧分子在氧化物奈米點表面的脫附，而造成導電性變化。選擇奈米點位置在鈦奈米線中間或其與電極接面，可製作出歐姆型 （ohmic） 和蕭特基（Schottky） 型兩種類型紫外光感測器，而後者靈敏度遠高於前者。</p>
+							<img src="img/UVsensor_fabrication.jpg">
+							<figcaption>※單一氧化鈦奈米點紫外光感測器製作流程圖。(a) 阻劑旋塗與原子力顯微術奈米機械加工 (b) 鈦薄膜沉積 (c) 阻劑掀離 (d) 光阻旋塗 (e) 曝光與顯影 (f) 金薄膜沉積 (g) 光阻掀離 (h) 原子力顯微術奈米氧化</figcaption>
+
+							<br>
+
+							<img src="img/UVsensor_SEM.jpg">
+							<figcaption>※ (a) 鈦奈米線跨接於金電極的 SEM 影像；(b) 鈦奈米線的 SEM 放大圖；(c) 為其 I-V 曲線量測結果。</figcaption>
+
+							<br>
+
+							<h3>紫外光感測 - 結果</h3>
+							<p>透過結合AFM奈米機械加工、奈米氧化與光學微影技術，以製作 (1) 單一氧化鈦奈米點連接於鈦奈米線，或 (2) 金電極的金屬－氧化物－金屬結構的方法，可得到直徑約 100 nm 的氧化鈦奈米點，分別連接於鈦奈米線或是金電極上，作為歐姆型、蕭特基型兩種不同的感測器架構。</p>
+							<p>紫外光感測上，歐姆型感測器靈敏度為 0.22 (從 14 到 17 nA)，恢復時間為78 秒；蕭特基型感測器靈敏度為 310 (從 0.26 到 83 nA)，是歐姆型的1400 倍，恢復時間為 1.8 秒，只有歐姆型的四十分之一，整體性能優異許多。</p>
+
+							<br>
+
+							<img src="img/UVsensor_fabrication_AFM.jpg">
+							<figcaption>※(a)、(d) 依序為歐姆型與蕭特基型感測器的 AFM 影像圖。(b)、(e) 依序為此兩種感測器的高度剖面圖。(c)、(f) 依序為此兩種感測器的 I-V 曲線圖。</figcaption>
+
+							<br>
+
+							<img src="img/UVsensor_response.jpg">
+							<figcaption>※(a)、(d) 依序為歐姆型與蕭特基型感測器在黑暗中與 254 nm 紫外光照射下的 I-V 曲線。(b)、(e) 依序為歐姆型與蕭特基型感測器照射 254 nm 紫外光後電流隨時間變化關係圖。(c)、(f) 依序為光電流上升/下降趨勢之指數函數擬合。</figcaption>													
+						</div>
+				</div>
+
+				<div id="nm_phcat" class="tabcontent3">
+						<div class="nmcontent">
+							<h3>有機染料光分解</h3>
+							<p></p>
+
+						</div>
+
+						<div class="nmcontent">
+							<h3>抗菌效應</h3>
+
+						</div>
+				</div>
+
+				<div id="nm_chara" class="tabcontent3">
+					
+						<div class="nmcontent">
+							<h3>光電材料</h3>
+							<p>目前已利用導電性 AFM 在不同處理後的ITO 導電玻璃上量得表面電性變化(圖1)，並在POPD-MEH-PPV薄膜上得到 50 nm 解析度的光學影像(圖2)，此種技術在有機電致發光薄膜研究上為首創，目前我們正進行區域電壓電流及光譜量測，預期將有更多重要結果產生，而這些資料對元件分析也有極大助益。</p>
+							<img src="img/ITO-surface.jpg">						
+							<figcaption>圖1. ITO導電玻璃之表面形貌及區域電流影像。</figcaption>
+							<br>
+							<img src="img/MEH-PPV-surface.jpg">
+							<figcaption>圖 2：MEH-PPV高分子薄膜之表面形貌及電致發光影像。</figcaption>
+
+						</div>
+						<hr>
+
+					
+						<div class="nmcontent">
+							<h3>鐵電材料</h3>
+							<p>鐵電陶瓷材料，目前已利用電力顯微術 (EFM) 在 PZT 薄膜上量測原始極區大小及分佈，並利用外加電壓產生單一極化區(圖1)，並定量測量在此區域之壓電係數d33。</p>
+							<p>利用PFM分析PZT薄膜，其表面形貌如圖2(a)所示，圖2(b)為殘留極化的分佈影像，其中暗區經過更詳細分析後，發現是非鐵電相。在掃描時加一直流電壓，便可極化探針下面區域，產生單一極化區，再利用PFM獲得極化後影像。</p>
+							<img src="img/pzt.jpg"><figcaption>圖1. PZT 薄膜表面形貌及經外加電壓於AFM 探針後產生之方形單一極化區</figcaption>
+							<br>
+							<img src="img/BFO-labelled.jpg"><figcaption>圖2：利用PFM研究BFO薄膜，(a)為表面形貌，(b)為殘留極化影像。</figcaption>
+
+							<hr>
+
+							<h3>奈米極化</h3>
+							<p>利用PFM分析PZT薄膜，可以得到表面形貌和殘留極化影像，其中暗區經過更詳細分析後，發現是非鐵電相。在掃描時加一直流電壓，便可極化探針下面區域，產生單一極化區，再利用PFM獲得極化後影像(圖 3)。</p>
+							<img src="img/polarized-pzt-afm.jpg">
+							<img src="img/probe-writ-nthu.jpg">
+							<figcaption>圖3：利用AFM探針加不同電壓極化PZT薄膜(a)大區域極化。(b)藉探針移動寫出”NTHU”四字。</figcaption>
+						</div>
+						<hr>
+					
+						<div class="nmcontent">
+							<h3>磁性材料</h3>
+							<p>利用磁力顯微術(MFM)來分析磁記錄材料(圖1)，磁性薄膜的表面磁區及磁壁分布，最近觀察到在115 nm鈷薄膜上的非對稱 Bloch 磁壁及 cross-tie 磁壁有共存現象，為文獻上首次記載(圖2)，這些可用來測試微磁學理論計算的正確與否。另外我們也在同一鈷薄膜上觀察到因結構缺陷所產生的磁性結構(圖3)。</p>
+							<img src="img/videotape-surface.jpg"><figcaption>圖 1：數位錄影帶上的表面形貌及磁記錄影像</figcaption>
+							<br>
+							<img src="img/Co-thin-film-n-domain-wall.jpg"><figcaption>圖 2：鈷薄膜上的表面形貌及Bloch磁壁與cross-tie磁壁</figcaption>
+							<br>
+							<img src="img/Co-thin-film-defect.jpg"><figcaption>圖 3：鈷薄膜上的表面形貌及因缺陷所產生的磁性結構</figcaption>
+							<hr>
+							<h3>其他材料</h3>
+							<p>發展摩擦力顯微術 (FFM)，力調變顯微術 (FMM) 等等以量測表面力學特性，與清大化工系陳壽安教授合作，利用材料表面彈性係數差異，成功測量出 PPV 及 CNPPV 混合高分子薄膜之相分離現象(圖 4)。</p>
+							<p>此外利用自製之彎式光纖探針，在經由準分子雷射加工後之高深寬比 polycarbonate 微渠道結構底部，作表面粗糙度量測(圖 5)，未來將利用此種技術測量生物組織培養之表面形貌。</p>
+							<p>本實驗室藉由Fiber Puller自製之光纖探針，利用近場光學顯微術(NSOM)於MEH-PPV導電高分子得到表面形貌和穿透近場光學影像(圖6)，光學影像的解析度可以達到40~60nm。(目前商用光纖探針解析度約100nm左右)。</p>
+							<img src="img/PPV-n-CNPPV.jpg"><figcaption>圖 4：PPV及CNPPV混合高分子薄膜之表面形貌及力調變影像</figcaption>
+							<br>
+							<img src="img/PC-surface-roughness.jpg"><figcaption>圖 5：彎式光纖探針於 PC 表面之微結構粗糙度量測</figcaption>
+							<br>
+							<img src="img/MEH-PPV-aggregate.jpg"><figcaption>圖 6：MEH-PPV導電高分子凝團(aggregate)在雲母片上的表面形貌(左)及穿透近場光學影像(右)。</figcaption>
+						</div>
+				</div>
+				
+
+				<div id="nm_litho" class="tabcontent3">
+					
+					<div class="nmcontent">
+						<h3>奈米雕刻</h3>
+						<p>以最直接的奈米雕刻方式便可製作奈米金屬結構，不過解析度受限於探針大小與樣品本身的厚度，因此多半選擇鑽石探針或力學常數較大的探針，避免在刻畫時，造成探針破壞，而樣品通常也是較軟的材質。例如利用AFM探針在金薄膜上雕刻出清大材料系創立30週年紀念(圖1)。</p>
+						<p>在我們的基板上 ，先鍍一層PMMA高分子，經由AFM探針加工，所打出的奈米孔陣列，鍍上一層金膜，再經liftoff後形成奈米點陣列。如圖(2)所示。</p>
+						<img src="img/176-2.gif"><figcaption>(圖1)其中最小字為0.5x0.5 μm2，線寬為50 nm，深度為10 nm。</figcaption>
+						<br>
+						<img src="img/liftoff-n-nmcraft.jpg"><figcaption>(圖2)奈米雕刻及Lift-off</figcaption>
+
+					</div>
+					<hr>
+					<div class="nmcontent">
+						<h3>奈米氧化</h3>
+						<p>將矽表面經過一般清潔步驟，去除表面自生氧化層後，於高摻雜矽探針加一負偏壓，氧化出清華材料系系徽(圖1)。</p>
+						<p>在1 m SiO2/Si的基板上，利用電子束蒸鍍上厚度為15 nm之鎳膜。當利用接觸式AFM(contact mode AFM)於掃描時，外加一負偏壓於探針上，改變掃描區域，可以氧化出不同大小之氧化鎳圖案(圖2)。</p>
+						<p>一般接觸式AFM其探針力學常數較小，在探針外加偏壓時，容易受到靜電力的影響，較不適合製作需高穩定性與重複性的氧化鎳點。所以改採用輕敲式AFM(tapping mode AFM)製作氧化鎳點(圖 3)，原因在於其探針的力學常數較大。</p>
+						<img src="img/175-2.gif"><figcaption>(圖1)其氧化層高度為 3 nm，最小線寬為50 nm。</figcaption>
+						<br>
+						<img src="img/NiO-pattern.jpg"><figcaption>(圖2)以接觸式AFM，外加-8 V，所產生之氧化鎳圖案。</figcaption>
+						<br>
+						<img src="img/NiO-dot-array.jpg"><figcaption>(圖3)以輕敲式AFM，外加-8 V、100 ms電壓脈衝，所產生的氧化鎳點陣列。</figcaption>
+					</div>
+					<hr>
+					<div class="nmcontent">
+						<h3>奈米電極</h3>
+						<p>在SiO2上鍍PMMA再利用機械蝕刻可做出奈米溝槽，再鍍上金屬並把PMMA lift off後即成為奈米金屬導線，目前已可做出線寬由40nm~120nm的金屬導線，後序可用來做成奈米電極，如圖1(a)、(c)所示。以及其所對應的I-V曲線關係(c)，和電流對tip移動距離之關係圖(d)。</p>
+						<img src="img/cu-nr-afm.jpg"><figcaption>(圖1) (a)為AFM圖像，在矽基板上製作線寬120 nm的奈米銅金屬線，(b)所對應的I-V曲線，可算出電阻值為2.54k歐姆，(c)經由切斷奈米尺度金屬線，製作出奈米電極，(d)可即時求出電流對tip移動距離之關係圖。</figcaption>
+					</div>
+				</div>
+
+				<script>
+					function openNano(cityName,elmnt,color) {
+					var i, tabcontent, tablinks;
+					tabcontent = document.getElementsByClassName("tabcontent3");
+					for (i = 0; i < tabcontent.length; i++) {
+					tabcontent[i].style.display = "none";
+					}
+					tablinks = document.getElementsByClassName("tablink3");
+					for (i = 0; i < tablinks.length; i++) {
+					tablinks[i].style.backgroundColor = "";
+					}
+					document.getElementById(cityName).style.display = "block";
+					elmnt.style.backgroundColor = color;
+
+					}
+					// Get the element with id="defaultOpen" and click on it
+					document.getElementById("defaultOpen").click();
+
+/*----------------------------上面控制 tab change ----------------------------------------*/
+				</script>
+			</div>
+	</section>
+
+	<footer id="main-footer">
+		<hr>
+		<p>
+			電話：(03) 5715131-33812 &nbsp &nbsp 地址：材料實驗館 206 室 
+		<br>
+			Copyright &copy; 2019 國立清華大學材料系	感測與光觸媒奈米材料實驗室
+		</p>
+	</footer>
+</div>
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<script src="myScript.js"></script>
+</body>
+</html>
