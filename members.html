@@ -1,0 +1,396 @@
+ <!DOCTYPE html>
+<html>
+<head>
+	<title>SPN LAB</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Content-Language" content="zh-tw,en">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		table{margin: 0 auto;}
+		#now_member img{width: 75%; border-radius: 10px; padding: 5px;}
+		.tablink2 {
+		  background-color: gray;
+		  color: white;
+		  float: left;
+		  border: none;
+		  outline: none;
+		  cursor: pointer;
+		  padding: 14px 16px;
+		  font-size: 17px;
+		  width: 33.333333%;
+		}
+
+		.tablink2:hover {
+		  background-color: steelblue;
+		  color:white;
+		}
+
+		/* Style the tab content */
+		.tabcontent2 {
+		  margin-top: 16pt;		  
+		  color: black;
+		  display: none;
+		  padding: 50px;
+		  text-align: center;
+		}
+
+		#now_member {background-color:white;}
+		#old_member {background-color:white;}
+		#group_photos {background-color:white;}
+		#old_member.tabcontent2 td {text-align: left;}
+
+		@media only screen and (max-width: 800px){
+			.tablink2{width: 100%;}
+		}
+	</style>
+</head>
+
+<link rel="stylesheet" type="text/css"  href="style.css">
+
+<body>
+
+<div class="main">
+	<header id="main-header">
+		<div id="logo">
+			<h1><a href="index.html">感測與光觸媒奈米材料實驗室</a></h1>
+			<h3><a href="index.html">Sensing and Photocatalysis Nanomaterials Laboratory</a></h3>
+		</div>
+		<span class="openoverlaynav" onclick="openNav()"><a>&#9776;</a></span>
+	</header>
+
+	<div id="Big-myNav" class="Big-overlaynav">
+		<div class="Big-overlaynav-content">
+			<a href="news.html">最新消息</a>
+			<a href="introduction.html">實驗室簡介</a>
+			<a href="professor.html">指導教授</a>
+			<a href="paper.html">論文發表</a>
+			<a href="research.html">研究方向</a>
+			<a href="result.html">研究成果</a>
+			<a href="members.html">實驗室成員</a>
+			<a href="index.html">回到首頁</a>
+		</div>
+	</div>
+
+	<header id="sub-header">
+		<h5><a href="http://www.mse.nthu.edu.tw" target="_blank">&#10148 清大材料</a></h5>
+	</header>
+
+	<div id="myNav" class="overlaynav">
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		<div class="overlaynav-content">
+			<a href="news.html">最新消息</a>
+			<a href="introduction.html">實驗室簡介</a>
+			<a href="professor.html">指導教授</a>
+			<a href="paper.html">論文發表</a>
+			<a href="research.html">研究方向</a>
+			<a href="result.html">研究成果</a>
+			<a href="members.html">實驗室成員</a>
+			<a href="index.html">回到首頁</a>
+		</div>
+	</div>
+
+
+	<section>
+		<div>
+
+
+				<button class="tablink2" onclick="openMember('now_member', this, 'steelblue')" id="defaultOpen">實驗室成員</button>
+				<button class="tablink2" onclick="openMember('old_member', this, 'steelblue')">已畢業成員</button>
+				<button class="tablink2" onclick="openMember('group_photos', this, 'steelblue')">生活寫真</button>
+
+<!--------------------present group members' list_--------------------->
+					<div id="now_member" class="tabcontent2">
+						<h1>實驗室成員</h1>
+						
+							<table cellspacing="2" cellpadding="10">
+								<!--first row-->
+								<tr>
+									<th>身分</th>
+									<th>姓名</th>
+									<th>電子信箱</th>
+									<th>其他</th>
+								</tr>
+								
+								<!-- second row -->
+								<!-- rowspan no. means the number of specific people -->
+								<!-- doctoral students -->
+								
+								
+								<!-- 2nd year masters' students -->
+
+
+								
+								<tr>
+									<th rowspan="3">碩二生</th>
+									<td>葉晁銘</td>
+									<td><a href="mailto:jajapopo@hotmail.com.tw">E-mail</a></td>
+								</tr>
+								
+
+								<tr>
+									<td>高沛君</td>
+									<td><a href="mailto:pj12048975@gmail.com">E-mail</a></td>
+								</tr>
+
+								<tr>
+									<td>吳尚儒</td>
+									<td><a href="mailto:toby014890@gmail.com">E-mail</a></td>
+								</tr>
+								
+
+								<tr>
+									<th rowspan="3">碩一生</th>
+									<td>吳昶昕</td>
+									<td><a href="mailto:vira6529@gmail.com">E-mail</a></td>
+								</tr>
+								
+								<tr>
+									<td>徐景程</td>
+									<td><a href="mailto:zxc565611@gmail.com">E-mail</a></td>
+								</tr>
+
+								<tr>
+									<td>徐偉翔</td>
+									<td><a href="mailto:ad587920@gmail.com">E-mail</a></td>
+								</tr>
+
+							</table>
+
+							<img src="img/20240816.jpg" >
+							<figcaption>2024年8月於材料實驗館</figcaption>
+					</div>
+
+
+					<div id="old_member" class="tabcontent2">
+							<h1>已畢業成員</h1>
+								
+
+								<table>
+									<tr><th>畢業年分</th>	<th>成員</th>	<th>學位</th>	<th>論文</th></tr>
+                                    
+									<tr><td>2024</td>	<td>徐子軒</td>	<td>碩士</td>	<td>以氧化亞銅/金/氧化鋅奈米複合材料為基礎之手機操控可攜式氣體感測器並應用於ppb等級戶外危害氧化性氣體監測</td></tr>
+									<tr><td>2024</td>	<td>劉承恩</td>	<td>碩士</td>	<td>基於氧化銦奈米材料的可攜式半導體型氣體感測器應用於室內和室外臭氧檢測</td></tr>
+									<tr><td>2024</td>	<td>劉祐丞</td>	<td>碩士</td>	<td>聚苯胺奈米點/氧化石墨烯奈米複合材料應用於高靈敏度氨氣感測</td></tr>
+									<tr><td>2024</td>	<td>林諺瓏</td>	<td>碩士</td>	<td>氧化鋅/鋅參雜氧化銦奈米複合材料合成並應用於氨氣感測</td></tr>
+									<tr><td>2023</td>	<td>尤偉丞</td>	<td>碩士</td>	<td>氧化亞銅/氧化鋅奈米複合材料應用於環境二氧化氮濃度監測</td></tr>
+									<tr><td>2023</td>	<td>林冠穎</td>	<td>碩士</td>	<td>大面積合成富含缺陷之氧化銦奈米材料應用於二氧化氮氣體感測</td></tr>
+									<tr><td>2023</td>	<td>洪承彬</td>	<td>碩士</td>	<td>大面積合成氧化銦奈米磚並應用於環境臭氧濃度監測</td></tr>
+									<tr><td>2023</td>	<td>王大輔</td>	<td>碩士</td>	<td>氧化亞銅/金/氧化鋅奈米複合材料應用於環境臭氧及二氧化氮總濃度監測</td></tr>
+									<tr><td>2023</td>	<td>Thangapandian Murugesan</td>	<td>博士</td>	<td>製備有機化合物(聚苯胺或金屬有機框架)和金奈米粒子修飾之交錯氧化鋅奈米柱及應用於高靈敏度二氧化氮與臭氧氣體感測</td></tr>
+									<tr><td>2022</td>	<td>Rishi Ranjan Kumar</td>	<td>博士</td>	<td>二硫化鉬/氧化鋅異質接面奈米複合材料應用於高靈敏度二氧化氮氣體感測器製作</td></tr>
+									<tr><td>2022</td>	<td>高宇翔</td>	<td>碩士</td>	<td>銅氧化物/氧化鋅奈米複合材料應用於環境臭氧濃度監測</td></tr>
+									<tr><td>2022</td>	<td>施宣如</td>	<td>碩士</td>	<td>銀/氧化銦奈米複合材料應用於臭氧及二氧化氮氣體感測</td></tr>
+									<tr><td>2021</td>	<td>張庭維</td>	<td>碩士</td>	<td>銅氧化物/金/氧化鋅奈米複合材料的批量生產與檢測並應用於環境監測臭氧與二氧化氮</td></tr>
+									<tr><td>2021</td>	<td>陳伯証</td>	<td>碩士</td>	<td>硫化鉬修飾氧化鋅奈米柱應用於室溫二氧化氮氣體感測</td></tr>
+									<tr><td>2020</td>	<td>許哲銘</td>	<td>碩士</td>	<td>銅氧化物/金/氧化鋅奈米複合材料之氣體感測器應用於環境二氧化氮濃度場域監測</td></tr>
+									<tr><td>2020</td>	<td>徐正軒</td>	<td>碩士</td>	<td>大面積合成氧化鋅奈米複合材料及應用於臭氧及二氧化氮氣體感測</td></tr>
+									<tr><td>2020</td>	<td>顏敏修</td>	<td>碩士</td>	<td>大面積製備氧化鋅奈米複合材料於光觸媒分解甲醛氣體之應用</td></tr>
+                                    <tr><td>2020</td>	<td>Sunkuru Sachin Kumar</td>	<td>碩士</td>	<td>氧化鋅奈米柱為基礎三元奈米複合材料氣體感測器之大氣與成長參數效應</td></tr> 
+                                    <tr><td>2019</td>	<td>陳煜杰</td>	<td>碩士</td>	<td>銅氧化物/金/氧化鋅奈米複合材料應用於二氧化氮氣體感測及溫濕度效應分析</td></tr> 
+									<tr><td>2019</td>	<td>陳昱仁</td>	<td>碩士</td>	<td>銅氧化物/氧化鋅光觸媒奈米複合材料於抗菌活性之探討</td></tr> 
+									<tr><td>2018</td>	<td>朱昌珮</td>	<td>碩士</td>	<td>銅氧化物與銀修飾氧化鋅奈米線於氮氧化物氣體感測之應用</td></tr> 
+									<tr><td>2018</td>	<td>呂文忠</td>	<td>碩士</td>	<td>銅氧化物/金/氧化鋅奈米線複合材料於二氧化氮氣體感測</td></tr>
+									<tr><td>2018</td>	<td>葉上銘</td>	<td>碩士</td>	<td>大面積水熱法成長銀/銅氧化物/氧化鋅奈米線複合材料於可撓性基板及應用於光觸媒及氣體吸附</td></tr>
+									<tr><td>2016</td>	<td>洪力揚</td>	<td>博士</td>	<td>金屬氧化物半導體奈米材料於紫外光與一氧化氮氣體感測之應用</td></tr>
+									<tr><td>2016</td>	<td>柯賢文</td>	<td>碩士</td>	<td>氧化亞銅奈米顆粒修飾氧化鋅奈米線於大氣環境中之一氧化氮氣體感測應用</td></tr>
+									<tr><td>2016</td>	<td>蔡承恩</td>	<td>碩士</td>	<td>低溫大面積成長氧化亞銅與銀奈米粒子共修飾氧化鋅奈米線於光觸媒應用</td></tr>
+									<tr><td>2016</td>	<td>陳建華</td>	<td>碩士</td>	<td>銀奈米粒子修飾氧化鋅奈米線於光觸媒應用</td></tr>
+									<tr><td>2015</td>	<td>江茂源</td>	<td>碩士</td>	<td>氧化亞銅及銀奈米粒子共修飾氧化鋅奈米線於光觸媒應用</td></tr>
+									<tr><td>2014</td>	<td>張展豪</td>	<td>博士</td>	<td>氧化鋅奈米線於光觸媒應用</td></tr>
+									<tr><td>2014</td>	<td>張永祥</td>	<td>碩士</td>	<td>銅氧化物修飾氧化鋅奈米線於光觸媒應用</td></tr>
+									<tr><td>2014</td>	<td>洪千雅</td>	<td>碩士</td>	<td>硫醇分子於單一金奈米線在液體中的光致吸附及脫附研究</td></tr>
+									<tr><td>2014</td>	<td>王俐雲</td>	<td>碩士</td>	<td>金奈米結構其基板調節表面電漿共振之分析</td></tr>
+									<tr><td>2013</td>	<td>陳信宏</td>	<td>碩士</td>	<td>具有極高靈敏度之單根氧化鋅奈米線一氧化氮氣體感測器</td></tr>
+									<tr><td>2013</td>	<td>陳薇宇</td>	<td>碩士</td>	<td>單一金奈米線電阻式感測器光與熱導致分子脫負與電阻下降之研究</td></tr>
+									<tr><td>2012</td>	<td>洪力揚</td>	<td>碩士</td>	<td>以原子力顯微術製作單一氧化鈦奈米線並應用於紫外光偵測</td></tr>
+									<tr><td>2012</td>	<td>羅盛永</td>	<td>碩士</td>	<td>金奈米結構及金薄膜邊界之表面電漿特性研究</td></tr>
+									<tr><td>2011</td>	<td>王景弘</td>	<td>碩士</td>	<td>金薄膜與金奈米多孔性薄膜之表面電漿子特性研究</td></tr>
+									<tr><td>2011</td>	<td>李彥錞</td>	<td>碩士</td>	<td>奈米結構金薄膜製備及其於表面增強拉曼散射之應用</td></tr>
+									<tr><td>2011</td>	<td>黃小倩</td>	<td>碩士</td>	<td>單一金奈米線化學感測器分子吸附動力學與高溫退火影響之研究</td></tr>
+									<tr><td>2011</td>	<td>鄭宜驊</td>	<td>碩士</td>	<td>單根氧化鋅奈米線一氧化氮氣體感測器製作與吸附動力學研究</td></tr>
+									<tr><td>2010</td>	<td>陳香安</td>	<td>博士</td>	<td>表面電漿子於單根金奈米線及金奈米多孔性薄膜之遠場及近場光學特性研究</td></tr>
+									<tr><td>2010</td>	<td>龍俊良</td>	<td>碩士</td>	<td>以近場光學顯微術研究金奈米結構之表面電漿子效應</td></tr>
+									<tr><td>2010</td>	<td>黃博雍</td>	<td>碩士</td>	<td>氧化鋅奈米線光陽極之半固態染料敏化太陽能電池製作</td></tr>
+									<tr><td>2010</td>	<td>林佛儒</td>	<td>碩士</td>	<td>單一金奈米線電阻式化學感測器化學吸附動力學研究</td></tr>
+									<tr><td>2009</td>	<td>林欣瑜</td>	<td>博士</td>	<td>單一金奈米線電阻式化學感測器</td></tr>
+									<tr><td>2009</td>	<td>何恕德</td>	<td>博士</td>	<td>寬能隙半導體奈米材料之合成及其應用於染料敏化太陽能電池</td></tr>
+									<tr><td>2009</td>	<td>蕭景倫</td>	<td>碩士</td>	<td>無催化劑成長氧化鋅奈米線及其於染料敏化太陽能電池之應用</td></tr>
+									<tr><td>2008</td>	<td>黃志翰</td>	<td>碩士</td>	<td>利用近場光學顯微術研究表面電漿偏極子於金奈米線陣列之傳遞現象</td></tr>
+									<tr><td>2007</td>	<td>陳盈方</td>	<td>碩士</td>	<td>利用原子力顯微術之機械力微影及電致遷移製作奈米電極</td></tr>
+									<tr><td>2007</td>	<td>吳宜蓁</td>	<td>碩士</td>	<td>以原子力顯微術奈米微影術製作的金奈米點與奈米線陣列之區域表面電漿共振特性</td></tr>
+									<tr><td>2007</td>	<td>蘇展祿</td>	<td>碩士</td>	<td>利用近場光學顯微術研究金屬狹縫奈米線和奈米點的近場光學分佈</td></tr>
+									<tr><td>2007</td>	<td>陳冠喬</td>	<td>碩士</td>	<td>藉表面粗糙度輔助成長氧化鋅奈米線及其發光特性研究</td></tr>
+									<tr><td>2006</td>	<td>廖建順</td>	<td>碩士</td>	<td>原子力顯微術奈米加工製作金屬奈米線與奈米點陣列及其區域表面電漿共振特性研究</td></tr>
+									<tr><td>2006</td>	<td>林效賢</td>	<td>碩士</td>	<td>選區成長氧化鋅奈米線及其發光特性研究</td></tr>
+									<tr><td>2006</td>	<td>曾名輝</td>	<td>碩士</td>	<td>金屬微米及奈米狹縫之近場光學顯微研究</td></tr>
+									<tr><td>2005</td>	<td>許如宏</td>	<td>博士</td>	<td>利用原子力顯微鏡製作奈米結構並應用於選區成長一維奈米材料</td></tr>
+									<tr><td>2005</td>	<td>黃明鴻</td>	<td>碩士</td>	<td>以原子力顯微術製作鎳奈米點並應用於選區成長氧化矽奈米線</td></tr>
+									<tr><td>2005</td>	<td>呂奕賢</td>	<td>碩士</td>	<td>利用掃描探針顯微術分析氧化鉍鐵薄膜的奈米尺度特性</td></tr>
+									<tr><td>2005</td>	<td>陳右儒</td>	<td>碩士</td>	<td>以原子力顯微術機械力微影製作金屬奈米線和奈米結構</td></tr>
+									<tr><td>2005</td>	<td>谷祖賢</td>	<td>碩士</td>	<td>導電高分子在奈米電極間電荷傳導特性之研究</td></tr>
+									<tr><td>2004</td>	<td>楊柏儒</td>	<td>碩士</td>	<td>以掃描探針顯微術研究電致發光高分子在奈米尺度下的光電特性</td></tr>
+									<tr><td>2004</td>	<td>張郁嫺</td>	<td>碩士</td>	<td>以原子力顯微術製作氧化鎳奈米結構並應用於奈米材料選區成長</td></tr>
+									<tr><td>2004</td>	<td>林俊羽</td>	<td>碩士</td>	<td>使用原子力顯微鏡製造金屬奈米線與奈米電極</td></tr>
+									<tr><td>2003</td>	<td>何恕德</td>	<td>碩士</td>	<td>以導電性原子力顯微術研究矽在奈米壓痕下之相變化行為</td></tr>
+									<tr><td>2003</td>	<td>賴信文</td>	<td>碩士</td>	<td>以原子力顯微術奈米氧化製作氧化鎳結構及其於奈米碳管選區成長的應用</td></tr>
+									<tr><td>2002</td>	<td>施孟君</td>	<td>碩士</td>	<td>合金及薄膜之奈米壓痕量測</td></tr>
+									<tr><td>2002</td>	<td>林惠蓮</td>	<td>碩士</td>	<td>以導電性原子力顯微術研究導電高分子之電洞傳導特性</td></tr>
+									<tr><td>2002</td>	<td>單立偉</td>	<td>碩士</td>	<td>彎式近場光學探針製作及探針特性研究</td></tr>
+									<tr><td>2001</td>	<td>陳品任</td>	<td>碩士</td>	<td>利用原子力顯微術研究ＰΖＴ薄膜之微觀鐵電特性</td></tr>
+									<tr><td>2001</td>	<td>王申申</td>	<td>碩士</td>	<td>以導電性原子力顯微鏡研究電致發光高分子之奈米級電荷傳導特性</td></tr>
+
+
+
+
+								</table>
+								
+
+
+
+					</div>
+
+					<div id="group_photos" class="tabcontent2">
+							<h1>生活寫真</h1>
+							<div class="slideshow-container">						
+							
+							<div class="mySlides fade">
+								<div class="numbertext">1 / 9</div>
+								<img src="img/2025_尾牙1.JPG" style="width:100%">
+								<div class="text">2025尾牙</div>
+							</div>
+							<div class="mySlides fade">
+								<div class="numbertext">2 / 9</div>
+								<img src="img/2024_尾牙.jpg" style="width:100%">
+								<div class="text">2024尾牙</div>
+							</div>
+							<div class="mySlides fade">
+								<div class="numbertext">3 / 9</div>
+								<img src="img/2023_尾牙.jpg" style="width:100%">
+								<div class="text">2023尾牙</div>
+							</div>
+
+							<div class="mySlides fade">
+								<div class="numbertext">4 / 9</div>
+								<img src="img/2022_尾牙2.jpg" style="width:100%">
+								<div class="text">2022尾牙</div>
+							</div>
+
+							<div class="mySlides fade">
+								<div class="numbertext">5 / 9</div>
+								<img src="img/2021_尾牙_1.jpg" style="width:100%">
+								<div class="text">2021尾牙</div>
+							</div>
+
+							<div class="mySlides fade">
+							  <div class="numbertext">6 / 9</div>
+							  <img src="img/2020_gatherings.jpg" style="width:100%">
+							  <div class="text">2020聚餐</div>
+							</div>
+
+							<div class="mySlides fade">
+								<div class="numbertext">7 / 9</div>
+								<img src="img/2019_尾牙.jpg" style="width:100%">
+								<div class="text">2019尾牙</div>
+							</div>
+
+							<div class="mySlides fade">
+							  <div class="numbertext">8 / 9</div>
+							  <img src="img/2018_尾牙.jpg" style="width:100%">
+							  <div class="text">2018尾牙</div>
+							</div>
+
+							<div class="mySlides fade">
+							  <div class="numbertext">9 / 9</div>
+							  <img src="img/2019_gatherings.jpg" style="width:100%">
+							  <div class="text">2019風城披薩</div>
+							</div>
+
+						
+							<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+							<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+							</div>
+							<br>
+
+							<div style="text-align:center">
+							  <span class="dot" onclick="currentSlide(1)"></span> 
+							  <span class="dot" onclick="currentSlide(2)"></span> 
+							  <span class="dot" onclick="currentSlide(3)"></span> 
+							  <span class="dot" onclick="currentSlide(4)"></span> 
+							  <span class="dot" onclick="currentSlide(5)"></span> 
+							  <span class="dot" onclick="currentSlide(6)"></span> 
+							  <span class="dot" onclick="currentSlide(7)"></span> 
+							  <span class="dot" onclick="currentSlide(8)"></span> 
+							  <span class="dot" onclick="currentSlide(9)"></span>
+							</div>
+					</div>
+
+		</div>
+	</section>
+
+	<footer id="main-footer">
+		<hr>
+		<p>
+			電話：(03) 5715131-33812 &nbsp &nbsp 地址：材料實驗館 206 室 
+		<br>
+			Copyright &copy; 2019 國立清華大學材料系	感測與光觸媒奈米材料實驗室
+		</p>
+	</footer>
+</div>
+
+		<script>
+//----------------------------------不同標籤(區段)--------------------------------------
+
+			function openMember(cityName,elmnt,color) {
+								var i, tabcontent, tablinks;
+								tabcontent = document.getElementsByClassName("tabcontent2");
+								for (i = 0; i < tabcontent.length; i++) {
+								tabcontent[i].style.display = "none";
+								}
+								tablinks = document.getElementsByClassName("tablink2");
+								for (i = 0; i < tablinks.length; i++) {
+								tablinks[i].style.backgroundColor = "";
+								}
+								document.getElementById(cityName).style.display = "block";
+								elmnt.style.backgroundColor = color;
+
+								}
+								// Get the element with id="defaultOpen" and click on it
+								document.getElementById("defaultOpen").click();
+
+//----------------------------------SlideShowGallery--------------------------------------
+								var slideIndex = 1;
+								showSlides(slideIndex);
+
+								function plusSlides(n) {
+								  showSlides(slideIndex += n);
+								}
+
+								function currentSlide(n) {
+								  showSlides(slideIndex = n);
+								}
+
+								function showSlides(n) {
+								  var i;
+								  var slides = document.getElementsByClassName("mySlides");
+								  var dots = document.getElementsByClassName("dot");
+								  if (n > slides.length) {slideIndex = 1}    
+								  if (n < 1) {slideIndex = slides.length}
+								  for (i = 0; i < slides.length; i++) {
+								      slides[i].style.display = "none";  
+								  }
+								  for (i = 0; i < dots.length; i++) {
+								      dots[i].className = dots[i].className.replace(" active", "");
+								  }
+								  slides[slideIndex-1].style.display = "block";  
+								  dots[slideIndex-1].className += " active";
+								}
+
+		</script>
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<script src="myScript.js"></script>
+</body>
+</html>
+
+
+<!---created by David Yen (2019)-->

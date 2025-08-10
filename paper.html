@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SPN LAB</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Content-Language" content="zh-tw,en">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		#papercontent li{
+		  padding: 5px;
+		}
+		#papercontent li:nth-child(even) {
+		  background-color: lightcyan;
+		}
+
+		.tablink {
+		  background-color:gray;
+		  color: white;
+		  float: left;
+		  border: none;
+		  outline: none;
+		  cursor: pointer;
+		  padding: 14px 16px;
+		  font-size: 17px;
+		  width: 33.3333333%;
+		}
+
+		.tablink:hover {
+		  background-color: steelblue ;
+		  color:white;
+		}
+
+		/* Style the tab content */
+		.tabcontent {
+		  margin-top: 16pt;
+		  color: black;
+		  display: none;
+		  padding: 50px;
+		}
+
+		#SCI {background-color:white;}
+		#Other {background-color:white;}
+		#Patents {background-color:white;}
+
+		@media only screen and (max-width: 800px){
+			.tabcontent{padding: unset;} .tablink{width: 100%;}
+		}
+	</style>
+</head>
+
+<link rel="stylesheet" type="text/css" href="style.css" >
+
+
+<body>
+<div class="main">
+
+	<header id="main-header">
+		<div id="logo">
+			<h1><a href="index.html">感測與光觸媒奈米材料實驗室</a></h1>
+			<h3><a href="index.html">Sensing and Photocatalysis Nanomaterials Laboratory</a></h3>
+		</div>
+		<span class="openoverlaynav" onclick="openNav()"><a>&#9776;</a></span>
+	</header>
+
+	<div id="Big-myNav" class="Big-overlaynav">
+		<div class="Big-overlaynav-content">
+			<a href="news.html">最新消息</a>
+			<a href="introduction.html">實驗室簡介</a>
+			<a href="professor.html">指導教授</a>
+			<a href="paper.html">論文發表</a>
+			<a href="research.html">研究方向</a>
+			<a href="result.html">研究成果</a>
+			<a href="members.html">實驗室成員</a>
+			<a href="index.html">回到首頁</a>
+		</div>
+	</div>
+
+	<header id="sub-header">
+		<h5><a href="http://www.mse.nthu.edu.tw" target="_blank">&#10148 清大材料</a></h5>
+	</header>
+
+	<div id="myNav" class="overlaynav">
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		<div class="overlaynav-content">
+			<a href="news.html">最新消息</a>
+			<a href="introduction.html">實驗室簡介</a>
+			<a href="professor.html">指導教授</a>
+			<a href="paper.html">論文發表</a>
+			<a href="research.html">研究方向</a>
+			<a href="result.html">研究成果</a>
+			<a href="members.html">實驗室成員</a>
+			<a href="index.html">回到首頁</a>
+		</div>
+	</div>
+
+
+
+	<section>
+		<div>
+
+			<div id="papercontent" class="content">
+				<h1>論文發表與專利</h1>
+
+								<button class="tablink" onclick="openColTab('SCI', this, 'steelblue')" id="defaultOpen">SCI Journal Papers</button>
+								<button class="tablink" onclick="openColTab('Other', this, 'steelblue')">Other Papers</button>
+								<button class="tablink" onclick="openColTab('Patents', this, 'steelblue')">Patents</button>
+
+
+<!----------------------------SCI Journal Papers----------------------------------------->
+								<div id="SCI" class="tabcontent">
+								  <h1>SCI Journal Papers</h1>
+
+								  <ol>
+									<li>
+									R. R. Kumar*, S. Gupta, A. k. Anbalagan, A. Khan, N.-H. Tai, C.-H. Lee, H.-N. Lin, “Time-dependent growth of sputtered MoS2 films on ZnO nanorods for enhanced NO2 sensing performance”, Micromachines 16, 659 (2025).<a href='https://www.mdpi.com/2072-666X/16/6/659' attr="pdf link">PDF</a>	
+									</li>
+									<li>
+									R. R. Kumar*, S. Gupta, H.-F. Huang, T. Murugesan, N.-H. Tai, H.-N. Lin, “Light intensity effects on the performance of In2O3 gas sensors: Insights into adsorption and desorption dynamics”, Mater. Chem. Phys. 337, 130639 (2025).<a href='https://www.sciencedirect.com/science/article/pii/S0254058425002858?via%3Dihub' attr="pdf link">PDF</a>	
+									</li>
+									<li>
+									T. Murugesan, R. R. Kumar, A. Ranjan, M.-Y. Lu, H.-N. Lin*, “Fabrication of large-area Au nanoparticle decorated ZnO@ZIF-8 core-shell heterostructure nanorods for ppb-level NO2 gas sensing at room temperature”, Sens. Actuators B 402, 135106 (2024).<a href='https://www.sciencedirect.com/science/article/pii/S0925400523018245?via%3Dihub' attr="pdf link">PDF</a>
+									</li>
+									<li>
+									Y.-P. Kuang, A. Dubey, R. R. Kumar, H.-Y. Tsai, S. N. S. Yadav, C.-Y. Chen, S. Gwo, H.-N. Lin, T.-J Yen*, “Multifunctional plasmonic sensor for excellent UV photodetection and NO2 gas sensing by an array of Al nanocaps on GaN truncated nanocones”, Adv. Opt. Mater. 11, 2300252 (2023). <a href='https://onlinelibrary.wiley.com/doi/10.1002/adom.202300252' attr="pdf link">PDF</a>
+								    </li>
+									<li>
+									R. R. Kumar, W.-C. Yu, T. Murugesan, P.-C. Chen, A. Ranjan, M.-Y. Lu, H.-N. Lin*, “Formation of large-scale MoS2/Cu2O/ZnO heterostructure arrays by in situ photodeposition and application for ppb-level NO2 gas sensing”, J. Alloy. Compd. 952, 169984 (2023). <a href='https://www.sciencedirect.com/science/article/pii/S0925838823012872' attr="pdf link">PDF</a>
+									</li>
+									<li>
+									A. k. Anbalagan, S. Gupta, R. R. Kumar, A. R. Tripathy, M. Chaudhary, S.-C Haw, T. Murugesan, H.-N. Lin, Y.-L. Chueh, N.-H. Tai, C.-H. Lee*, “Gamma-ray engineered surface defects on zinc oxide nanorods towards enhanced NO2 gas sensing performance at room temperature”, Sens. Actuators B 369, 132255 (2022). <a href='https://www.sciencedirect.com/science/article/pii/S0925400522008978' attr="pdf link">PDF</a>
+									</li>
+									<li>
+									T. Murugesan, R. R. Kumar, A. k. Anbalagan, C.-H. Lee, H.-N. Lin*, “Interlinked polyaniline/ZnO nanorod composite for selective NO2 gas sensing at room temperature”, ACS Appl. Nano Mater. 5, 4921 (2022). <a href='https://pubs.acs.org/doi/10.1021/acsanm.1c04519' attr="pdf link">PDF</a>
+									</li>
+									<li>
+									R. R. Kumar*, M. R. Habib, A. Khan, P.-C. Chen, T. Murugesan, S. Gupta, A. k. Anbalagan, N.-H. Tai, C.-H. Lee, H.-N. Lin, “Sulfur monovacancies in liquid-exfoliated MoS2 nanosheets for NO2 gas sensing”, ACS Appl. Nano Mater. 4, 9459 (2021).<a href='https://pubs.acs.org/doi/abs/10.1021/acsanm.1c01929' attr="pdf link">PDF</a> (cited > 10 times)
+									</li>
+									<li>
+									R. Gandotra, Y.-R. Chen, T. Murugesan, T.-W. Chang, H.-Y. Chang, H.-N. Lin*, “Highly efficient and morphology dependent antibacterial activities of photocatalytic CuxO/ZnO nanocomposites”, J. Alloy. Compd. 873, 159769 (2021).<a href='https://www.sciencedirect.com/science/article/pii/S0925838821011786?via%3Dihub' attr="pdf link">PDF</a> (cited > 10 times)
+									</li>
+									<li>
+									R. R. Kumar, T. Murugesan, T.-W. Chang, H.-N. Lin*, “Defect controlled adsorption/desorption kinetics of ZnO nanorods for UV-activated NO2 gas sensing at room temperature”, Mater. Lett. 287, 129257 (2021).<a href='https://www.sciencedirect.com/science/article/pii/S0167577X20319650?via%3Dihub' attr="pdf link">PDF</a> (cited > 20 times)
+									</li>
+									<li>
+									R. R. Kumar, T. Murugesan, A. Dash, C.-H. Hsu, S. Gupta, A. Manikandan, A. k. Anbalagan, C.-H. Lee, N.-H. Tai, Y.-L. Chueh, H.-N. Lin*, “Ultrasensitive and light-activated NO2 gas sensor based on networked MoS2/ZnO nanohybrid with adsorption/desorption kinetics study”, Appl. Surf. Sci. 536, 147933 (2021).<a href="https://www.sciencedirect.com/science/article/pii/S0169433220326908" attr="pdf link">PDF</a> (cited > 50 times)
+									</li> 
+									<li>
+									S.-Y. Tang, C.-C. Yang, T.-Y. Su, T.-Y. Yang, S.-C. Wu, Y.-C. Hsu, Y.-Z. Chen, T.-N. Lin, J.-L. Shen, H.-N. Lin, P.-W. Chiu, H.-C. Kuo, Y.-L. Chueh*, “Design of core–shell quantum dots–3D WS2 nanowall hybrid nanostructures with high-performance bifunctional sensing applications”, ACS Nano 14, 12668 (2020).  <a href="https://pubs.acs.org/doi/10.1021/acsnano.0c01264" attr="pdf link">PDF</a> (cited > 30 times)
+									</li>  
+									<li>
+									T.-Y. Su, Y.-Z. Chen, Y.-C. Wang, S.-Y. Tang, Y.-C. Shih, F. Cheng, Z. M. Wang, H.-N. Lin, Y.-L. Chueh*, “Highly sensitive, selective and stable NO2 gas sensors with a ppb-level detection limit on 2D-platinum diselenide films”, J. Mater. Chem. C, 8, 4851 (2020). <a href="https://pubs.rsc.org/en/content/articlelanding/2020/tc/c9tc05747a#!divAbstract " attr="pdf link">PDF</a> (cited > 20 times)
+									</li>
+                                    <li>
+									W.-C. Lu, S. S. Kumar, Y.-C. Chen, C.-M. Hsu, H.-N. Lin*, “Au/Cu2O/ZnO ternary nanocomposite for low concentration NO2 gas sensing at room temperature”, Mater. Lett. 256, 126657 (2019).  <a href="https://www.sciencedirect.com/science/article/pii/S0167577X19312881 " attr="pdf link">PDF</a> (cited > 10 times)
+									</li>
+									<li>
+									C.-E. Tsai, S.-M. Yeh, C.-H. Chen, H.-N. Lin*, “Flexible photocatalytic paper with Cu2O and Ag nanoparticle-decorated ZnO nanorods for visible light photodegradation of organic dye”, Nanoscale Res. Lett. 14, 204 (2019). <a href="https://nanoscalereslett.springeropen.com/articles/10.1186/s11671-019-3034-7" attr="pdf link">PDF</a> (cited > 10 times)
+									</li>
+									<li>
+									Y.-Z. Chen, S.-W. Wang, C.-C. Yang, C.-H. Chung, Y.-C. Wang, S.-W. Huang Chen, C.-W. Chen, T.-Y. Su, H.-N. Lin, H.-C. Kuo, Y.-L. Chueh*, “Indoor light-activated 3D cone-shaped MoS2 bilayers-based NO gas sensor with ppb-level detection at room-temperature”, Nanoscale 11, 10410 (2019). <a href="https://pubs.rsc.org/en/content/articlehtml/2019/nr/c8nr10157d" attr="pdf link">PDF</a> (cited > 30 times)
+									</li>
+									<li>
+									H. Medina, J.-G. Li, T.-Y. Su, Y.-W. Lan, S.-H. Lee,.C.-W. Chen, Y.-Z. Chen, A. Manikandan, S.-H. Tsai, A.Navabi, X. Zhu, Y.-C. Shih, W.-S. Lin, J.-H. Yang, S. R. Thomas, B.-W. Wu, C.-H. Shen, J.-M. Shieh, H.-N. Lin, A. Javey, K. L. Wang, Y.-L. Chueh*, “Wafer-scale growth of WSe2 monolayers toward phase-engineered hybrid WOx/WSe2 films with sub-ppb NOx gas sensing by a low temperature plasma-assisted selenization process”, Chem. Mater. 29, 1587 (2017). <a href="http://pubs.acs.org/doi/abs/10.1021/acs.chemmater.6b04467" attr="pdf link">PDF</a> (cited > 70 times)
+									</li>
+									<li>
+									L.-Y. Hong, H.-W. Ke, C.-E. Tsai, and H.-N. Lin*, “Low concentration NO gas sensing under ambient environment using Cu2O nanoparticle modified ZnO nanowires”, Mater. Lett. 185, 243 (2016). <a href="http://www.sciencedirect.com/science/article/pii/S0167577X16313052" attr="pdf link">PDF</a> (cited > 10 times)
+									</li>
+									<li>
+									L.-Y. Hong, and H.-N. Lin*, “NO gas sensing at room temperature using single titanium oxide nanodot sensors created by atomic force microscopy nanolithography”, Beilstein J. Nanotechnol. 7, 1044 (2016). <a href="http://www.beilstein-journals.org/bjnano/single/articleFullText.htm?publicId=2190-4286-7-97" attr="pdf link">PDF</a> (cited > 10 times)
+									</li>
+									<li>
+									C. Chen, Z. Li*, H.-N. Lin, G. Wang, J. Liao, M. Li, S. Lv, and W. Li, “Enhanced visible light photocatalytic performance of ZnO nanowires integrated with CdS and Ag2S”, Dalton Trans. 45, 3750 (2016). <a href="http://pubs.rsc.org/en/content/articlelanding/2016/dt/c5dt04533a#!divAbstract" attr="pdf link">PDF</a> (cited > 70 times)
+									</li>
+									<li>
+									M.-Y. Chiang, and H.-N. Lin*, “Enhanced photocatalysis of ZnO nanowires co-modified with cuprous oxide and silver nanoparticles”, Mater. Lett. 160, 440 (2015). <a href="http://www.sciencedirect.com/science/article/pii/S0167577X15303773" attr="pdf link">PDF</a>(cited > 10 times)
+									</li>
+									<li>
+									L.-Y. Hong, and H.-N. Lin*, “Fabrication of single titanium oxide nanodot ultraviolet sensors by atomic force microscopy nanolithography”, Sens. Actuators A 232, 94 (2015). <a href="http://www.sciencedirect.com/science/article/pii/S0924424715300108" attr="pdf link">PDF</a>
+									</li>
+									<li>
+									C.-F. Chen, C.-T. Ku, Y.-H. Tai, P.-K. Wei, H.-N. Lin, and C.-B. Huang*, “Creating optical near-field orbital angular momentum in a gold metasurface”, Nano Lett. 15, 2746 (2015). <a href="http://pubs.acs.org/doi/abs/10.1021/acs.nanolett.5b00601" attr="pdf link">PDF</a> (cited > 100 times)
+									</li>
+									<li>
+									C.-T. Ku, H.-N. Lin, and C.-B. Huang*, “Direct observation of surface plasmon vortex and subwavelength focusing with arbitrarily-tailored intensity patterns”, Appl. Phys. Lett. 106, 053112 (2015). <a href="http://scitation.aip.org/content/aip/journal/apl/106/5/10.1063/1.4907652?TRACK=RSS" attr="pdf link">PDF</a> (cited > 10 times)
+									</li>
+									<li>
+									Y.-H. Chang, M.-Y. Chiang, J.-H. Chang and H.-N. Lin*, “Enhanced visible light photocatalysis of cuprous oxide nanoparticle modified zinc oxide nanowires”, Mater. Lett. 138, 85 (2015). <a href="http://www.sciencedirect.com/science/article/pii/S0167577X14017455" attr="pdf link">PDF</a>
+									</li>
+									<li>
+									J.-H. Chang and H.-N. Lin*, “Exploitation of piezoelectricity for enhancing photocatalytic activity of ZnO nanowires”, Mater. Lett. 132, 134 (2014). <a href="http://www.sciencedirect.com/science/article/pii/S0167577X14011033" attr="pdf link">PDF</a>  (cited > 20 times)
+									</li>
+									<li>
+									J.-H. Chang and H.-N. Lin*, “Investigation of the photocatalytic activity of ZnO nanowires: substrate effect and kinetics analysis”, J. Nanomater. 2014, 426457 (2014). <a href="http://www.hindawi.com/journals/jnm/2014/426457/" attr="pdf link">PDF</a>
+									</li>
+									<li>
+									Y.-H. Lin, B. Handel, H. J. Huang, H.-A. Chen, Y.-F. Chen, H.-N. Lin, and D. P. Tsai*, “Near-field optical imaging of a porous Au film: influences of topographic artifacts and surface plasmons”, Plasmonics 8, 377 (2013). <a href="http://link.springer.com/article/10.1007%2Fs11468-012-9401-1" attr="pdf link">PDF</a>
+									</li>
+									<li>
+									H.-A. Chen, J.-L. Long, Y.-H. Lin, C.-J. Weng, and H.-N. Lin*,“Plasmonic properties of a nanoporous gold film investigated by far-field and near-field optical techniques”, J. Appl. Phys. 110, 054302 (2011). <a href="http://scitation.aip.org/content/aip/journal/jap/110/5/10.1063/1.3631824" attr="pdf link">PDF</a> (cited > 20 times)
+									</li>
+									<li>
+									L.-W. Chang, J.-H. Chang, J.-W. Yeh, H.-N. Lin, and H. C. Shih*,“Zigzag GaN/Ga2O3 heterogeneous nanowires: synthesis, optical and gas sensing properties ”, AIP Advances 1, 032114 (2011). <a href="http://scitation.aip.org/content/aip/journal/adva/1/3/10.1063/1.3624331" attr="pdf link">PDF</a> (cited > 20 times)
+									</li>
+									<li>
+									S.-T. Ho, C.-L. Hsiao, H.-Y. Lin, H.-A. Chen, C.-Y. Wang, and H.-N. Lin*,“Single-crystalline zinc oxide nanowires as photoanode material for dye-sensitized solar cells”, J. Nanosci. Nanotechnol. 10, 6473 (2010). <a href="http://www.ingentaconnect.com/content/asp/jnn/2010/00000010/00000010/art00029?crawler=true&mimetype=application/pdf" attr="pdf link">PDF</a>
+									</li>
+									<li>
+									H.-A. Chen, H.-Y. Lin, and H.-N. Lin*,“Localized surface plasmon resonance in lithographically fabricated single gold nanowires”, J. Phys. Chem. C 114, 10359 (2010). <a href="http://pubs.acs.org/doi/abs/10.1021/jp1014725" attr="pdf link">PDF</a> (cited > 10 times)
+									</li>
+									<li>
+									H.-Y. Lin, H.-A. Chen, Y.-J. Wu, J.-H. Huang, and H.-N. Lin*,“Fabrication of metal nanostructures by atomic force microscopy nanomachining and related applications”, J. Nanosci. Nanotechnol. 10, 4482 (2010). <a href="http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=5991793" attr="pdf link">PDF</a> (cited > 10 times)
+									</li>
+									<li>
+									H.-C. Wu, T.-Y. Tsai, F.-H. Chu, N.-H. Tai, H.-N. Lin, H.-T. Chiu, and C.-Y. Lee*,“Electron field emission properties of nanomaterials on rough silicon rods”, J. Phys. Chem. C 114, 130 (2010).<a href="http://pubs.acs.org/doi/abs/10.1021/jp908566q" attr="pdf link">PDF</a> (cited > 20 times)
+									</li>
+									<li>
+									S.-T. Ho, C.-Y. Wang, H.-L. Liu, and H.-N. Lin*, "Catalyst-free selective-area growth of vertically aligned zinc oxide nanowires", Chem. Phys. Lett. 463, 141 (2008).<a href="http://www.sciencedirect.com/science/journal/00092614" attr="pdf link">PDF</a> (cited > 30 times)
+									</li>
+									<li>
+									T.-Y. Ke, H.-A. Chen, H.-S. Sheu, J.-W. Yeh, H.-N. Lin, C.-Y. Lee*, and H.-T. Chiu, "Sodium niobate nanowire and its piezoelectricity", J. Phys. Chem. C 112, 8827 (2008). <a href="http://pubs.acs.org/cgi-bin/abstract.cgi/jpccck/2008/112/i24/abs/jp711598j.html" attr="pdf link">PDF</a> (cited > 90 times)
+									</li>
+									<li>
+									H.-Y. Lin, H.-A. Chen, and H.-N. Lin*, "Fabrication of a single metal nanowire connected with dissimilar metal electrodes and its application to chemical sensing" ,Anal. Chem. 80, 1937 -1941 (2008). <a href="http://pubs.acs.org/cgi-bin/abstract.cgi/ancham/asap/abs/ac701911j.html" attr="pdf link">PDF</a> (cited > 30 times)
+									</li>
+									<li>
+									S.-T. Ho, K.-C. Chen, H.-A. Chen, H.-Y. Lin, C.-Y. Cheng, and H.-N. Lin*, "Catalyst-free surface-roughness-assisted growth of large-scale vertically aligned zinc oxide nanowires by thermal evaporation" ,Chem. Mater. 19, 4083-4086 (2007). <a href="http://pubs3.acs.org/acs/journals/doilookup?in_doi=10.1021/cm070474y" attr="pdf link">PDF</a> (cited > 40 times)
+									</li>
+									<li>
+									T.-H. Ku, J.-H. Hsu, H.-N. Lin*, H.-F. Meng, M.-C. Chen and S.-A. Chen, "Study of charge transport in conducting polymer between electrodes with nanogaps", Nanotechnology 17, 2279 (2006). <a href="http://www.iop.org/EJ/abstract/0957-4484/17/9/035/" attr="pdf link">PDF</a>
+									</li>
+									<li>
+									J. H. He, J. H. Hsu, C. W. Wang, H. N. Lin, L. J. Chen, and Z. L. Wang*, "Pattern and feature designed growth of ZnO nanowire arrays for vertical devices", J. Phys. Chem. B 110, 50 (2006). <a href="http://pubs.acs.org/cgi-bin/abstract.cgi/jpcbfk/2006/110/i01/abs/jp055180j.html" attr="pdf link">PDF</a> (cited > 110 times)
+									</li>
+									<li>
+									J.-H. Hsu, M.-H. Huang, H.-H. Lin, and H.-N. Lin*, "Selective growth of silica nanowires on nickel nanostructures created by atomic force microscopy nanomachining", Nanotechnology 17, 170 (2006). <a href="http://www.iop.org/EJ/abstract/0957-4484/17/1/027/" attr="pdf link">PDF</a> (cited > 20 times)
+									</li>
+									<li>
+									Y.-H. Lee, J.-M. Wu*, Y.-C. Chen, Y.-H. Lu, and H.-N. Lin, "Surface chemistry and nanoscale characterizations of multiferroic BiFeO3 thin films", Electrochem. Solid State Lett. 8, F43 (2005). <a href="http://www.ecsdl.org/dbt/dbt.jsp?KEY=ESLEF6&Volume=8&Issue=10" attr="pdf link">PDF</a> (cited > 30 times)
+									</li>
+									<li>
+									Y.-J. Chen, J.-H. Hsu, and H.-N. Lin*, "Fabrication of metal nanowires by atomic force microscopy nanoscratching and lift-off process", Nanotechnology 16, 1112 (2005). <a href="http://www.iop.org/EJ/abstract/0957-4484/16/8/020" attr="pdf link">PDF</a> (cited > 100 times)
+									</li>
+									<li>
+									J.-H. Huang*, H.-N. Lin, C.-C. Chuang, H.-W. Lai, and J.-H. Hsu, "Selective growth of carbon nanotubes on nickel oxide templates created by atomic force microscope nano-oxidation",Diam. Relat. Mater. 14, 744 (2005). <a href="http://sdos.ejournal.ascc.net/cgi-bin/sciserv.pl?collection=journals&journal=09259635" attr="pdf link">PDF</a> (cited > 10 times)
+									</li>
+									<li>
+									H.-N. Lin*, Y.-H. Chang, J.-H. Yen, J.-H. Hsu, I.-C. Leu, and M.-H. Hon,"Selective growth of vertically aligned carbon nanotubes on nickel oxide nanostructures created by atomic force microscope nano-oxidation", Chem. Phys. Lett.,399, 422 (2004), <a href="http://sdos.ejournal.ascc.net/cgi-bin/sciserv.pl?collection=journals&journal=00092614" attr="pdf link">PDF</a> (cited > 10 times)
+									</li>
+									<li>
+									J.-H. Hsu, C.-Y. Lin, and H.-N. Lin*, "Fabrication of metallic nanostructures by atomic force microscopy nanomachining and lift-off process", J. Vac. Sci. Technol. B,22, 2768 (2004),<a href="http://scitation.aip.org/journals/doc/JVTBD9-home/" attr="pdf link">PDF</a> (cited > 20 times)
+									</li>
+									<li>
+									S.-T. Ho, Y.-H. Chang, H.-N. Lin*, "Conducting atomic force microscopy study of phase transformation in silicon nanoindentation", J. Appl. Phys. 96, 3562 (2004).<a href="http://scitation.aip.org/journals/doc/JAPIAU-home/" attr="pdf link">PDF</a>
+									</li>
+									<li>
+									J.-H. Hsu, H.-W. Lai, H.-N. Lin*, C.-C. Chuang, and J.-H. Huang, " Fabrication of nickel oxide nanostructures by atomic force microscope nano-oxidation and wet etching", J. Vac. Sci. Technol. B, 21, 2599 (2003).<a href="http://scitation.aip.org/journals/doc/JVTBD9-home/" attr="pdf link">PDF</a>
+									</li>
+									<li>
+									H.-N. Lin*, S.-H. Chen, S.-T. Ho, P.-R. Chen, and I-N. Lin, "Comparative measurements of the piezoelectric coefficient of a lead zirconate titanate film by piezoresponse force microscopy using electrically characterized tips", J. Vac. Sci. Technol. B, 21, 916 (2003). <a href="http://scitation.aip.org/journals/doc/JVTBD9-home/" attr="pdf link">PDF</a> (cited > 20 times)
+									</li>
+									<li>
+									H.-N. Lin*, H.-L. Lin, S.-S. Wang, L.-S. Yu, G.-Y. Perng, S.-A. Chen, and S.-H. Chen, "Nanoscale charge transport in an electroluminescent polymer investigated by conducting atomic force microscopy", Appl. Phys. Lett., 81, 2572 (2002). <a href="http://scitation.aip.org/content/aip/journal/apl/81/14/10.1063/1.1509464" attr="pdf link">PDF</a>(cited > 70 times)
+									</li>
+									<li>
+									W. J. Jong, S. H. Lai, K. H. Hong, H. N. Lin, and H. C. Shih*, "The effect of catalysis on the formation of one-dimensional carbon structured materials", Diam. Relat. Mater. 11, 1019 (2002). <a href="http://www.sciencedirect.com/science/article/pii/S0925963501005519" attr="pdf link">PDF</a> (cited > 20 times)
+									</li>
+									<li>
+									H.-N. Lin*, S.-H. Chen, G.-Y. Perng, and S.-A. Chen, "Nanoscale surface electrical properties of indium tin oxide films for organic light emitting diodes investigated by conducting atomic force microscopy", J. Appl. Phys. 89, 3976 (2001). <a href="http://scitation.aip.org/content/aip/journal/jap/89/7/10.1063/1.1353558" attr="pdf link">PDF</a> (cited > 40 times)
+									</li>
+									<li>
+									H.-N. Lin*, S.-H. Chen, Y.-Z. Lee, and S.-A. Chen, "Nanoscale optical imaging on an electroluminescent polymer by conducting atomic force microscopy", J. Vac. Sci. Technol. B, 19, 308 (2001). <a href="http://scitation.aip.org/content/avs/journal/jvstb/19/1/10.1116/1.1343099" attr="pdf link">PDF</a>
+									</li>
+									<li>
+									S.-H. Chen, H.-N. Lin*, and C.-R. Yang, "Surface roughness measurement on microchannels by atomic force microscopy using a bent tapered fiber probe", Rev. Sci. Instrum. 71, 3953 (2000). <a href="http://scitation.aip.org/content/aip/journal/rsi/71/10/10.1063/1.1288234" attr="pdf link">PDF</a>
+									</li>
+									<li>
+									S.-H. Chen, H.-N. Lin*, and P. M. Ong, "Spring constant measurementof a bent near-field optical fiber probe", Rev. Sci. Instrum. 71,3788 (2000). <a href="http://scitation.aip.org/content/aip/journal/rsi/71/10/10.1063/1.1290503" attr="pdf link">PDF</a>
+									</li>
+									<li>
+									H.-N. Lin*, C.-R. Chang, and Y. H. Chiou, "Magnetic forcemicroscopy study of a defect induced orthogonal magnetic structure on a cobalt film", J. Mag. Mag. Mater.209, 243 (2000). <a href="http://www.sciencedirect.com/science/article/pii/S0304885399007039" attr="pdf link">PDF</a>
+									</li>
+									<li>
+									H.-N. Lin*, T.-T. Hung, E.-C. Chang, and S.-A. Chen, "Force modulation microscopy study of phase separation on blend polymer films", Appl. Phys. Lett. 74, 2785 (1999). <a href="http://scitation.aip.org/content/aip/journal/apl/74/19/10.1063/1.124013" attr="pdf link">PDF</a>
+									</li>
+									<li>
+									H.-N. Lin*, U. Lewlomphaisarl, S. H. Chen, L. J. Lee, and D. P. Tsai, "Controllable fabrication of bent near-field optical fiber probes by electric arc heating", Rev. Sci. Instrum. 69, 3843 (1998). <a href="http://scitation.aip.org/content/aip/journal/rsi/69/11/10.1063/1.1149188" attr="pdf link">PDF</a>(cited > 10 times)
+									</li>
+									<li>
+									H.-N. Lin*, S. H. Chen, L. J. Lee, and D. P. Tsai, "Construction of a dual mode scanning near-field optical microscope based on a tapping mode atomic force microscope", Rev. Sci. Instrum. 69, 3840, (1998). <a href="http://scitation.aip.org/content/aip/journal/rsi/69/11/10.1063/1.1149187" attr="pdf link">PDF</a>
+									</li>
+									<li>
+									H.-N. Lin*, Y. H. Chiou, B.-M. Chen, H.-P. D. Shieh, and C.-R. Chang, "Magnetic force microscopy study of domain walls on a thin cobalt film", J. Appl. Phys. 83, 4997 (1998). <a href="http://scitation.aip.org/content/aip/journal/jap/83/9/10.1063/1.367306" attr="pdf link">PDF</a>(cited > 20 times)
+									</li>
+									<li>
+									T. C. Chang, C. S. Chang*, H.-N. Lin, and T. T. Tsong, "Creation of nanostructures on gold surfaces in nonconducting liquid", Appl. Phys. Lett. 67, 903 (1995). <a href="http://scitation.aip.org/content/aip/journal/apl/67/7/10.1063/1.114689" attr="pdf link">PDF</a>(cited > 20 times)
+									</li>
+									<li>
+									H.-N. Lin, C. S. Chang, and T. T. Tsong*, "Generation of nanometer holes at Pt surfaces in air and a nonconducting liquid with the scanning tunneling microscope", J. Appl. Phys. 77, 2825 (1995). <a href="http://ieeexplore.ieee.org/Xplore/defdeny.jsp?url=http%3A%2F%2Fieeexplore.ieee.org%2Fstamp%2Fstamp.jsp%3Ftp%3D%26arnumber%3D5151467%26userType%3Dinst&denyReason=-133&arnumber=5151467&productsMatched=null&userType=inst" attr="pdf link">PDF</a>
+									</li>
+									<li>
+									T. T. Tsong*, C. S. Chang, W. B. Su, H. N. Lin, T. C. Chang, and R. L. Lo, "High field effects useful for atomic manipulations", Chinese J. Phys. 32, 667 (1994). <a href="http://psroc.phys.ntu.edu.tw/cjp/v32/667.pdf" attr="pdf link">PDF</a>
+									</li>
+									<li>
+									H.-N. Lin, H. J. Maris*, L. B. Freund, K. Y. Lee, H. Luhn, and D. P. Kern, "Study of vibrational modes of gold nanostructures by picosecond ultrasonics", J. Appl. Phys. 73, 37 (1993). <a href="http://scitation.aip.org/content/aip/journal/jap/73/1/10.1063/1.353859" attr="pdf link">PDF</a>(cited > 70 times)
+									</li>
+									<li>
+									H.-N. Lin, R. J. Stoner, H. J. Maris*, J. M. E. Harper,C. Cabral Jr., J.-M. Halbout, and G. W. Rubloff, "Nondestructive detection of titanium disilicide phase transformation by picosecond ultrasonics", Appl. Phys. Lett. 61, 2700 (1992). <a href="http://scitation.aip.org/content/aip/journal/apl/61/22/10.1063/1.108114" attr="pdf link">PDF</a>(cited > 10 times)
+									</li>
+									<li>
+									H.-N. Lin, R. J. Stoner, H. J. Maris*, and J. Tauc, "Phonon attenuation and velocity measurements in transparent materials by picosecond acoustic interferometry", J. Appl. Phys. 69, 3816 (1991). <a href="http://scitation.aip.org/content/aip/journal/jap/69/7/10.1063/1.348958" attr="pdf link">PDF</a> (cited > 160 times)
+									</li>
+
+								  </ol>
+								</div>
+
+<!-- --------------------------Other Papers--------------------------------------- -->
+								<div id="Other" class="tabcontent">
+								  <h1>Other Papers</h1>
+								  <ol>
+										
+										<li>
+											葉晁銘, 莊子毅, 黃導陽, 林鶴南, “低溫合成金銅奈米粒子修飾氧化鋅奈米柱應用於二氧化氮氣體感測”, 2024材料科學學會年會論文集 , no. P0581 (2024).
+										</li>
+									    <li>
+											林諺瓏, 吳尚儒, 黃行, 黃導陽, 林鶴南, “氧化鋅/鋅參雜氧化銦奈米複合材料合成並應用於氨氣感測”, 2024材料科學學會年會論文集 , no. P0272 (2024).
+										</li>
+										<li>
+											劉祐丞, 李承宇, 黃導陽, 林鶴南, “聚苯胺奈米點/氧化石墨烯奈米複合材料應用於應用於高靈敏度氨氣感測”, 2024材料科學學會年會論文集 , no. P0043 (2024).
+										</li>		
+										<li>
+											徐子軒, 洪承彬, 王大輔, 蘇暐中, 孫揚喆, 劉承恩, 林鶴南, “以氧化銦奈米磚為基礎之手機操控可攜式半導體式臭氧感測器”, 科儀新知237期, 13 (2023).<a href='https://www.tiri.narl.org.tw/Files/Doc/Publication/InstTdy/237/02370133.pdf' attr="pdf link">PDF</a>
+										</li>
+									    <li>
+											C.-B. Hung, C.-E. Liu, T.-H. Hsu, H.-N. Lin, “Hydrothermal synthesis of indium oxide nanobricks for for highly sensitive and selective ozone gas sensing”, 2023材料科學學會年會論文集, no. P0535 (2023).
+									    </li>									    
+									    <li>
+											D.-F. Wang, T.-H. Hsu, C.-E. Liu, H.-N. Lin, “Cuprous oxide/gold/zinc oxide nanocomposite for highly sensitive and selective ozone and nitrogen dioxide gas sensing”, 2023材料科學學會年會論文集, no. P0295 (2023).									    
+										</li>
+										<li>
+											W.-C. Yu, C.-B. Hung, Y.-H. Kao, H.-N. Lin, “Highly selective chemiresistive ozone sensor with artificial neural network algorithm”, The 19th International Conference on Automation Technology (Automation 2022), no. 1045 (2022).									    
+										</li>
+										<li>	
+											T. Murugesan, H.-N. Lin, “Fabrication of Au/ZIF-8/ZnO heterostructure for highly sensitive and selective NO2 sensing and real time monitoring at room temperature”, 2022材料科學學會年會論文集, no. P11-016 (2022).										
+										</li>
+									    <li>
+											Y.-H. Kao, W.-C. Yu, H.-N. Lin, “Highly selective chemiresistive ozone sensor with artificial neural network algorithm for air quality monitoring”, 2022 International Conference on Smart Sensors, no. 0022 (2022).
+									   </li>
+									    <li>
+										    施宣如, 高宇翔, 張庭維, 沈煒翔, 林儀豪, 林奕成, 廖泰杉, 蕭文澤, 林鶴南, “手機操控可攜式二氧化氮氣體感測器”, 科儀新知230期, 10 (2022). <a href='https://www.tiri.narl.org.tw/Publication/InstTdy_Full/12542?PubId=230' attr="pdf link">PDF</a>
+									    </li>
+									    <li>
+											T.-W. Chang, H.-J. Shih, Y.-H. Kao, H.-N. Lin, “Compact chemiresistive gas sensor with artificial neural network algorithm for air pollution monitoring”, 2021 International Conference on Smart Sensors Proceedings (2021). 
+										</li>
+										<li>
+											R. R. Kumar, H.-N. Lin, “Ultrasensitive and optoelectronic room temperature NO2 gas sensor based on MoS2/ZnO hybrid structure for real time air quality monitoring”, 2020年材料科學學會年會論文集, no. P030044 (2020)									
+										</li>
+										<li>
+											T. Murugesan, H.-N. Lin, “PANi/ZnO nanocomposite for highly sensitive and selective NO2 gas sensing at room temperature”, 2020 International Conference on Smart Sensors Proceedings p. 34 (2020).
+										</li>
+										<li>
+											R. R. Kumar, T.-W. Chang, P.-C. Chen, H.-N. Lin, “Synthesis of MoS2/ZnO nanocomposite for NO2 sensing and development of nanocomposite-based portable gas sensor”, 2020 International Conference on Smart Sensors Proceedings p. 30 (2020)
+										</li>
+										<li>
+											呂文忠, 陳煜杰, 柯賢文, 林鶴南, “奈米粒子修飾氧化鋅奈米線於大氣環境中氮氧化物氣體感測應用”, 科儀新知218期, 26 (2019).
+										</li>
+										<li>
+											陳煜杰, S. S. Kumar, 林鶴南, “金/銅氧化物/氧化鋅三元奈米複合材料應用於二氧化氮氣體感測”, 2018年材料科學學會年會論文集, no. P030032 (2018).
+										</li>
+										<li>
+											陳昱仁, 林鶴南, “添加氧化亞銅奈米立方體對氧化鋅奈米柱抑菌效應之影響”, 2018年材料科學學會年會論文集, no. P030035 (2018).	
+										</li>
+										<li>
+											H.-N. Lin, S.-M. Yeh, C.-E. Tsai, C.-H. Chen, “Photodegradation of organic dye using flexible photocatalytic paper with Cu2O and Ag nanoparticles decorated ZnO nanorods”, 4O-011, Conference Proceedings, ChinaNano 2017.
+										</li>
+										<li>
+											柯賢文, 朱昌珮, 洪力揚, 林鶴南, "ZnO nanowires modified with Cu2O nanoparticles for NO gas sensing under ambient environment", 2016年材料科學年會論文集, no. 180 (2016).
+										</li>
+										<li>
+											蔡承恩, 呂文忠, 葉上銘, 林鶴南, "成長奈米粒子修飾氧化鋅奈米線於紙上及應用於有機染料光分解", 2016年材料科學年會論文集, no. 153 (2016).	
+										</li>
+										<li>
+											洪力揚, 林鶴南, "Room temperature NO gas sensors created by atomic force microscopy nanolithography", 2015年材料科學年會論文集, no. 376 (2015).
+										</li>
+										<li>
+											江茂源, 蔡承恩, 林鶴南, "Improved photocatalytic performance of ZnO nanowires co-modified with Cu2O and Ag nanoparticles", 2015年材料科學年會論文集, no. 289 (2015).
+										</li>
+										<li>
+											洪力揚, 林鶴南, "以原子力顯微術奈米微影製作單一鈦奈米點紫外光感測器", 科儀新知, 201, 22 (2014).
+										</li>
+										<li>
+											王俐雲, 林鶴南, "金奈米粒子和單根金奈米線的基板調節區域表面電漿共振", 科儀新知, 201, 4 (2014).	
+										</li>
+										<li>
+											L. -Y. Hong and H. -N. Lin, "Single titanium oxide nanodot ultraviolet light nanosensors crated by atomic force microscopy nanolithography", 2014 IUMRS-ICEM Proceedings, p. (2014).
+										</li>
+										<li>
+											張展豪, 林鶴南, "Enhanced photocatalytic activity of bent ZnO nanowires", 2013年材料科學年會論文集, no. 08950895 (2013).
+										</li>
+										<li>
+											洪力揚, 林鶴南, "Single titanium oxide nanodot ultraviolet light sensor created by atomic force microscopy nano-oxidation", 2013年材料科學年會論文集, no. 09350935 (2013).	
+										</li>
+										<li>
+											J. -H. Chang, and H. -N. Lin, "Photocatalytic behavior of single-crystalline ZnO nanowires on fluorine-doped tin oxide and quartz", 2011 IUMRS-ICA Proceedings, p. (2011).	</li>
+										<li>
+											Y. -H. Lin, B. Handel, H. J. Huang, H. -A. Chen, Y. -F. Chen, H. -N. Lin, and D. P. Tsai, "Near-field optical studies of Au porous film regarding topographic artifacts and surface plasmon influences" ,2011 OECC Proceedings, p. 350 (2011).
+										</li>
+										<li>
+											C. -W. Chen, H. -Y. Lin, H. -N. Lin, and D. -R. Liu, "SERS enhancement attributed to excitation of surface plasmons on ultra-thin golden film deposited on Si-substrate", 2011 OECC Proceedings, p. 737 (2011).	
+										</li>
+										<li>
+											鄭宜驊, 陳香安, 林鶴南, "Fabrication of nitric oxide gas sensors based on single ZnO nanowires", 2010年材料科學年會論文集, P08-0841 (2010).	
+										</li>
+										<li>
+											林佛儒, 林欣瑜, 林鶴南, “單一金奈米線奈米感測器化學吸附動力學研究” , 2010年化學感測器科技研討會論文集, p. 157 (2010).
+										</li>
+										<li>
+											林欣瑜, 陳香安, 林鶴南, “單一金奈米線電阻式化學感測器” , 奈米通訊, 15(4), 31 (2008).	
+										</li>
+										<li>
+											楊思齊, 林欣瑜, 蕭景倫, 林鶴南, "利用光還原反應於氧化鋅奈米線上被覆銀奈米粒子及其反射光譜的量測", 2008年材料科學年會論文集, P07-159 (2008).
+										</li>
+										<li>
+											蕭景倫, 朱釜萱, 何恕德, 林鶴南, "Catalyst-free growth of ZnO nanowires and its application for dye-sensitized solar cells", 2008年材料科學年會論文集, P01-172 (2008).
+										</li>
+										<li>
+											H. -Y.Lin, and H. -N .Lin, "Chemical sensor based on single gold nanowire fabricated by atomic force microscopy nanomachining" ,2008 Tip-Based Nanofabrication Workshop Proceedings, A2-03 (2008).
+										</li>
+										<li>
+											H. -Y. Lin, H. -A. Chen, Y. -J. Wu, J. -H. Huang, and H. -N. Lin, "Fabrication of metal nanostructures by atomic force microscopy nanomachining and related applications" , 2008 Tip-Based Nanofabrication Workshop Proceedings, A2-01 (2008).
+										</li>
+										<li>
+											陳香安, 柯聰盈, 李紫原, 林鶴南, "Piezoelectric characterization of sodium niobate nanowire by piezoresponse force microscopy", 2008年中華民國顯微鏡學會論文集, P51-52 (2008)	
+										</li>
+										<li>
+											黃志翰, 林鶴南, "Study of surface plasmon polariton propagation on gold nanowire arrays by near-field scanning optical microscopy", 2008年中華民國顯微鏡學會論文集, P49-50 (2008).
+										</li>
+										<li>
+											林欣瑜, 陳香安, 林鶴南, "Fabrication of a single gold nanowire connected with titanium electrodes and its application to chemical sensing" , 2007年材料科學學會論文集, P07-076 (2007).
+										</li>
+										<li>
+											何恕德, 陳冠喬, 陳香安, 林欣瑜, 鄭鈞元, 林鶴南, "Surface-roughness-catalyzed growth of large-scale vertically aligned zinc oxide nanowires by thermal evaporation without metal catalysts", 2007年材料科學學會論文集, P07-067 (2007).	
+										</li>
+										<li>
+											吳宜蓁, 廖健順, 林欣瑜, 林鶴南, "金奈米點與奈米線陣列之區域表面電漿共振特性研究" ,科儀新知, 28(4), 77 (2007).
+										</li>
+										<li>
+											陳冠喬, 陳香安, 林欣瑜, 林鶴南, "氧化鋅奈米線缺陷影響其發光性質之研究" , 2006年材料科學學會論文集, P07-046 (2006)
+										</li>
+										<li>
+											陳盈方, 林欣瑜, 林鶴南, "利用電致遷移及原子力顯微術之機械力微影製作奈米電極" , 2006年材料科學學會論文集, P07-049 (2006)
+										</li>
+										<li>
+											吳宜蓁, 廖健順, 林欣瑜, 林鶴南, “金奈米點與奈米線陣列之區域表面電漿共振特性研究” , 2006年奈米生醫暨光電科技研討會論文集, I-11 (2006), PDF
+										</li>
+										<li>
+											吳宜蓁, 廖健順, 林鶴南, “金奈米線陣列表面接合自組裝分子之區域表面電漿共振特性研究” , 2006年化學感測器科技研討會論文集, p. 136 (2006), PDF	
+										</li>
+										<li>
+											廖健順, 林鶴南, “金屬奈米線區域表面電漿共振特性研究”, 2005年材料科學年會論文集, 4-3-P-020 (2005).
+										</li>
+										<li>
+											林效賢, 林鶴南, “選區成長氧化鋅奈米線及其發光特性研究”, 2005年材料科學年會論文集, 4-1-O-003 (2005).
+										</li>
+										<li>
+											M. -H. Huang, J. -H. Hsu, and H. -N. Lin, “Selective growth of silica nanowires on nickel nanostructures created by atomic force microscopy nanomachining”, STM 2005 Proceedings, p. 391 (2005).
+										</li>
+										<li>
+											林欣瑜, 林效賢, 廖健順, 曾名輝, 林鶴南, “原子力顯微術於奈米微影之應用”, 2005奈米國家型科技計畫成果發表會壁報論文集, p. 409 (2005),PDF
+										</li>
+										<li>
+											Y. -J. Chen, J. -H. Hsu, and H. -N. Lin, “Fabrication of metal nanowires by atomic force microscopy nanolithography”, SNDT 2005 Proceedings, p. 137 (2005).
+										</li>
+										<li>
+											林欣瑜,陳右儒,谷祖賢,林鶴南,方友清,童山, “以摩擦力顯微術研究硬膜材料奈米磨潤特性”, 科儀新知, 26(5), 61 (2005).
+										</li>
+										<li>
+											H.-N. Lin, Y.-H. Chang, J.-H. Hsu, M.-H. Huang, J.-H. Yen, I.-C. Leu, and M.-H. Hon, “Selective growth of nanomaterials on nickel oxide nanostructures created by atomic force microscope nano-oxidation”, International Union of Materials Research Societies (IUMRS) International Conference in Asia 2004, B-O-14 (2004).
+										</li>
+										<li>
+											Ju-Hung Hsu , Chun-Yu Lin, Yu-Ju Chen, and Heh-Nan Lin “Application of atomic force microscopy nanomachining to the fabrication of metallic nanodots, nanowires, and nanoelectrodes”,材料科學年會論文集, OD3-03,(2004),<a href="pdf/OD3-03.pdf">PDF</a>
+										</li>
+										<li>
+											陳右儒,谷祖賢,林欣瑜,方友清,林鶴南“利用原子力顯微術定量量測薄膜之摩擦力”,2004年材料科學年會論文集, PD3-06 (2004).<a href="pdf/PD3-06.pdf">PDF</a>
+										</li>
+										<li>
+											谷祖賢,許如宏,林鶴南“導電高分子在奈米電極間電荷傳導特性之研究”,2004年材料科學年會論文集, PD3-04 (2004).<a href="pdf/PD3-04.pdf">PDF</a>
+										</li>
+										<li>
+											B.-R. Yang, H.-N. Lin, "Mobility enhancement of electroluminescent polymer aggregates and films investigated by conducting atomic force microscopy", Taiwan international conference on nano science and technology (TICON 2004), poster 17-20 (2004).<a href="pdf/TCI-YBR.pdf"> PDF </a>
+										</li>
+										<li>
+											J.-H. Hsu, C.-Y. Lin, H.-N. Lin, "Fabrication of metaliic nanostructures by atomic force microscopy nanomachining and lift-off process", Taiwan international conference on nano science and technology (TICON 2004), poster 8-10 (2004).<a href="pdf/TCI-HJH.pdf"> PDF </a>
+										</li>
+										<li>
+											Y.-H. Chang, J.-H. Yen, M.-H. Huang, J.-H. Hsu, I.-C. Leu, H.-N. Lin and M.-H. Hon, "Selective growth of vertically aligned carbon nanotubes on nickel oxide nanostructures created by atomic force microscope nano-oxdation", Taiwan international conference on nano science and technology (TICON 2004), poster 5-7 (2004).<a href="pdf/TCI-CYH.pdf"> PDF </a>
+										</li>
+										<li>
+											許如宏 ,賴信文,林鶴南,莊佳智,黃金花,“奈米氧化製作氧化鎳圖樣及其應用於奈米碳管選區成長”,2003年材料科學年會論文集, PH-043 ( 2003).
+										</li>
+										<li>
+											楊柏儒 ,許如宏,林鶴南“以導電性原子力顯微術研究奈米尺度共軛高分子團聚物之電性”,2003年材料科學年會論文集, PH-041 ( 2003).
+										</li>
+										<li>
+											張郁嫺 ,何恕德,林鶴南“以導電性原子力顯微術觀察矽經奈米壓痕後之相變化行為”,2003年材料科學年會論文集, PH-048 ( 2003).
+										</li>
+										<li>
+											林俊羽,林鶴南,“利用原子力顯微術在聚甲基丙烯酸甲酯薄膜上製作微影圖案”,2003年材料科學會論文集, PH-045 ( 2003).
+										</li>
+										<li>
+											呂奕賢,何恕德,林鶴南 "利用壓電力顯微術觀察溶膠製備PZT薄膜其微觀相的區別" ,2003年材料科學年會論文集, PH-047 ( 2003).
+										</li>
+										<li>
+											賴信文, 許如宏, 林鶴南, 莊佳智, 黃金花, “氧化鎳奈米結構製作及其應用於奈米碳管選區成長”, 科儀新知, 25(2), 54 (2003).
+										</li>
+										<li>
+											許如宏, 林鶴南, “原子力顯微術於奈米加工之應用”, 物理雙月刊, 25(5), 620 (2003).
+										</li>
+										<li>
+											施孟君, 何恕德, 林鶴南, 陳維釧, 吳信田, "基材效應對薄膜奈米壓痕量測之影響", 2002年材料科學年會論文集, PL-39 (2002).
+										</li>
+										<li>
+											賴信文, 許如宏, 何恕德, 林鶴南, "掃描探針顯微術於微影成像上的應用", 2002年材料科學年會論文集, PL-38 (2002).
+										</li>
+										<li>
+											H.-N. Lin, H.-L. Lin, S.-S. Wang, "Conducting atomic force microscopy study of nanoscale charge transport in an electroluminescent polymer", 2001台灣光電科技研討會論文集, p. 26 (2001).
+										</li>
+										<li>
+											施孟君, 林鶴南, 廖士傑, "碳化鎢 / 鈷合金之奈米壓痕量測", 2001年材料科學年會論文集, P04-11 (2001).
+										</li>
+										<li>
+											許如宏, 林鶴南, 蘇炎坤, 林俊良, 汪信全, "利用掃描電容顯微術研究InGaAIP發光二極體", 2001年材料科學年會論文集, P07-32 (2001).	
+										</li>
+										<li>
+											何恕德, 陳品任, 林鶴南, 林諭男, "利用原子力顯微術量測PZT薄膜之d33壓電係數", 2001年材料科學年會論文集, P03-79 (2001).
+										</li>
+										<li>
+											王申申, 林鶴南, 陳思翰, "電致發光高分子之奈米尺度光電特性研究", 科儀新知, 23(2), 4 (2001).
+										</li>
+										<li>
+											林鶴南, 許如宏, "掃描探針顯微術於奈米表面檢測之應用", 材料會訊, 8(4), 72 (2001).	
+										</li>
+										<li>
+											H.-N. Lin, S.-H. Chen, "Conducting atomic force microscopy study of indium tin oxide", International Photonics Conference 2000 Proceedings, p. 555 (2000).	
+										</li>
+										<li>
+											陳品任, 林鶴南, 陳思翰, 林諭男, "利用原子力顯微術研究Pb(Zr0.52Ti0.48)O3薄膜之微觀鐵電特性", 2000年材料科學年會論文集, C-27 (2000).	
+										</li>
+										<li>
+											陳思翰, 林鶴南, "彎式近場光學探針彈性係數量測", 科儀新知, 21(6), 56 (2000).	
+										</li>
+										<li>
+											H.-N. Lin, S.-H. Chen, Y. Z. Lee, and S.-A. Chen, "Nanoscale optical imaging on electroluminescent polymer by conducting atomic force microscopy", 1999台灣光電科技研討會論文集, p. 195 (1999).	
+										</li>
+										<li>
+											S.-H. Chen, H.-N. Lin, W. C. Lin, and D. P. Tsai, "Fabrication and application of bent near-field optical fiber probes", 1999台灣光電科技研討會論文集, p. 639 (1999).	
+										</li>
+										<li>
+											陳思翰, 李龍正, 林鶴南, "近場光學顯微系統研製", 科儀新知, 20(3), 33 (1998).	
+										</li>
+										<li>
+											邱裕煌, 林鶴南, "磁力顯微術原理及其在磁性薄膜檢測的應用", 科儀新知, 19(3), 41 (1997).
+										</li>
+										<li>
+											林鶴南, "超快雷射之超高頻超聲波產生及偵測", 科儀新知, 17(6), 25 (1996).	
+										</li>
+										<li>
+											林鶴南, 李龍正, 劉克迅, "原子力顯微術及其在半導體研究上的應用", 科儀新知, 17(3), 29 (1995).	
+										</li>
+										<li>
+											張嘉升, 吳允中, 林鶴南, 蘇維彬, 蘇文娟, 鄭天佐, "Atomic manipulation, surface diffusion and electrochemical studies on gold surfaces with STM and AFM", 真空科技, 6(2), 19 (1993).	
+										</li>
+										<li>
+											H.-N. Lin, R. J. Stoner, H. J. Maris, J. M. E. Harper, C. Cabral Jr., J. M. Halbout, and G. W. Rubloff, "Detection of titanium silicide formation and phase transformation by picosecond ultrasonics", Mater. Res. Soc. Symp. Proc. 260, 221 (1992).	
+										</li>
+										<li>
+											H.-N. Lin, R. J. Stoner, and H. J. Maris, "Ultrasonic experiments at ultrahigh frequency with picosecond time resolution", IEEE1990 Ultrasonics Symposium Proceedings, p. 1301 (1991).	
+										</li>
+										<li>
+											H.-N. Lin, R. J. Stoner, and H. J. Maris*, "Nondestructive testing of microstructures by picosecond ultrasonics", J. Nondestructive Evaluation 9, 239 (1990).	
+										</li>
+										<li>
+											H.-N. Lin, H. J. Maris, J. Tauc, and H. T. Grahn, "Phonon attenuation and velocity measurements in fused quartz by picosecond acoustic interferometry", Phonons 89, p. 1430 (1990).	
+										</li>					  	
+
+
+								  </ol>
+								</div>
+
+
+<!------------------------------Patents--------------------------------------->
+								<div id="Patents" class="tabcontent">
+								  <h1>Patents</h1>
+								  <ol>
+								  	
+								  	<li>
+								  		林鶴南, 廖泰杉, 呂文忠, 陳煜杰, 庫瑪 桑庫儒 薩欽, 朱昌珮, “具有雙功能性電極對與紫外激活三元奈米複合材料之可攜式氣體感測裝置”, 中華民國發明專利第I676793號(2019).
+
+ 								  	</li>
+
+ 								  	<li>
+								  		蔡瑞益, 林鶴南, 蕭和彥, 蔡定平, 梁新祥, 李龍正,黃鼎名, 黃吉宏, "電弧式光纖直/彎探針製作裝置", 中華民國新型專利第137563號 (1998)
+								  	</li>
+								  </ol>
+								</div>
+
+
+								<script>
+									function openColTab(colTabName,elmnt,color) {
+									  var i, tabcontent, tablinks;
+									  tabcontent = document.getElementsByClassName("tabcontent");
+
+									  for (i = 0; i < tabcontent.length; i++) {
+									    tabcontent[i].style.display = "none";
+									  }
+
+									  tablinks = document.getElementsByClassName("tablink");
+									  for (i = 0; i < tablinks.length; i++) {
+									    tablinks[i].style.backgroundColor = "";
+									  }
+
+									  document.getElementById(colTabName).style.display = "block";
+									  elmnt.style.backgroundColor = color;
+
+									}
+									// Get the element with id="defaultOpen" and click on it
+									document.getElementById("defaultOpen").click();
+								</script>
+			</div>
+
+
+		</div>
+	</section>
+
+
+
+	<aside>
+
+	</aside>
+
+
+
+
+	<footer id="main-footer">
+		<hr>
+		<p>
+			電話：(03) 5715131-33812 &nbsp &nbsp 地址：材料實驗館 206 室 
+		<br>
+			Copyright &copy; 2019 國立清華大學材料系	感測與光觸媒奈米材料實驗室
+		</p>
+	</footer>
+</div>
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<script src="myScript.js"></script>
+</body>
+</html>

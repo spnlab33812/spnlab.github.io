@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SPN LAB</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Content-Language" content="zh-tw,en">
+	<meta name="keywords" content="SPN, SPN LAB, 林鶴南實驗室, 感測與光觸媒奈米材料實驗室, H.N. Lin">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<style>
+		html, body{
+			  height: 100%;
+			  margin: 0;
+			}
+
+		body{
+			position: relative;
+		}
+
+		.bgimg { 
+		  /* The image used */
+		  background-image: url(img/om-bg-homepg.jpg);
+
+		  /* Full height */
+		  height: 100%; 
+
+		  /* Center and scale the image nicely */
+		  background-position: center;
+		  background-repeat: no-repeat;
+		  background-size: cover;
+		  opacity: 1;
+		  /*filter: blur(8px);
+  			-webkit-filter: blur(8px);*/
+  			transition: all 5s ease-in;
+  			background-blend-mode: overlay;
+  			background-color: rgba(0,0,0,0.5);
+		}	
+		
+
+		#home-header {
+			position: absolute;
+			top: 33.333333%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 80%;
+		}
+
+
+		h1{
+			font-size: 2.5em;	
+			color: white;
+			font-weight: bold;
+			/*text-shadow: 1px 1px 0px white;*/
+			text-align: center;
+
+			  animation-name: bigtitle;
+			  animation-duration: 2s;
+		}
+		
+		
+
+		/* Standard syntax */
+		@keyframes bigtitle {
+		  from {opacity: 0;}
+		  to {opacity:1;}
+		}
+
+		.homecontent {
+			position: fixed;
+			left: 50%;
+			bottom: 33.3333%;
+			transform: translate(-50%, -50%);
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		.homecontent a {
+				border-radius: 10px;
+				border-style: solid;
+				padding: 5px 20px;
+				text-align: center;
+				text-decoration: none;
+				color: white;
+				font-size: 1.5em;
+				
+				margin-left: 1em;
+				margin-right: 1em;				
+			  	margin-top: 10px;
+
+				animation-name: lang;
+			  	animation-duration: 2s;
+
+			  	width: 20pt;
+			  	height: 20pt;
+		}
+
+		@keyframes lang {
+		  from {opacity: 0;}
+		  to {opacity:1;}
+		}
+
+		.homecontent a:link{
+			color:white;
+		}
+
+		.homecontent a:active{
+			color:white;
+		}
+
+		.homecontent a:hover{
+			text-decoration: none;
+			background-color: rgba(0,0,0,0.5);			
+		}
+
+		.homecontent a:visited{
+			color: white;
+		}
+/*-----------------------------------------------------------------------------*/
+		@media only screen and (max-width: 800px){
+			#home-header{width:auto;}	 #home-header h1{font-size:1.5em;}
+			.homecontent{bottom: 16.666%;width:fit-content;} .homecontent a{margin: 0 auto;}
+		}
+	</style>
+</head>
+
+<link href="style.css" rel="stylesheet" type="text/css">
+
+<body>
+	<div class="bgimg"></div>	
+		<div>
+			<div id="home-header">
+				<h1>感測與光觸媒奈米材料實驗室<br>Sensing and Photocatalysis Nanomaterials Laboratory</h1>				
+			</div>
+
+			<div class="homecontent">
+				<a href="indexChs.html">中文</a>
+				<a href="indexEng.html">English</a>
+			</div>
+		</div>
+</body>
+</html>
