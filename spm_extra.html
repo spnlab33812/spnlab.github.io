@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SPN LAB</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Content-Language" content="zh-tw,en">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style type="text/css">
+		.microsycontent img{
+		  height: 250px;
+		}
+
+		.microsycontent {
+		  padding: 0 18px;
+		  max-height: 0;
+		  overflow: hidden;
+		  transition: max-height 0.2s ease-out;
+		  background-color: white;
+		}
+
+	</style>
+</head>
+
+<link href="style.css" rel="stylesheet" type="text/css">
+
+<body>
+<div class="main">
+
+	<header id="main-header">
+		<div id="logo">
+		<h1>感測與光觸媒奈米材料實驗室<br>Sensing and Photocatalysis Nanomaterials Laboratory</h1>
+		</div>
+		<span class="openoverlaynav" onclick="openNav()"><a>選單 &#9776;</a></span>
+	</header>
+
+	<header id="sub-header">
+		<h5><a href="http://www.mse.nthu.edu.tw" target="_blank">&#10148 清大材料</a></h5>
+	</header>
+
+	<div id="myNav" class="overlaynav">
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		<div class="overlaynav-content">
+			<a href="news.html">最新消息</a>
+			<a href="introduction.html">實驗室簡介</a>
+			<a href="professor.html">指導教授</a>
+			<a href="paper.html">論文發表</a>
+			<a href="spm_intro.html">SPM介紹</a>
+			<a href="research.html">研究方向</a>
+			<a href="result.html">研究成果</a>
+			<a href="members.html">實驗室成員</a>
+			<a href="contact.html">聯絡我們</a>
+			<a href="index.html">回到首頁</a>
+		</div>
+	</div>
+
+
+
+
+	<section>
+		<div>
+
+			<div class="content" id="SPM">
+				<h1>掃描探針顯微術</h1>
+
+
+				
+				<div id="STM" class="tabcontent4">
+					<button class="collapsible">掃描穿隧顯微術</button>
+					<div  class="microsycontent">
+						<h3>掃描穿隧顯微術 (Scanning Tunneling Microscopy, STM)</h3>
+						<p>在金屬探針及導電樣品間加上小電壓，並將兩者距離維持在數埃至數十埃間，使探針尖端原子團與樣品表面的量子穿隧電流保持定值，而測得表面結構形狀，具有原子解析度。</p>
+						<p>在SPM技術中具有最佳解析度，但由於無法在非導體上操作，故目前主要應用於基礎性學術研究。</p>
+						<img src="img/STM.gif"><figcaption>Si(111)-7x7表面重構影像 (清大物理系羅榮立教授提供)</figcaption>
+
+					</div>
+				</div>
+				<div id="AFM" class="tabcontent4">
+					<button class="collapsible">原子力顯微術</button>
+					<div  class="microsycontent">
+						<h3>原子力顯微術 (Atomic Force Microscopy, AFM)</h3>
+						<p>探針一般由成份為Si或Si3N4懸臂樑及針尖組成，尖端直徑20至100nm，藉著針尖與樣品間的原子作用力，使懸臂樑產生位移，而測得表面結構形狀，具有原子解析度。光偏折為最常用之距離控制機制。</p>
+						<p>操作上分接觸式(DC式)、非接觸式及間歇接觸式(AC式)。</p>
+						<p>應用於奈米級表面形狀量測，粗糙度分析、生醫樣品檢測等等。</p>
+						<img src="img/AFM.gif"><figcaption>矽晶片上鍍鎢薄膜影像，左圖為表面形貌，右圖為相位影像</figcaption>
+					</div>
+				</div>
+				<div id="FFM" class="tabcontent4">
+					<button class="collapsible">摩擦力顯微術</button>
+					<div  class="microsycontent">
+						<h3>摩擦力顯微術 (Friction Force Microscopy, FFM)</h3>
+						<p>在接觸式AFM 中，利用四象限光電二極體，同時偵測探針的垂直及水平位移，而得到固定正向力下之表面摩擦力，在一般原子力顯微鏡皆有此功能。</p>
+						<p>FFM應用於樣品結構成份區分，表面潤滑特性分析，表面摩擦力量測等等。</p>
+						<p>目前大多是測量摩擦力相對值，絕對值量測有幾種不同方法，但正確性及重複性仍有待提升。</p>
+						<img src="img/FFM.gif"><figcaption>	鑽石薄膜影像，左圖為表面形貌，右圖為摩擦力影像</figcaption>
+					</div>
+				</div>
+				<div id="MFM" class="tabcontent4">
+					<button class="collapsible">磁力顯微術</button>
+					<div  class="microsycontent">
+						<h3>磁力顯微術 (Magnetic Force Microscopy, MFM</h3>
+						<p>利用鍍有磁性薄膜之矽探針，藉著探針尖端的 磁矩與磁性材料間磁力來檢測表面磁特性，解析度約為50nm。</p>
+						<p>早期使用非接觸式AFM方式，只能得到磁力影像；現大多利用兩段掃描，先得到表面形狀，然後在定高度掃描取得磁力影像。</p>
+						<p>應用於磁性薄膜、磁記憶裝置、磁記錄結果分析等等。</p>
+						<img src="img/MFM.gif"><figcaption>	1.44 MB 軟碟片格式化區 ，左圖表面結構，右圖為磁力影像</figcaption>
+					</div>
+				</div>
+				<div id="NSOM" class="tabcontent4">
+					<button class="collapsible">近場光學顯微鏡</button>
+					<div  class="microsycontent">
+						<h3>近場光學顯微鏡 (Near-Field Scanning Optical Microscopy, NSOM)</h3>
+						<p>近場光學顯微鏡是近年來發展迅速的表面檢測儀器，可突破傳統光學顯微鏡的繞射極限，而得到30至100 nm左右的解析度。</p>
+						<p>原理乃是利用與原子力顯微鏡相似之距離回饋機制，將一光學孔穴在樣品表面1至20 nm上掃描，而得到表面高低及光學影像，其中最常用之探針為尖端直徑在50至100 nm的光纖探針。</p>
+						<img src="img/NSOM.gif"><figcaption>聚苯乙烯奈米球表面形貌(左)及反射近場光學影像(右)</figcaption>
+					</div>
+				</div>
+				<div id="SCM" class="tabcontent4">
+					<button class="collapsible">掃描電容顯微術</button>
+					<div  class="microsycontent">
+						<h3>掃描電容顯微術 (Scanning Capacitance Microscopy, SCM)</h3>
+						<p>隨著半導體科技的蓬勃發展，與其有關的分析技術也開始倍受重視 ，SCM便是其中之一。SCM可以分析半導體元件的摻雜輪廓(doping profile)，除了定性的分析之外，還具有定量分析的能力。而且較其他在半導體科技裡所應用的分析技術不同的是，SCM是一種非破壞性的分析量測，不會對試片造成破壞。</p>
+						<p>其原理是利用一導電探針與試片表面的交互作用。在探針和試片之間所加的電場，造成試片裡載子的移動。藉著外加一AC電壓，量測其電容訊號，來分析試片。</p>
+						<img src="img/SCM.gif"><figcaption>LED的表面影像(左)與電容微分影像(右)</figcaption>
+					</div>
+				</div>																				
+				
+				<a href="spm_intro.html"> 回去前頁 </a>
+
+			</div>
+
+
+		</div>
+				<script>
+					var coll = document.getElementsByClassName("collapsible");
+					var i;
+
+					for (i = 0; i < coll.length; i++) {
+					  coll[i].addEventListener("click", function() {
+					    this.classList.toggle("active");
+					    var content = this.nextElementSibling;
+					    if (content.style.maxHeight){
+					      content.style.maxHeight = null;
+					    } else {
+					      content.style.maxHeight = content.scrollHeight + "px";
+					    } 
+					  });
+					}
+				</script>
+	</section>
+
+
+
+	<aside>
+
+	</aside>
+
+
+
+
+	<footer id="main-footer">
+		<hr>
+		<p>
+			電話：(03) 5715131-33812 &nbsp &nbsp 地址：材料實驗館 206 室 
+		<br>
+			Copyright &copy; 2019 國立清華大學材料系	感測與光觸媒奈米材料實驗室
+		</p>
+	</footer>
+</div>
+
+		<script>
+			function openNav() {
+			  document.getElementById("myNav").style.height = "100%";
+			}
+
+			function closeNav() {
+			  document.getElementById("myNav").style.height = "0%";
+			}
+		</script>
+
+</body>
+</html>
