@@ -1,12 +1,105 @@
 <!DOCTYPE html>
 <html>
 
+<html lang="zh-Hant">
 <head>
-	<title>SPN LAB</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta http-equiv="Content-Language" content="zh-tw,en">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Language" content="zh-tw,en" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SPN LAB</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="style15.css" rel="stylesheet" type="text/css" />
+  <style>
+    /* 響應式選單 */
+    .openoverlaynav {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 30px;
+      cursor: pointer;
+      display: none;
+      z-index: 1001;
+    }
+
+    @media screen and (max-width: 768px) {
+      .openoverlaynav {
+        display: block;
+      }
+
+      .overlaynav {
+        display: block;
+      }
+    }
+
+    @media screen and (min-width: 769px) {
+      .overlaynav {
+        display: none;
+      }
+    }
+
+    .overlaynav {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1000;
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.95);
+      overflow-x: hidden;
+      transition: 0.3s;
+    }
+
+    .overlaynav-content {
+      position: relative;
+      top: 25%;
+      width: 100%;
+      text-align: center;
+    }
+
+    .overlaynav-content a {
+      display: block;
+      font-size: 24px;
+      color: white;
+      padding: 10px;
+      text-decoration: none;
+    }
+
+    .overlaynav-content a:hover {
+      background-color: #444;
+    }
+
+    .closebtn {
+      position: absolute;
+      top: 15px;
+      right: 35px;
+      font-size: 40px;
+      color: white;
+      text-decoration: none;
+    }
+
+    /* 圖片輪播容器簡單設定（可自行擴充） */
+    .container {
+      max-width: 100%;
+      overflow: auto;
+    }
+
+    .wrapper img {
+      width: 100%;
+      max-width: 500px;
+      margin: 10px auto;
+      display: block;
+    }
+
+    /* 頁面頂部按鈕 */
+    #myBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 30px;
+      display: none;
+      z-index: 999;
+    }
+  </style>
+</head>>
 
 <link href="style.css" rel="stylesheet" type="text/css">
 <link href="style15.css" rel="stylesheet" type="text/css">
@@ -130,6 +223,7 @@
 </body>
 
 </html>
+
 
 
 
