@@ -9,15 +9,16 @@
   <link href="style15.css" rel="stylesheet" type="text/css" />
   <style>
     /* 響應式選單 */
-    .openoverlaynav {
-      position: absolute;
-      top: 15px;
-      right: 20px;
-      font-size: 30px;
-      cursor: pointer;
-      display: none;
-      z-index: 1001;
-    }
+   .openoverlaynav {
+  position: fixed;
+  top: 15px;
+  right: 20px;
+  font-size: 30px;
+  cursor: pointer;
+  display: none; /* 桌面預設隱藏 */
+  z-index: 1001;
+  color: white; /* 或根據背景選顏色 */
+  }
 
     @media screen and (max-width: 768px) {
       .openoverlaynav {
@@ -196,6 +197,7 @@
 
 </body>
 </html>
+
 
 
 
