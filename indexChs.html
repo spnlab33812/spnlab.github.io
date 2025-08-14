@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-<html>
-
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8" />
@@ -99,13 +97,12 @@
       z-index: 999;
     }
   </style>
-</head>>
-
-<link href="style.css" rel="stylesheet" type="text/css">
-<link href="style15.css" rel="stylesheet" type="text/css">
-
+</head>
 <body>
-<!-- 主導覽 -->
+
+<div class="main">
+
+  <!-- 主導覽 -->
   <header id="main-header">
     <div id="logo">
       <h1><a href="index.html">感測與光觸媒奈米材料實驗室</a></h1>
@@ -133,96 +130,73 @@
   <header id="sub-header">
     <h5><a href="https://mse.site.nthu.edu.tw" target="_blank">&#10148; 清大材料</a></h5>
   </header>
-	<section>
-		<body>
-			<div   class="container">
-				<div  class= "wrapper">
-					<img src="img/新創獎頒獎1.png">
-					<img src="img/華立1.png"> 
-					<img src="img/Innozone1.png">	
-					<img src="img/新創獎獎狀1.png">	
-					<img src="img/2024材料年會獎狀.png">
-					<img src="img/年會獎狀1.png">
-				</div>
-			</div>
-	
-		</body>
-		</section>
 
-	<section>
-		<div>
-				
-			
-				
-				<div class="midcontent">
+  <!-- 圖片區 -->
+  <section>
+    <div class="container">
+      <div class="wrapper">
+        <img src="img/新創獎頒獎1.png" alt="image1" />
+        <img src="img/華立1.png" alt="image2" />
+        <img src="img/Innozone1.png" alt="image3" />
+        <img src="img/新創獎獎狀1.png" alt="image4" />
+        <img src="img/2024材料年會獎狀.png" alt="image5" />
+        <img src="img/年會獎狀1.png" alt="image6" />
+      </div>
+    </div>
+  </section>
 
-					<table cellspacing="2" cellpadding="10">
-					
-						<tr><td colspan="2">感測與光觸媒奈米材料實驗室</td></tr>
-						<tr><td>指導教授</td>			<td>林鶴南(Heh-Nan Lin)</td></tr>
-						<tr><td>辦公室</td>			<td>材料實驗館201室</td></tr>
-						<tr><td>辦公室電話</td>			<td>(03)5715131 轉33811</td></tr>
-						<tr><td>電子信箱</td>			<td>hnlin@mx.nthu.edu.tw</td></tr>
-						<tr><td>實驗室</td>			<td>材料實驗館206室</td></tr>
-						<tr><td>實驗室電話</td>			<td>(03)5715131 轉33812</td></tr>
-						<br></br>
-						<br></br>
-						
-						
-					</table>
+  <!-- 實驗室資訊 -->
+  <section>
+    <div class="midcontent">
+      <table cellspacing="2" cellpadding="10">
+        <tr><td colspan="2">感測與光觸媒奈米材料實驗室</td></tr>
+        <tr><td>指導教授</td><td>林鶴南(Heh-Nan Lin)</td></tr>
+        <tr><td>辦公室</td><td>材料實驗館201室</td></tr>
+        <tr><td>辦公室電話</td><td>(03)5715131 轉33811</td></tr>
+        <tr><td>電子信箱</td><td>hnlin@mx.nthu.edu.tw</td></tr>
+        <tr><td>實驗室</td><td>材料實驗館206室</td></tr>
+        <tr><td>實驗室電話</td><td>(03)5715131 轉33812</td></tr>
+      </table>
+    </div>
+  </section>
 
-					<table cellspacing="2" cellpadding="10">
-						
-						<br></br>
-						<br></br>
-						<br></br>
-						<br></br>
-						<br></br>
-						<br></br>
-						<br></br>
-						<br></br>
-						<br></br>
-						<br></br>
-						<br></br>
-						<br></br>
-						<br></br>
-						
-					</table>
-
-				</div>
-
-				<div>
-				</div>
-
-				
-
-
-		</div>
-	</section>
-
-
-
-	<aside>
-
-	</aside>
-
-
-
-
-	<footer id="main-footer">
-		<hr>
-		<p>
-			電話：(03) 5715131-33812 &nbsp &nbsp 地址：材料實驗館 206 室 
-		<br>
-			Copyright &copy; 2019 國立清華大學材料系	感測與光觸媒奈米材料實驗室
-		</p>
-	</footer>
+  <!-- 頁尾 -->
+  <footer id="main-footer">
+    <hr />
+    <p>
+      電話：(03) 5715131-33812　地址：材料實驗館 206 室<br />
+      Copyright &copy; 2019 國立清華大學材料系 感測與光觸媒奈米材料實驗室
+    </p>
+  </footer>
 </div>
-<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-<script src="myScript.js"></script>
-</body>
 
+<!-- 回頂部按鈕 -->
+<button onclick="topFunction()" id="myBtn" title="回到頂部">Top</button>
+
+<!-- JS 控制選單 -->
+<script>
+  function openNav() {
+    document.getElementById("myNav").style.width = "100%";
+  }
+
+  function closeNav() {
+    document.getElementById("myNav").style.width = "0";
+  }
+
+  // 回頂部功能
+  const myBtn = document.getElementById("myBtn");
+  window.onscroll = function () {
+    myBtn.style.display = window.scrollY > 300 ? "block" : "none";
+  };
+
+  function topFunction() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+
+</body>
 </html>
+
 
 
 
