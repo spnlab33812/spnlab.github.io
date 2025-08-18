@@ -76,7 +76,7 @@ img{
 /* -------- 媒體查詢 -------- */
 @media (max-width: 768px) {
   /* 桌機輪播隱藏 */
-  .container {
+  .wrapper {
     display: none !important;
   }
   
@@ -89,6 +89,7 @@ img{
     animation: scrollCarousel 15s linear infinite;
   }
 }
+
 
 
 
