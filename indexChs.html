@@ -23,9 +23,9 @@
   <span class="openoverlaynav" onclick="openNav()">&#9776;</span>
 </header>
 
-<!-- 桌機版選單 -->
-<div class="Big-overlaynav">
-  <div class="Big-overlaynav-content">
+	<!-- 桌機版選單 -->
+	<div class="Big-overlaynav">
+  	<div class="Big-overlaynav-content">
     <a href="news.html">最新消息</a>
     <a href="introduction.html">實驗室簡介</a>
     <a href="professor.html">指導教授</a>
@@ -37,11 +37,11 @@
   </div>
 </div>
 
-<!-- 手機版 overlay 選單 -->
-<div id="myNav" class="overlaynav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <div class="overlaynav-content">
-    <a href="news.html">最新消息</a>
+	<!-- 手機版 overlay 選單 -->
+	<div id="myNav" class="overlaynav">
+ 		 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  	<div class="overlaynav-content">
+    	<a href="news.html">最新消息</a>
     <a href="introduction.html">實驗室簡介</a>
     <a href="professor.html">指導教授</a>
     <a href="paper.html">論文發表</a>
@@ -51,6 +51,14 @@
     <a href="index.html">回到首頁</a>
   </div>
 </div>
+	<script>
+function openNav() {
+  document.getElementById("myNav").style.height = "100%";
+}
+function closeNav() {
+  document.getElementById("myNav").style.height = "0%";
+}
+</script>
 
 	<header id="sub-header">
 		<h5><a href="http://www.mse.nthu.edu.tw" target="_blank">&#10148 清大材料</a></h5>
@@ -160,3 +168,4 @@
 </body>
 
 </html>
+
