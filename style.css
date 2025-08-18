@@ -112,6 +112,19 @@ figcaption{
   margin: 0;
   padding: 0 10px 10px 10px;
 }
+@media only screen and (max-width: 800px){
+  #main-header h1 {
+    font-size: 1.2em;
+  }
+
+  #main-header h3 {
+    font-size: 1em;
+  }
+
+  #logo {
+    width: 100%;
+  }
+}
 
 #main-header a{all:unset;cursor: pointer;}
 
@@ -222,12 +235,12 @@ section {
 	float: left;
 }
 
-.leftimg img {
+.leftimg img, .rightimg img {
   vertical-align: middle;
-  width: :auto;
+  width: auto;
   height: 135px;
+  max-width: 100%; /* RWD 關鍵 */
 }
-
 .rightimg {
   margin-top: 20px;
 	float: left;
@@ -237,6 +250,10 @@ section {
   vertical-align: middle;
   width: :auto;
   height: 135px;
+}
+.leftimg img, .rightimg img {
+  width: 100%;
+  height: auto;
 }
 
 /*-- news page--*/
@@ -441,6 +458,7 @@ section:after {
     section{margin: 10px;}
     table{width: 100%;}
     #research img{width: 100%;height: auto;}
+
 
 
 }
