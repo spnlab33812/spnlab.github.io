@@ -10,18 +10,19 @@
 <link href="style.css" rel="stylesheet" type="text/css">
 
 <body>
+
 <div class="main">
-
 	<header id="main-header">
-		<div id="logo">
-			<h1><a href="index.html">感測與光觸媒奈米材料實驗室</a></h1>
-			<h3><a href="index.html">Sensing and Photocatalysis Nanomaterials Laboratory</a></h3>
-		</div>
-		<span class="openoverlaynav" onclick="openNav()"><a>&#9776;</a></span>
-	</header>
+      <div id="logo">
+        <h1><a href="index.html">感測與光觸媒奈米材料實驗室</a></h1>
+        <h3><a href="index.html">Sensing and Photocatalysis Nanomaterials Laboratory</a></h3>
+      </div>
+      <!-- 漢堡按鈕 (手機版才會顯示) -->
+      <span class="openoverlaynav" onclick="openNav()">&#9776;</span>
+    </header>
 
-	<div id="Big-myNav" class="Big-overlaynav">
-		<div class="Big-overlaynav-content">
+	<div class="Big-overlaynav">
+      <div class="Big-overlaynav-content">
 				<a href="introductionEng.html">About Us</a>
 				<a href="professorEng.html">Advisor</a>
 				<a href="paperEng.html">Publications</a>
@@ -29,9 +30,20 @@
 				<a href="index.html">Home</a>
 		</div>
 	</div>
+	<div id="myNav" class="overlaynav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <div class="overlaynav-content">
 
+				<a href="introductionEng.html">About Us</a>
+				<a href="professorEng.html">Advisor</a>
+				<a href="paperEng.html">Publications</a>
+				<a href="pdf/Research.pdf">Research</a>
+				<a href="index.html">Home</a>
+		</div>
+	</div>
+	
 		<header id="sub-header">
-			<h5><a href="http://www.mse.nthu.edu.tw" target="_blank">&#10148 Department of Materials Science & Engineering</a></h5>
+			<h5><a href="https://mse.site.nthu.edu.tw/w" target=" target="_blank">&#10148 Department of Materials Science & Engineering</a></h5>
 		</header>
 
 		<div id="myNav" class="overlaynav">
@@ -44,6 +56,14 @@
 				<a href="index.html">Home</a>
 			</div>
 		</div>
+   <script>
+    function openNav() {
+      document.getElementById("myNav").style.height = "100%";
+    }
+    function closeNav() {
+      document.getElementById("myNav").style.height = "0%";
+    }
+  </script>
 
 
 
@@ -85,3 +105,4 @@
 </body>
 
 </html>
+
