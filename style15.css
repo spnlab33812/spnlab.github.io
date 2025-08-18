@@ -48,6 +48,7 @@ img{
     
 
 }
+/* 手機版輪播：預設隱藏 */
 .carousel-container {
   display: none;
   overflow: hidden;
@@ -61,7 +62,7 @@ img{
 }
 
 .carousel-slide img {
-  width: 100%;
+  width: 80vw;
   flex-shrink: 0;
   margin-right: 10px;
   border-radius: 8px;
@@ -74,21 +75,16 @@ img{
   100% { transform: translateX(-100%); }
 }
 
-/* 手機版樣式 */
+/* 行動裝置樣式 */
 @media (max-width: 768px) {
   .static-images {
-    display: none;
+    display: none; /* 手機隱藏桌機圖片 */
   }
 
   .carousel-container {
-    display: block;
+    display: block; /* 手機顯示輪播 */
   }
 
   .carousel-slide {
     animation-duration: 36s;
   }
-
-  .carousel-slide img {
-    width: 80vw; /* 限制單張圖片寬度 */
-  }
-}
