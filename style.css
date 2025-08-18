@@ -400,7 +400,27 @@ section:after {
       text-align: center; 
       color: lightblue;
     }
+	#home-header {
+		width: auto;
+	}
 
+	#home-header h1 {
+		font-size: 1.5em;
+	}
+
+	.homecontent {
+		bottom: 16.666%;
+		width: 100%;
+		display: flex;
+		flex-direction: column;  /* 垂直排列按鈕 */
+		align-items: center;     /* 置中 */
+		gap: 12px;                /* 按鈕之間的間距 */
+	}
+
+	.homecontent a {
+		margin: 0;        /* 移除多餘 margin */
+		width: auto;
+	}
     .openoverlaynav a:hover{color:white;text-decoration: none;}
     .overlaynav {
       height: 0%; 
@@ -444,6 +464,7 @@ section:after {
 
 
 }
+
 
 
 
