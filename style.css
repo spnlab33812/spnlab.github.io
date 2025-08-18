@@ -228,12 +228,7 @@ section {
 	float: left;
 }
 
-.leftimg img, .rightimg img {
-  vertical-align: middle;
-  width: auto;
-  height: 135px;
-  max-width: 100%; /* RWD 關鍵 */
-}
+
 .rightimg {
   margin-top: 20px;
 	float: left;
@@ -456,6 +451,7 @@ section:after {
 
 
 }
+
 
 
 
