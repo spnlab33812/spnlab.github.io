@@ -477,33 +477,6 @@ section:after {
 
 
 }
-/* ----------- Slideshow 區塊 ----------- */
-.slideshow-section {
-  width: 100%;
-  padding: 20px 0;
-  box-sizing: border-box;
-}
-
-.slideshow-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 16px;
-  padding: 0 5vw;
-}
-
-.slideshow-wrapper img {
-  max-width: 300px;
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-  transition: transform 0.3s ease;
-}
-
-.slideshow-wrapper img:hover {
-  transform: scale(1.02);
-}
 
 /* ----------- 手機版調整 ----------- */
 @media only screen and (max-width: 800px) {
@@ -517,6 +490,7 @@ section:after {
     max-width: 100%;
   }
 }
+
 
 
 
