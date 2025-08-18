@@ -86,9 +86,10 @@ img{
   }
 
   .carousel-slide {
-    animation-duration: 12s; /* 手機版動畫速度加快 */
+    animation-duration: 36s; /* 手機版動畫速度加快 */
   }
 }
+
 
 
 
