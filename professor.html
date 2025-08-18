@@ -88,14 +88,30 @@
 		<div>
 
 			<div class="content" id="profcontent">
-					<table cellspacing="2" cellpadding="10">
-						<tr>
-							<th colspan="2">指導教授</th>
-						</tr> 
-						<tr> 
-							<td> 
-								<img src="img/網頁相片.jpg" style="max-width:auto; height:auto;"> </td>
-							<td>
+  <style>
+    /* 桌機維持 120px */
+    .prof-img {
+      width: 120px;
+      height: auto;
+    }
+
+    /* 手機版自動縮放 */
+    @media (max-width: 768px) {
+      .prof-img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  </style>
+
+  <table cellspacing="2" cellpadding="10">
+    <tr>
+      <th colspan="2">指導教授</th>
+    </tr>
+    <tr>
+      <td>
+        <img src="img/網頁相片.jpg" class="prof-img">
+      </td>
 								<ul style="list-style-type: none;margin: 0;padding: 0;">
 									<li>姓名：林鶴南 (Heh-Nan Lin)</li>
 									<li>辦公室：材料實驗館 201室</li>
@@ -210,6 +226,7 @@
 </body>
 
 </html>
+
 
 
 
