@@ -455,6 +455,15 @@ section:after {
       width: 50%; 
       transition: width .4s ease-in-out;
     }
+	.wrapper {
+ 	flex-direction: column;
+  	padding: 0 5vw;
+	}
+
+	.wrapper img {
+ 	width: 100%;
+  	height: auto;
+	}
     .overlaynav a:hover, .overlaynav a:focus {color: #f1f1f1;}
     .overlaynav-content a:hover{background-color: coral; width: 60%;}
     .closebtn{position: absolute; top: 20px; right: 45px; font-size: 60px;}
@@ -468,4 +477,5 @@ section:after {
 
 
 }
+
 
