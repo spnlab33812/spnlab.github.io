@@ -444,4 +444,26 @@ section:after {
 
 
 }
+.container-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 桌機版：預設順序：圖片在上，表格在下 */
+.wrapper {
+  order: 1;
+}
+.midcontent {
+  order: 2;
+}
+
+/* 行動版：調整順序，讓表格在圖片下方 */
+@media (max-width: 768px) {
+  .wrapper {
+    order: 1;
+  }
+  .midcontent {
+    order: 2;
+  }
+}
 
