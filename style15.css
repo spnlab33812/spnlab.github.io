@@ -70,14 +70,25 @@ img{
 }
 
 /* 動畫 */
-@keyframes scrollCarousel {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-100%); }
+@keyframes scrollCarousel slide {
+    0% { transform: translateX(0); }/*starts from position 0*/
+    16.67% { transform: translateX(0); }/* Hold the frame for 5% of time  */
+    21.67% { transform: translateX(-100%); } /*moving from 0 to -100%*/
+    33.33% { transform: translateX(-100%); }/* Hold the frame for 5% of time  */
+    38.33% { transform: translateX(-200%); } /*moving from -100% to -200%*/
+    50% { transform: translateX(-200%); }/* Hold the frame for 5% of time */
+    55% { transform: translateX(-300%); } /*moving from -200% to -300%*/
+    66.67% { transform: translateX(-300%); }/* Hold the  frame for 5%  of time */
+    71.67% { transform: translateX(-400%); } /*moving from -300% to -400%*/
+    83.33% { transform: translateX(-400%); }/* Hold the  frame for 5% of time */
+    88.33% { transform: translateX(-500%); } /*moving from -400% to -500%*/
+    99%{ transform: translateX(-500%); }/* Hold the  frame for 5% of time */
+    100%{ transform: translateX(0); }
 }
 
 /* 行動裝置樣式 */
 @media (max-width: 768px) {
-  .static-images {
+  .container {
     display: none; /* 手機隱藏桌機圖片 */
   }
 
@@ -88,3 +99,4 @@ img{
   .carousel-slide {
     animation-duration: 36s;
   }
+
