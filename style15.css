@@ -48,7 +48,7 @@ img{
     
 /* -------- 手機版輪播 -------- */
 .carousel-container {
-  display: none; /* 預設隱藏 */
+  display: none!important /* 預設隱藏 */
   overflow: hidden;
   position: relative;
 }
@@ -89,6 +89,7 @@ img{
     animation: scrollCarousel 15s linear infinite;
   }
 }
+
 
 
 
