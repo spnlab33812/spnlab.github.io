@@ -204,12 +204,6 @@ section {
   background-color: darkcyan;
 
 }
-.slideshow-section, .table-section {
-  width: 100%;
-  display: block;
-  margin: 0 auto;
-}
-
 
 /* ------------------------------------------------ indexChs page ---------------------------------------------------------------*/
 
@@ -228,6 +222,11 @@ section {
 	float: left;
 }
 
+.leftimg img {
+  vertical-align: middle;
+  width: :auto;
+  height: 135px;
+}
 
 .rightimg {
   margin-top: 20px;
@@ -238,10 +237,6 @@ section {
   vertical-align: middle;
   width: :auto;
   height: 135px;
-}
-.leftimg img, .rightimg img {
-  width: 100%;
-  height: auto;
 }
 
 /*-- news page--*/
@@ -437,7 +432,6 @@ section:after {
       width: 50%; 
       transition: width .4s ease-in-out;
     }
-	
     .overlaynav a:hover, .overlaynav a:focus {color: #f1f1f1;}
     .overlaynav-content a:hover{background-color: coral; width: 60%;}
     .closebtn{position: absolute; top: 20px; right: 45px; font-size: 60px;}
@@ -447,7 +441,6 @@ section:after {
     section{margin: 10px;}
     table{width: 100%;}
     #research img{width: 100%;height: auto;}
-
 
 
 }
