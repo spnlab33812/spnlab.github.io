@@ -75,7 +75,7 @@ img{
 
 /* ✅ 僅手機版顯示輪播、隱藏靜態圖片 */
 @media (max-width: 768px) {
-  .wrapper {
+  .container {
     display: none;
   }
 
@@ -87,6 +87,7 @@ img{
     animation: scrollCarousel 12s linear infinite;
   }
 }
+
 
 
 
