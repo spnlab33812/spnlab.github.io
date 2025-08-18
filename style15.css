@@ -6,45 +6,47 @@
 body{
     background-color: #ffffff;
 }
-.container {
-  width: 80vw; /* 限制寬度 */
-  max-width: 1200px;
-  margin: 50px auto; /* 置中 */
-  overflow: hidden;
-  position: relative;
-  height: 400px; /* 固定高度 */
+.container{
+    width: 130vmin;
+    position: absolute;
+    
+    top: 30%;
+    left: 30%;
+    overflow: hidden;
 }
-
-.wrapper {
-  display: flex;
-  width: calc(400px * 6); /* 假設有6張圖片，每張400px寬 */
-  height: 100%;
-  animation: slide 25s infinite;
+.wrapper{
+    width : 100%;
+    height: 100%;
+    
+    display: flex;
+    animation : slide 25s infinite;
 }
-
-img {
-  width: 400px;
-  height: 100%;
-  object-fit: cover;
-  flex-shrink: 0;
-}
-
+/*此為首頁跑馬燈照片動畫撥放調整編碼,增加slide時,除了時間段要分割外，也需要保留停留時間，第一個時間百分比表示slide 出現時間，第二個時間百分比表示停留時間*/
 @keyframes slide {
-  0% { transform: translateX(0); }
-  16.67% { transform: translateX(0); }
-  21.67% { transform: translateX(-400px); }
-  33.33% { transform: translateX(-400px); }
-  38.33% { transform: translateX(-800px); }
-  50% { transform: translateX(-800px); }
-  55% { transform: translateX(-1200px); }
-  66.67% { transform: translateX(-1200px); }
-  71.67% { transform: translateX(-1600px); }
-  83.33% { transform: translateX(-1600px); }
-  88.33% { transform: translateX(-2000px); }
-  99% { transform: translateX(-2000px); }
-  100% { transform: translateX(0); }
+    0% { transform: translateX(0); }/*starts from position 0*/
+    16.67% { transform: translateX(0); }/* Hold the frame for 5% of time  */
+    21.67% { transform: translateX(-100%); } /*moving from 0 to -100%*/
+    33.33% { transform: translateX(-100%); }/* Hold the frame for 5% of time  */
+    38.33% { transform: translateX(-200%); } /*moving from -100% to -200%*/
+    50% { transform: translateX(-200%); }/* Hold the frame for 5% of time */
+    55% { transform: translateX(-300%); } /*moving from -200% to -300%*/
+    66.67% { transform: translateX(-300%); }/* Hold the  frame for 5%  of time */
+    71.67% { transform: translateX(-400%); } /*moving from -300% to -400%*/
+    83.33% { transform: translateX(-400%); }/* Hold the  frame for 5% of time */
+    88.33% { transform: translateX(-500%); } /*moving from -400% to -500%*/
+    99%{ transform: translateX(-500%); }/* Hold the  frame for 5% of time */
+    100%{ transform: translateX(0); }
 }
 
+
+img{
+    
+    width: 100%;
+    height: 100%;
+    
+    
+    
+}
 
 img{
     
@@ -107,6 +109,7 @@ img{
     display: block !important;
   }
 }
+
 
 
 
