@@ -48,7 +48,7 @@ img{
     
 
 }
-/* 手機版輪播：預設隱藏 */
+* 手機版輪播容器：預設隱藏，手機時顯示 */
 .carousel-container {
   display: none;
   overflow: hidden;
@@ -58,7 +58,7 @@ img{
 /* 輪播圖片區 */
 .carousel-slide {
   display: flex;
-  animation: scrollCarousel 12s linear infinite;
+  animation: scrollCarousel 36s linear infinite;
 }
 
 .carousel-slide img {
@@ -69,26 +69,26 @@ img{
   object-fit: contain;
 }
 
-/* 動畫 */
+/* 動畫效果 */
 @keyframes scrollCarousel {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-100%); }
+  100% { transform: translateX(-50%); }
 }
 
-/* 行動裝置樣式 */
+/* ✅ 僅手機顯示輪播，隱藏桌機圖片 */
 @media (max-width: 768px) {
   .wrapper {
-    display: none; /* 手機隱藏桌機圖片 */
+    display: none;
   }
 
   .carousel-container {
-    display: block; /* 手機顯示輪播 */
+    display: block;
   }
 
   .carousel-slide {
-    animation-duration: 12s;
+    animation-duration: 12s; /* 手機版動畫速度加快 */
   }
-
+}
 
 
 
