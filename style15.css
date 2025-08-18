@@ -88,7 +88,7 @@ img{
 
 /* 行動裝置樣式 */
 @media (max-width: 768px) {
-  .container {
+  .wrapper {
     display: none; /* 手機隱藏桌機圖片 */
   }
 
@@ -99,5 +99,6 @@ img{
   .carousel-slide {
     animation-duration: 36s;
   }
+
 
 
