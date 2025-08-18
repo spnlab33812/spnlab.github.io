@@ -12,45 +12,76 @@
 <body>
 <div class="main">
 
+	<!DOCTYPE html>
+<html>
+
+<head>
+	<title>SPN LAB</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Content-Language" content="zh-tw,en">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<link href="style.css" rel="stylesheet" type="text/css">
+<link href="style15.css" rel="stylesheet" type="text/css">
+
+<body>
+<div class="main">
+
 	<header id="main-header">
-		<div id="logo">
-			<h1><a href="index.html">感測與光觸媒奈米材料實驗室</a></h1>
-			<h3><a href="index.html">Sensing and Photocatalysis Nanomaterials Laboratory</a></h3>
-		</div>
-		<span class="openoverlaynav" onclick="openNav()"><a>&#9776;</a></span>
-	</header>
+      <div id="logo">
+        <h1><a href="index.html">感測與光觸媒奈米材料實驗室</a></h1>
+        <h3><a href="index.html">Sensing and Photocatalysis Nanomaterials Laboratory</a></h3>
+      </div>
+      <!-- 漢堡按鈕 (手機版才會顯示) -->
+      <span class="openoverlaynav" onclick="openNav()">&#9776;</span>
+    </header>
 
-	<div id="Big-myNav" class="Big-overlaynav">
-		<div class="Big-overlaynav-content">
-			<a href="news.html">最新消息</a>
-			<a href="introduction.html">實驗室簡介</a>
-			<a href="professor.html">指導教授</a>
-			<a href="paper.html">論文發表</a>
-			<a href="research.html">研究方向</a>
-			<a href="result.html">研究成果</a>
-			<a href="members.html">實驗室成員</a>
-			<a href="index.html">回到首頁</a>
-		</div>
-	</div>
+    <!-- 桌機版選單 -->
+    <div class="Big-overlaynav">
+      <div class="Big-overlaynav-content">
+        <a href="news.html">最新消息</a>
+        <a href="introduction.html">實驗室簡介</a>
+        <a href="professor.html">指導教授</a>
+        <a href="paper.html">論文發表</a>
+        <a href="research.html">研究方向</a>
+        <a href="result.html">研究成果</a>
+        <a href="members.html">實驗室成員</a>
+        <a href="index.html">回到首頁</a>
+      </div>
+    </div>
 
-	<header id="sub-header">
-		<h5><a href="https://mse.site.nthu.edu.tw/" target="_blank">&#10148 清大材料</a></h5>
-	</header>
+    <!-- 手機版 overlay 選單 (只保留一個) -->
+    <div id="myNav" class="overlaynav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <div class="overlaynav-content">
+        <a href="news.html">最新消息</a>
+        <a href="introduction.html">實驗室簡介</a>
+        <a href="professor.html">指導教授</a>
+        <a href="paper.html">論文發表</a>
+        <a href="research.html">研究方向</a>
+        <a href="result.html">研究成果</a>
+        <a href="members.html">實驗室成員</a>
+        <a href="index.html">回到首頁</a>
+      </div>
+    </div>
 
-	<div id="myNav" class="overlaynav">
-			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-		<div class="overlaynav-content">
-			<a href="news.html">最新消息</a>
-			<a href="introduction.html">實驗室簡介</a>
-			<a href="professor.html">指導教授</a>
-			<a href="paper.html">論文發表</a>
-			<a href="research.html">研究方向</a>
-			<a href="result.html">研究成果</a>
-			<a href="members.html">實驗室成員</a>
-			<a href="index.html">回到首頁</a>
-		</div>
-	</div>
+    <!-- 子標題列 -->
+    <header id="sub-header">
+      <h5><a href="http://www.mse.nthu.edu.tw" target="_blank">&#10148 清大材料</a></h5>
+    </header>
 
+  </div>
+
+  <!-- JS 控制開關 -->
+  <script>
+    function openNav() {
+      document.getElementById("myNav").style.height = "100%";
+    }
+    function closeNav() {
+      document.getElementById("myNav").style.height = "0%";
+    }
+  </script>
 
 
 	<section>
@@ -178,3 +209,4 @@
 </body>
 
 </html>
+
