@@ -444,3 +444,18 @@ section:after {
 
 
 }
+/* 教授照片 RWD */
+.prof-img {
+  max-width: 120px;   /* 桌機版最大 120px */
+  width: 100%;        /* 在小螢幕自動縮放 */
+  height: auto;       /* 保持比例 */
+  display: block;
+}
+
+/* 如果你只想在桌機時固定 120px，手機不限制 */
+@media only screen and (max-width: 600px) {
+  .prof-img {
+    max-width: 100%;  /* 在手機版佔滿欄位 */
+  }
+}
+
