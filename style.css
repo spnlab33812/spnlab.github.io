@@ -444,41 +444,7 @@ section:after {
 
 
 }
-<style>
-  .container-wrapper {
-    display: flex;
-    flex-direction: column;
-  }
 
-  /* 手機版：強制圖片在上、表格在下（這裡順序剛好不需要反轉，但保留是為了彈性） */
-  @media (max-width: 768px) {
-    .wrapper {
-      order: 1;
-    }
-
-    .midcontent {
-      order: 2;
-    }
-  }
-
-  .wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    margin: 20px 0;
-  }
-
-  .wrapper img {
-    max-width: 100%;
-    width: 180px;
-    height: auto;
-  }
-
-  .midcontent {
-    padding: 10px;
-  }
-</style>
 
 
 
