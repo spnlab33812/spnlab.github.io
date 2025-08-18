@@ -70,7 +70,7 @@ img{
 }
 
 /* 動畫 */
-@keyframes scrollCarousel slide {
+@keyframes slide {
     0% { transform: translateX(0); }/*starts from position 0*/
     16.67% { transform: translateX(0); }/* Hold the frame for 5% of time  */
     21.67% { transform: translateX(-100%); } /*moving from 0 to -100%*/
@@ -99,4 +99,5 @@ img{
   .carousel-slide {
     animation-duration: 36s;
   }
+
 
