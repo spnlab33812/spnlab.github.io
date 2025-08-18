@@ -450,15 +450,6 @@ section:after {
     flex-direction: column;
   }
 
-  /* 桌機版：維持圖片在上、表格在下 */
-  .wrapper {
-    order: 1;
-  }
-
-  .midcontent {
-    order: 2;
-  }
-
   /* 手機版：強制圖片在上、表格在下（這裡順序剛好不需要反轉，但保留是為了彈性） */
   @media (max-width: 768px) {
     .wrapper {
@@ -488,5 +479,6 @@ section:after {
     padding: 10px;
   }
 </style>
+
 
 
