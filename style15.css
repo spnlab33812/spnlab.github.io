@@ -56,7 +56,9 @@ body {
 }
 
 .carousel-slide {
-  display: flex;
+ display: flex;
+  width: calc((80vw + 10px) * 12); /* 12張圖片含間距 */
+  animation: scrollCarousel 12s linear infinite;
 }
 
 .carousel-slide img {
@@ -89,6 +91,7 @@ body {
     animation: scrollCarousel 2s linear infinite;
   }
 }
+
 
 
 
