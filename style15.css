@@ -88,9 +88,10 @@ body {
   }
   
   .carousel-slide {
-    animation: scrollCarousel 2s linear infinite;
+    animation: scrollCarousel 15s linear infinite;
   }
 }
+
 
 
 
