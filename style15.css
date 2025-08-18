@@ -56,7 +56,10 @@ body {
 }
 
 .carousel-slide {
+  width: 600%; /* 6張圖片 * 100% */
+  height: 100%;
   display: flex;
+  animation: slide 25s infinite;
 }
 
 .carousel-slide img {
@@ -68,9 +71,20 @@ body {
 }
 
 /* 手機輪播動畫：持續無縫滑動 */
-@keyframes scrollCarousel {
+@keyframes slide {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  16.67% { transform: translateX(0); }
+  21.67% { transform: translateX(-100%); }
+  33.33% { transform: translateX(-100%); }
+  38.33% { transform: translateX(-200%); }
+  50% { transform: translateX(-200%); }
+  55% { transform: translateX(-300%); }
+  66.67% { transform: translateX(-300%); }
+  71.67% { transform: translateX(-400%); }
+  83.33% { transform: translateX(-400%); }
+  88.33% { transform: translateX(-500%); }
+  99% { transform: translateX(-500%); }
+  100% { transform: translateX(0); }
 }
 
 /* -------- 媒體查詢 -------- */
@@ -89,6 +103,7 @@ body {
     animation: scrollCarousel 12s linear infinite;
   }
 }
+
 
 
 
