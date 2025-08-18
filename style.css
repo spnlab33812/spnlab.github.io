@@ -217,6 +217,12 @@ section {
   background-color: darkcyan;
 
 }
+.slideshow-section, .table-section {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
 
 /* ------------------------------------------------ indexChs page ---------------------------------------------------------------*/
 
@@ -462,3 +468,4 @@ section:after {
 
 
 }
+
