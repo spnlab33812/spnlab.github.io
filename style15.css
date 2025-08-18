@@ -62,7 +62,7 @@ img{
 }
 
 .carousel-slide img {
-  width: 80vw;
+  width: 130vw;
   flex-shrink: 0;
   margin-right: 10px;
   border-radius: 8px;
@@ -89,6 +89,7 @@ img{
     animation-duration: 36s; /* 手機版動畫速度加快 */
   }
 }
+
 
 
 
