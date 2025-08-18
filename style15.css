@@ -49,12 +49,11 @@ img{
 
 }
 .carousel-container {
-  display: none;
+  display: none !important;
   overflow: hidden;
   position: relative;
 }
 
-/* 輪播內容區 */
 .carousel-slide {
   display: flex;
 }
@@ -67,20 +66,20 @@ img{
   object-fit: contain;
 }
 
-/* 動畫效果 */
+/* 輪播動畫 */
 @keyframes scrollCarousel {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
 
-/* ✅ 僅手機版顯示輪播、隱藏靜態圖片 */
+/* ✅ 手機版：隱藏桌機圖片、啟用輪播 */
 @media (max-width: 768px) {
-  .container {
-    display: none;
+  .static-images {
+    display: none !important;
   }
 
   .carousel-container {
-    display: block;
+    display: block !important;
   }
 
   .carousel-slide {
