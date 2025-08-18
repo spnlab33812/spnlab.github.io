@@ -48,17 +48,15 @@ body {
   100% { transform: translateX(0); }
 }
 
+/* -------- 手機版輪播 -------- */
 .carousel-container {
-  display: none;
+  display: none; /* 預設隱藏 */
   overflow: hidden;
   position: relative;
-  width: 100vw;
-  height: auto;
 }
 
 .carousel-slide {
   display: flex;
-  animation: scrollCarousel 12s linear infinite;
 }
 
 .carousel-slide img {
@@ -69,21 +67,29 @@ body {
   object-fit: contain;
 }
 
-/* 手機版無縫滑動動畫 */
+/* 手機輪播動畫：持續無縫滑動 */
 @keyframes scrollCarousel {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
 
-/* 媒體查詢：手機版 */
+/* -------- 媒體查詢 -------- */
 @media (max-width: 768px) {
+  /* 桌機輪播隱藏 */
   .container {
     display: none !important;
   }
+  
+  /* 手機輪播顯示 */
   .carousel-container {
     display: block !important;
   }
+  
+  .carousel-slide {
+    animation: scrollCarousel 12s linear infinite;
+  }
 }
+
 
 
 
