@@ -46,4 +46,49 @@ img{
     
     
     
+
+}
+.carousel-container {
+  display: none;
+  overflow: hidden;
+  position: relative;
+}
+
+/* 輪播圖片區 */
+.carousel-slide {
+  display: flex;
+  animation: scrollCarousel 30s linear infinite;
+}
+
+.carousel-slide img {
+  width: 100%;
+  flex-shrink: 0;
+  margin-right: 10px;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+/* 動畫 */
+@keyframes scrollCarousel {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+/* 手機版樣式 */
+@media (max-width: 768px) {
+  .static-images {
+    display: none;
+  }
+
+  .carousel-container {
+    display: block;
+  }
+
+  .carousel-slide {
+    animation-duration: 36s;
+  }
+
+  .carousel-slide img {
+    width: 80vw; /* 限制單張圖片寬度 */
+  }
 }
