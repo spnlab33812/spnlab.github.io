@@ -8,22 +8,30 @@ body {
   background-color: #ffffff;
 }
 
+/* -------- 桌機版輪播 -------- */
 .container {
   width: 130vmin;
   position: absolute;
   top: 30%;
   left: 30%;
   overflow: hidden;
+  display: block;
 }
 
 .wrapper {
-  width: 100%;
+  width: 600%; /* 6張圖片 * 100% */
   height: 100%;
   display: flex;
   animation: slide 25s infinite;
 }
 
-/* 桌面版首頁輪播動畫 */
+.wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 桌機動畫：分段滑動並停留 */
 @keyframes slide {
   0% { transform: translateX(0); }
   16.67% { transform: translateX(0); }
@@ -40,18 +48,12 @@ body {
   100% { transform: translateX(0); }
 }
 
-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-/* -------- 手機版輪播 -------- */
 .carousel-container {
-  display: none !important; /* 預設隱藏 */
+  display: none;
   overflow: hidden;
   position: relative;
+  width: 100vw;
+  height: auto;
 }
 
 .carousel-slide {
@@ -68,25 +70,22 @@ img {
   object-fit: contain;
 }
 
-/* 手機版動畫 */
+/* 手機版無縫滑動動畫 */
 @keyframes scrollCarousel {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(calc(-1 * ((80vw + 10px) * 6)));
-  }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
-/* 手機版顯示輪播 */
+/* 媒體查詢：手機版 */
 @media (max-width: 768px) {
   .container {
-    display: none;
+    display: none !important;
   }
   .carousel-container {
     display: block !important;
   }
 }
+
 
 
 
