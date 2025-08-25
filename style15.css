@@ -71,20 +71,18 @@ img{
 
 /* Slideshow 效果 - 每張圖片停頓切換 */
 @keyframes scrollCarouselMobile {
-  0%    { transform: translateX(0); }
-  14.28%  { transform: translateX(0); }
-  17.13%  { transform: translateX(-100vw); }
-  28.56%  { transform: translateX(-100vw); }
-  31.41%  { transform: translateX(-200vw); }
-  42.84%  { transform: translateX(-200vw); }
-  45.69%  { transform: translateX(-300vw); }
-  57.12%  { transform: translateX(-300vw); }
-  59.97%  { transform: translateX(-400vw); }
-  71.4%   { transform: translateX(-400vw); }
-  74.25%  { transform: translateX(-500vw); }
-  85.68%  { transform: translateX(-500vw); }
-  88.53%  { transform: translateX(-600vw); } /* 最後一張（複製的第一張） */
-  100%    { transform: translateX(0); } /* 平滑回原點 */
+  0% { transform: translateX(0); }
+  14.28% { transform: translateX(0); }
+  19.28% { transform: translateX(-100%); }
+  33.33% { transform: translateX(-100%); }
+  38.33% { transform: translateX(-200%); }
+  52.38% { transform: translateX(-200%); }
+  57.38% { transform: translateX(-300%); }
+  71.43% { transform: translateX(-300%); }
+  76.43% { transform: translateX(-400%); }
+  90.48% { transform: translateX(-400%); }
+  95.48% { transform: translateX(-500%); }
+  100%  { transform: translateX(-600%); }
 }
 
 /* 媒體查詢：手機版 */
@@ -96,6 +94,7 @@ img{
     display: block !important;
   }
 }
+
 
 
 
