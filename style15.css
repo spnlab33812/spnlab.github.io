@@ -18,23 +18,22 @@ body{
     height: 100%;
     
     display: flex;
-    animation : slide 25s infinite;
+    animation : slide 30s infinite;
 }
 /*此為首頁跑馬燈照片動畫撥放調整編碼,增加slide時,除了時間段要分割外，也需要保留停留時間，第一個時間百分比表示slide 出現時間，第二個時間百分比表示停留時間*/
 @keyframes slide {
-    0% { transform: translateX(0); }/*starts from position 0*/
-    16.67% { transform: translateX(0); }/* Hold the frame for 5% of time  */
-    21.67% { transform: translateX(-100%); } /*moving from 0 to -100%*/
-    33.33% { transform: translateX(-100%); }/* Hold the frame for 5% of time  */
-    38.33% { transform: translateX(-200%); } /*moving from -100% to -200%*/
-    50% { transform: translateX(-200%); }/* Hold the frame for 5% of time */
-    55% { transform: translateX(-300%); } /*moving from -200% to -300%*/
-    66.67% { transform: translateX(-300%); }/* Hold the  frame for 5%  of time */
-    71.67% { transform: translateX(-400%); } /*moving from -300% to -400%*/
-    83.33% { transform: translateX(-400%); }/* Hold the  frame for 5% of time */
-    88.33% { transform: translateX(-500%); } /*moving from -400% to -500%*/
-    99%{ transform: translateX(-500%); }/* Hold the  frame for 5% of time */
-    100%{ transform: translateX(0); }
+    0% { transform: translateX(0); }
+  14.28% { transform: translateX(0); }
+  19.28% { transform: translateX(-100%); }
+  33.33% { transform: translateX(-100%); }
+  38.33% { transform: translateX(-200%); }
+  52.38% { transform: translateX(-200%); }
+  57.38% { transform: translateX(-300%); }
+  71.43% { transform: translateX(-300%); }
+  76.43% { transform: translateX(-400%); }
+  90.48% { transform: translateX(-400%); }
+  95.48% { transform: translateX(-500%); }
+  100%  { transform: translateX(-600%); }
 }
 
 
@@ -56,15 +55,11 @@ img{
   height: auto;
 }
 
-.carousel-slide {
-  display: flex;
-  width: calc((80vw + 10px) * 12); /* 假設12張圖片含間距 */
-  animation: scrollCarousel 15s linear infinite;
-}
+
 
 .carousel-slide {
   display: flex;
-  width: 600vw; /* 6張圖片，每張佔100vw */
+  width: 700vw; /* 7張圖片，每張佔100vw */
   animation: scrollCarouselMobile 18s infinite;
 }
 
@@ -76,19 +71,20 @@ img{
 
 /* Slideshow 效果 - 每張圖片停頓切換 */
 @keyframes scrollCarouselMobile {
-  0%   { transform: translateX(0); }
-  16.66% { transform: translateX(0); }
-  19.99% { transform: translateX(-100vw); }
-  33.32% { transform: translateX(-100vw); }
-  36.65% { transform: translateX(-200vw); }
-  49.98% { transform: translateX(-200vw); }
-  53.31% { transform: translateX(-300vw); }
-  66.64% { transform: translateX(-300vw); }
-  69.97% { transform: translateX(-400vw); }
-  83.3%  { transform: translateX(-400vw); }
-  86.63% { transform: translateX(-500vw); }
-  99.96% { transform: translateX(-500vw); }
-  100%   { transform: translateX(0); }
+  0%    { transform: translateX(0); }
+  14.28%  { transform: translateX(0); }
+  17.13%  { transform: translateX(-100vw); }
+  28.56%  { transform: translateX(-100vw); }
+  31.41%  { transform: translateX(-200vw); }
+  42.84%  { transform: translateX(-200vw); }
+  45.69%  { transform: translateX(-300vw); }
+  57.12%  { transform: translateX(-300vw); }
+  59.97%  { transform: translateX(-400vw); }
+  71.4%   { transform: translateX(-400vw); }
+  74.25%  { transform: translateX(-500vw); }
+  85.68%  { transform: translateX(-500vw); }
+  88.53%  { transform: translateX(-600vw); } /* 最後一張（複製的第一張） */
+  100%    { transform: translateX(0); } /* 平滑回原點 */
 }
 
 /* 媒體查詢：手機版 */
@@ -100,6 +96,7 @@ img{
     display: block !important;
   }
 }
+
 
 
 
