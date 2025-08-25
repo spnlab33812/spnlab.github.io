@@ -407,6 +407,9 @@ section:after {
 	#home-header h1 {
 		font-size: 1.5em;
 	}
+	 #sub-header {
+    display: block !important;
+    }
 
 	.homecontent {
 		bottom: 16.666%;
@@ -464,6 +467,7 @@ section:after {
 
 
 }
+
 
 
 
