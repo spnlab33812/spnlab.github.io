@@ -18,7 +18,7 @@ body{
     height: 100%;
     
     display: flex;
-    animation : slide 30s infinite;
+    animation : slide 25s infinite;
 }
 /*此為首頁跑馬燈照片動畫撥放調整編碼,增加slide時,除了時間段要分割外，也需要保留停留時間，第一個時間百分比表示slide 出現時間，第二個時間百分比表示停留時間*/
 @keyframes slide {
@@ -60,7 +60,7 @@ img{
 .carousel-slide {
   display: flex;
   width: 700vw; /* 7張圖片，每張佔100vw */
-  animation: scrollCarouselMobile 18s infinite;
+  animation: scrollCarouselMobile 25s infinite;
 }
 
 .carousel-slide img {
@@ -96,6 +96,7 @@ img{
     display: block !important;
   }
 }
+
 
 
 
