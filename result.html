@@ -10,8 +10,7 @@
     
     <style>
         /* ============================
-           1. 頁面專屬樣式 (保留原本設定)
-           包含：Tab 分頁、摺疊內容、圖片排版
+           1. 頁面專屬樣式 (保留)
            ============================ */
         .tablink3 {
             background-color: gray;
@@ -30,7 +29,6 @@
             color: white;
         }
 
-        /* Style the tab content */
         .tabcontent3 {
             margin-top: 16pt;
             color: black;
@@ -91,20 +89,19 @@
             text-align: left;
             width: 50%;
             padding: 25px;
-            display: block; /* 確保它會換行 */
+            display: block;
             color: #666;
             font-size: 0.9em;
         }
 
         @media only screen and (max-width: 800px) {
-            .tablink3 { min-height: 50px; width: 33.33%; float: left; font-size: 14px; padding: 10px 5px; } /* 手機版按鈕調整，避免太高 */
+            .tablink3 { min-height: 50px; width: 33.33%; float: left; font-size: 14px; padding: 10px 5px; } 
             .nmcontent p, .nmcontent img, figcaption { width: 100%; padding: 10px; }
             .nmcontent img { max-height: unset; max-width: 100%; }
         }
 
         /* ============================
-           2. 全站統一樣式修正 (Global Fixes)
-           包含：選單一行、標題置中、手機版修復
+           2. 全站統一樣式修正
            ============================ */
         
         /* 電腦版選單強制一行 */
@@ -193,12 +190,26 @@
             #logo h3 { font-size: 1em !important; }
         }
         
-        /* 內容區塊微調 */
+        /* 【修正重點】內容區塊設定 
+           強制靠左對齊，移除原本的置中設定
+        */
         .content {
-             width: 100%;
-             max-width: 1200px;
-             margin: 0 auto;
-             padding: 20px;
+            width: 100% !important;
+            /* 移除 max-width 和 margin: 0 auto，讓它貼齊左邊 */
+            margin: 0 !important;
+            max-width: none !important;
+            
+            /* 文字強制靠左 */
+            text-align: left !important;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        
+        /* 標題也保持靠左 */
+        .content h1 {
+            text-align: left !important;
+            margin-bottom: 20px;
+            color: steelblue;
         }
     </style>
 </head>
