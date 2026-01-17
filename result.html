@@ -1,121 +1,207 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>SPN LAB</title>
+	<title>SPN LAB - 研究成果</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta http-equiv="Content-Language" content="zh-tw,en">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<style type="text/css">
 
-			.tablink3 {
-			  background-color: gray;
-			  color: white;
-			  float: left;
-			  border: none;
-			  outline: none;
-			  cursor: pointer;
-			  padding: 14px 16px;
-			  font-size: 17px;
-			  width: 16.6666666667%;
-			}
+    <link href="style.css" rel="stylesheet" type="text/css">
+    
+    <style>
+        /* ============================
+           1. 頁面專屬樣式 (保留原本設定)
+           包含：Tab 分頁、摺疊內容、圖片排版
+           ============================ */
+        .tablink3 {
+            background-color: gray;
+            color: white;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            font-size: 17px;
+            width: 16.6666666667%;
+        }
 
-			.tablink3:hover {
-			  background-color:steelblue;
-			  color:white;
-			}
+        .tablink3:hover {
+            background-color: steelblue;
+            color: white;
+        }
 
-			/* Style the tab content */
-			.tabcontent3 {
-			  margin-top: 16pt;
-			  color: black;
-			  display: none;
-			  /*padding: 50px;*/
-			  /*text-align: center;*/
-			}
+        /* Style the tab content */
+        .tabcontent3 {
+            margin-top: 16pt;
+            color: black;
+            display: none;
+        }
 
-			/*--摺疊式--*/
-			.collapsible {
-			  border: none;
-			  background-color: #777;
-			  color: white;
-			  cursor: pointer;
-			  padding: 18px;
-			  width: 100%;
-			  border: none;
-			  text-align: left;
-			  outline: none;
-			  font-size: 15px;
-			}
+        /*--摺疊式--*/
+        .collapsible {
+            border: none;
+            background-color: #777;
+            color: white;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+        }
 
-			.collapsible.active, .collapsible:hover {
-			  background-color: lightgray;
-			  color: black;
-			}
+        .collapsible.active, .collapsible:hover {
+            background-color: lightgray;
+            color: black;
+        }
 
-			.collapsible:after {
-			  content: '\002B';
-			  color: black;
-			  font-weight: bold;
-			  float: right;
-			  margin-left: 5px;
-			}
+        .collapsible:after {
+            content: '\002B';
+            color: black;
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+        }
 
-			.collapsible.active:after {
-			  content: "\2212";
-			}
+        .collapsible.active:after {
+            content: "\2212";
+        }
 
-			.nmcontent{
-			  background-color: white;
-			}
+        .nmcontent {
+            background-color: white;
+        }
 
-			.nmcontent h3{
-				text-align: left;
-			}
+        .nmcontent h3 {
+            text-align: left;
+        }
 
-			.nmcontent p{
-				padding:25px;
-				width: 50%;
-			}
+        .nmcontent p {
+            padding: 25px;
+            width: 50%;
+        }
 
-			.nmcontent img{			
-			  max-width: 50%;
-			  height: auto;
-			  /*max-height: 300px;*/
-			  padding: 25px;	  
-			}
+        .nmcontent img {
+            max-width: 50%;
+            height: auto;
+            padding: 25px;
+        }
 
-			figcaption{
-				all:unset;
-				text-align: left;
-				width: 50%;
-				padding:25px;
-			}
+        figcaption {
+            all: unset;
+            text-align: left;
+            width: 50%;
+            padding: 25px;
+            display: block; /* 確保它會換行 */
+            color: #666;
+            font-size: 0.9em;
+        }
 
-			@media only screen and (max-width: 800px){
-				.tablink3 {min-height: 150px;}				
-				.nmcontent p, .nmcontent img, figcaption{width: 100%;padding:2px;}
-				.nmcontent img{max-height: unset; max-width:unset; }
-			}
+        @media only screen and (max-width: 800px) {
+            .tablink3 { min-height: 50px; width: 33.33%; float: left; font-size: 14px; padding: 10px 5px; } /* 手機版按鈕調整，避免太高 */
+            .nmcontent p, .nmcontent img, figcaption { width: 100%; padding: 10px; }
+            .nmcontent img { max-height: unset; max-width: 100%; }
+        }
 
-	</style>
+        /* ============================
+           2. 全站統一樣式修正 (Global Fixes)
+           包含：選單一行、標題置中、手機版修復
+           ============================ */
+        
+        /* 電腦版選單強制一行 */
+        .Big-overlaynav-content {
+            display: flex !important;       
+            justify-content: center !important; 
+            flex-wrap: nowrap !important;   
+            width: 100% !important;         
+        }
+
+        .Big-overlaynav-content a {
+            width: auto !important;         
+            flex: 1 1 auto !important;      
+            display: block !important;
+            float: none !important;         
+            margin: 0 !important;           
+            white-space: nowrap !important; 
+            padding: 10px 0 !important;     
+        }
+
+        .Big-overlaynav-content a:hover {
+            background-color: coral !important;
+            width: auto !important; 
+        }
+
+        /* 選單層級修正 */
+        .overlaynav {
+            z-index: 2000 !important;
+        }
+
+        /* 電腦版：網站大標題置中設定 */
+        #main-header {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            justify-content: center !important;
+            text-align: center !important; 
+            padding-left: 0 !important;   
+            padding-right: 0 !important;
+            position: relative; 
+            min-height: 80px;
+        }
+        
+        #logo {
+            width: 100% !important;        
+            max-width: 100% !important;    
+            margin: 0 auto !important;     
+            float: none !important;        
+            display: block !important;
+        }
+
+        #logo h1, #logo h3 {
+            text-align: center !important;
+            width: 100% !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+            padding: 5px 10px !important;
+        }
+
+        /* 漢堡按鈕圖示 */
+        .openoverlaynav {
+            position: absolute !important;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            cursor: pointer;
+            font-size: 30px;
+        }
+
+        /* 手機版專用設定 */
+        @media only screen and (max-width: 800px) {
+            .openoverlaynav {
+                top: 15px !important;       
+                right: 20px !important;     
+                transform: none !important; 
+            }
+
+            #main-header {
+                padding-top: 50px !important; 
+                padding-bottom: 20px !important;
+            }
+
+            #logo { padding: 0 10px !important; }
+            #logo h1 { font-size: 1.5em !important; }
+            #logo h3 { font-size: 1em !important; }
+        }
+        
+        /* 內容區塊微調 */
+        .content {
+             width: 100%;
+             max-width: 1200px;
+             margin: 0 auto;
+             padding: 20px;
+        }
+    </style>
 </head>
-
-<link rel="stylesheet" type="text/css" href="style.css">
-
-
-<body>
-<!DOCTYPE html>
-<html>
-
-<head>
-	<title>SPN LAB</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta http-equiv="Content-Language" content="zh-tw,en">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-
-<link href="style.css" rel="stylesheet" type="text/css">
-<link href="style15.css" rel="stylesheet" type="text/css">
 
 <body>
 <div class="main">
@@ -125,11 +211,9 @@
         <h1><a href="index.html">感測與光觸媒奈米材料實驗室</a></h1>
         <h3><a href="index.html">Sensing and Photocatalysis Nanomaterials Laboratory</a></h3>
       </div>
-      <!-- 漢堡按鈕 (手機版才會顯示) -->
       <span class="openoverlaynav" onclick="openNav()">&#9776;</span>
     </header>
 
-    <!-- 桌機版選單 -->
     <div class="Big-overlaynav">
       <div class="Big-overlaynav-content">
         <a href="news.html">最新消息</a>
@@ -138,12 +222,11 @@
         <a href="paper.html">論文發表</a>
         <a href="research.html">研究方向</a>
         <a href="result.html">研究成果</a>
+        <a href="honors.html">榮譽事項</a>
         <a href="members.html">實驗室成員</a>
-        <a href="index.html">回到首頁</a>
       </div>
     </div>
 
-    <!-- 手機版 overlay 選單 (只保留一個) -->
     <div id="myNav" class="overlaynav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
       <div class="overlaynav-content">
@@ -153,28 +236,25 @@
         <a href="paper.html">論文發表</a>
         <a href="research.html">研究方向</a>
         <a href="result.html">研究成果</a>
+        <a href="honors.html">榮譽事項</a>
         <a href="members.html">實驗室成員</a>
-        <a href="index.html">回到首頁</a>
       </div>
     </div>
 
-    <!-- 子標題列 -->
     <header id="sub-header">
       <h5><a href="https://mse.site.nthu.edu.tw/" target="_blank">&#10148 清大材料</a></h5>
     </header>
 
-  </div>
+</div>
 
-  <!-- JS 控制開關 -->
-  <script>
+<script>
     function openNav() {
       document.getElementById("myNav").style.height = "100%";
     }
     function closeNav() {
       document.getElementById("myNav").style.height = "0%";
     }
-  </script>
-
+</script>
 
 	<section>
 			<div>
@@ -184,8 +264,6 @@
 						<p>
 							由於科技的快速發展，材料製造技術尺寸已由微米、次微米、而逐漸發展到奈米級精密處理，因此「奈米材料及技術」的地位也日益重要，並且被公認為本世紀最重要的科技之一，世界各國都投入大量的心血和金錢從事其相關的研究。本實驗室致力於發展掃描探針顯微術 (SPM) 及相關奈米技術，目前研究成果如下：<strong>奈米材料</strong>、<strong>氣體感測</strong>、<strong>紫外光感測</strong>、<strong>光觸媒</strong>、<strong>奈米檢測</strong>及<strong>奈米微影</strong>。
 						</p>
-
-
 					</div>
 
 				<button class="tablink3" onclick="openNano('nm_matr', this, 'steelblue')" id="defaultOpen">奈米材料</button>
@@ -198,36 +276,36 @@
 
 				<div id="nm_matr" class="tabcontent3">
 							
-							<div  class="nmcontent">
+							<div class="nmcontent">
 								<h2>氧化鋅奈米線</h2>
 									<h3>爐管法</h3>
-							  		<p>藉由三段升溫爐管成長，將處理好的基板置入中溫區段，將裝有鋅粉與碳粉的氧化鋁鉗鍋置入高溫區段，以機械幫浦抽真空數分鐘後通入氬氣與氧氣，藉由Thermal evaporation成長出氧化鋅奈米線。</p>
-							  		<img src="img/furnace.jpg">
+							  		<p>藉由三段升溫爐管成長，將處理好的基板置入中溫區段，將裝有鋅粉與碳粉的氧化鋁鉗鍋置入高溫區段，以機械幫浦抽真空數分鐘後通入氬氣與氧氣，藉由Thermal evaporation成長出氧化鋅奈米線。</p>
+							  		<img src="img/furnace.jpg">
 
-						  			<h4>爐管法結果</h4>
-						  			<img src="img/thermal-evap.jpg"><figcaption>SEM images of (a) as-grown, (b) Cu2O NPs modified, (c) Ag NPs modified, and (d) Cu2O and Ag NPs co-modified ZnO NWs. The insets are enlarged NWs images. (e) A TEM image of a co-modified NW. (f) A high resolution image of a single NP, which is a combination of a Cu2O and an Ag NPs. (g), (h) Fourier transform patterns of the two individual NPs.</figcaption>
+						  			<h4>爐管法結果</h4>
+						  			<img src="img/thermal-evap.jpg"><figcaption>SEM images of (a) as-grown, (b) Cu2O NPs modified, (c) Ag NPs modified, and (d) Cu2O and Ag NPs co-modified ZnO NWs. The insets are enlarged NWs images. (e) A TEM image of a co-modified NW. (f) A high resolution image of a single NP, which is a combination of a Cu2O and an Ag NPs. (g), (h) Fourier transform patterns of the two individual NPs.</figcaption>
 
 									<br>			
 
 
-						  			<h3>水溶液法</h3>
-							  		<p>先將醋酸鋅酒精溶液中加入適當量的氫氧化鈉調整pH值，放入烘箱內三小時，製得晶種液；接著把晶種液佈於基板上，放入硝酸鋅與HMTA混合水溶液中，在烘箱內反應七小時，即成長出氧化鋅奈米線。</p>
-							  		
+						  			<h3>水溶液法</h3>
+							  		<p>先將醋酸鋅酒精溶液中加入適當量的氫氧化鈉調整pH值，放入烘箱內三小時，製得晶種液；接著把晶種液佈於基板上，放入硝酸鋅與HMTA混合水溶液中，在烘箱內反應七小時，即成長出氧化鋅奈米線。</p>
+							  		
 
-						  			<h4>水溶液法結果</h4>
-						  			<img src="img/hydrothermal.jpg"><figcaption>(a) ZnO NWs grown on 10 cm x 10 cm substrate. SEM images of (b) as-grown, and (c) Ag NPs modified by the solution method.</figcaption>
-						  			<hr>
+						  			<h4>水溶液法結果</h4>
+						  			<img src="img/hydrothermal.jpg"><figcaption>(a) ZnO NWs grown on 10 cm x 10 cm substrate. SEM images of (b) as-grown, and (c) Ag NPs modified by the solution method.</figcaption>
+						  			<hr>
 
 							</div>
 									
 					<div class="nmcontent" id="metalNR">
 						<h2>金屬奈米線</h2>
-					  		<p>利用原子力顯微鏡 (atomic force microscopy, AFM)的微影技術，以探針機械力加工方式，在鍍有PMMA薄膜的矽基板上，刻畫出奈米溝槽，再利用離子濺鍍或電子束蒸鍍，鍍上約20 nm厚的金屬，進行去阻劑製程 (lift-off) ，如此可得到金屬奈米線陣列。而以白光光源，在光學顯微鏡暗視野 (dark field) 模式下，可得到奈米線的散射光影像，也就是區域表面電漿共振 (localized surface plasmon resonance, LSPR) 的光學影像，並將散射光收集到光纖，送進光譜儀，分析其共振光譜特性 。</p>
-					  		<img src="img/gold_nr.jpg"><figcaption>Figure 1 單根金奈米線之(a)SEM影像, (b) 奈米線短軸斷面TEM影像. 單根金奈米線(寬度70 nm及厚度 22 nm)之(c) 光學暗視野影像及(d)其散射光譜, 峰值分別為490 nm(藍光)及628 nm (紅光)</figcaption>
+					  		<p>利用原子力顯微鏡 (atomic force microscopy, AFM)的微影技術，以探針機械力加工方式，在鍍有PMMA薄膜的矽基板上，刻畫出奈米溝槽，再利用離子濺鍍或電子束蒸鍍，鍍上約20 nm厚的金屬，進行去阻劑製程 (lift-off) ，如此可得到金屬奈米線陣列。而以白光光源，在光學顯微鏡暗視野 (dark field) 模式下，可得到奈米線的散射光影像，也就是區域表面電漿共振 (localized surface plasmon resonance, LSPR) 的光學影像，並將散射光收集到光纖，送進光譜儀，分析其共振光譜特性 。</p>
+					  		<img src="img/gold_nr.jpg"><figcaption>Figure 1 單根金奈米線之(a)SEM影像, (b) 奈米線短軸斷面TEM影像. 單根金奈米線(寬度70 nm及厚度 22 nm)之(c) 光學暗視野影像及(d)其散射光譜, 峰值分別為490 nm(藍光)及628 nm (紅光)</figcaption>
 
-					  		<br>
+					  		<br>
 
-					  		<img src="img/gold_nr_pic2.jpg"><figcaption>Figure 2 於不同偏振方向入射光(相對奈米線長軸)之光學暗視野影像(a) 平行, alpha= 0 °及(b)垂直, alpha= 90°. (c)未偏振及偏振入射光下的散射光譜. 當入射光偏振時,散射強度於平行時最強,垂直時最弱(每隔15 °量測).</figcaption>						
+					  		<img src="img/gold_nr_pic2.jpg"><figcaption>Figure 2 於不同偏振方向入射光(相對奈米線長軸)之光學暗視野影像(a) 平行, alpha= 0 °及(b)垂直, alpha= 90°. (c)未偏振及偏振入射光下的散射光譜, 當入射光偏振時,散射強度於平行時最強,垂直時最弱(每隔15 °量測).</figcaption>						
 							
 					</div>
 										
@@ -335,8 +413,8 @@
 						<div class="nmcontent">
 							<h3>抗菌效應</h3>
 							<p>The time-dependent survival ratios of the two samples were also measured. The calculated first-order kinetic constants of the ZnO and Cu<sub>x</sub>O/ZnO samples are 0.084 min<sup>–1</sup> and 0.097 min<sup>–1</sup> in dark, respectively, and 0.14 min<sup>–1</sup> and 0.25 min<sup>–1</sup> under light, respectively. With its excellent antibacterial activity, the Cu<sub>x</sub>O/ZnO nanocomposite has good potential for practical applications.</p>
-                         
-                         <img src="img/nm_anti_1.jpg">
+                         
+                         <img src="img/nm_anti_1.jpg">
 
 
 						</div>
@@ -454,7 +532,7 @@
 	<footer id="main-footer">
 		<hr>
 		<p>
-			電話：(03) 5715131-33812 &nbsp &nbsp 地址：材料實驗館 206 室 
+			電話：(03) 5715131-33812 &nbsp &nbsp 地址：材料實驗館 206 室 
 		<br>
 			Copyright &copy; 2019 國立清華大學材料系	感測與光觸媒奈米材料實驗室
 		</p>
@@ -465,5 +543,3 @@
 </body>
 
 </html>
-
-
