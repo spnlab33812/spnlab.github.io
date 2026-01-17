@@ -45,21 +45,21 @@
             max-width: 1000px;
         }
         
-        /* 【關鍵修正】列表樣式設定 */
+        /* 列表樣式設定 */
         #news {
             display: block !important;
             text-align: left !important;    /* 強制文字靠左 */
             padding-left: 40px !important;  /* 左側留出編號的空間 */
             padding-right: 20px !important; /* 右側留白 */
-            margin: 0 !important;           /* 移除多餘外距 */
+            margin-top: 20px !important;    /* 上方留一點白，因為標題刪掉了 */
             line-height: 1.8;
             font-size: 16px;
         }
 
         #news li {
-            text-align: left !important;    /* 強制每一項都靠左 */
-            margin-bottom: 15px;            /* 每個項目之間留點空隙 */
-            list-style-position: outside;   /* 讓編號在文字框外面，對齊更整齊 */
+            text-align: left !important;    
+            margin-bottom: 15px;            
+            list-style-position: outside;   
         }
 
         /* ============================
@@ -131,7 +131,7 @@
             #logo h3 { font-size: 1em !important; }
             
             #news {
-                padding-left: 25px !important; /* 手機版左邊縮排少一點 */
+                padding-left: 25px !important; 
                 padding-right: 10px !important;
             }
         }
@@ -193,10 +193,6 @@
 
 <section>
     <div>
-        <div class="midcontent" style="text-align: center; margin-bottom: 10px;">
-            <h2>榮譽事項</h2>
-        </div>
-
         <div class="midcontent">
             <ol id="news">
                 <li><a href=" https://innoaward.taiwan-healthcare.org/news_detail.php?REFDOCTYPID=0ppom83g7ixumxv6&REFDOCID=0t8fi4vi8db91r3b">賀!!本實驗室榮獲2025年國家新創獎-新創精進獎 環境科技與能源應用類，作品「具智慧演算法之手機操控多晶片可攜式氣體感測器」。(2026/1/6)</a></li>
