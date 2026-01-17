@@ -10,7 +10,35 @@
 
     <style>
         /* ============================
-           1. 輪播圖設定 (Carousel Styles)
+           1. 電腦版選單強制一行 (Menu Single Line Fix)
+           【這是這次修正的重點】
+           ============================ */
+        .Big-overlaynav-content {
+            display: flex !important;       /* 使用 Flexbox 排版 */
+            justify-content: center !important; /* 內容置中 */
+            flex-wrap: nowrap !important;   /* 強制禁止換行 */
+            width: 100% !important;         /* 寬度佔滿 */
+        }
+
+        .Big-overlaynav-content a {
+            width: auto !important;         /* 取消原本的固定百分比寬度 */
+            flex: 1 1 auto !important;      /* 讓每個選項「平均分配」空間 */
+            display: block !important;
+            float: none !important;         /* 清除可能的浮動 */
+            margin: 0 !important;           /* 清除邊距，避免擠壓 */
+            white-space: nowrap !important; /* 禁止文字換行 */
+            padding: 10px 0 !important;     /* 上下留白 */
+        }
+
+        /* 滑鼠移過去的效果 */
+        .Big-overlaynav-content a:hover {
+            background-color: coral !important;
+            /* 移除原本的寬度變化，避免造成排版跳動 */
+            width: auto !important; 
+        }
+
+        /* ============================
+           2. 輪播圖設定 (Carousel Styles)
            ============================ */
         .spn-carousel-container {
             position: relative;
@@ -22,8 +50,6 @@
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
             background-color: #fff;
             min-height: 200px;
-            
-            /* 底部增加 50px 的留白空間，給按鈕專用 */
             padding-bottom: 50px !important; 
         }
 
@@ -93,7 +119,7 @@
         }
 
         /* ============================
-           2. 表格置中設定 (Table Centering)
+           3. 表格置中設定 (Table Centering)
            ============================ */
         .midcontent {
             float: none !important;
@@ -108,14 +134,14 @@
         }
 
         /* ============================
-           3. 選單層級修正 (Menu Z-Index Fix)
+           4. 選單層級修正 (Menu Z-Index Fix)
            ============================ */
         .overlaynav {
             z-index: 2000 !important;
         }
 
         /* ============================
-           4. 電腦版：標題置中設定
+           5. 電腦版：標題置中設定
            ============================ */
         #main-header {
             display: flex !important;
@@ -157,7 +183,7 @@
         }
 
         /* ============================
-           5. 手機版專用設定 (Mobile Fix)
+           6. 手機版專用設定 (Mobile Fix)
            ============================ */
         @media only screen and (max-width: 800px) {
             .openoverlaynav {
@@ -197,8 +223,7 @@
         <a href="paper.html">論文發表</a>
         <a href="research.html">研究方向</a>
         <a href="result.html">研究成果</a>
-        
-                <a href="honors.html">榮譽事項</a>
+        <a href="honors.html">榮譽事項</a>
         <a href="members.html">實驗室成員</a>
       </div>
     </div>
@@ -212,8 +237,7 @@
         <a href="paper.html">論文發表</a>
         <a href="research.html">研究方向</a>
         <a href="result.html">研究成果</a>
-        
-                <a href="honors.html">榮譽事項</a>
+        <a href="honors.html">榮譽事項</a>
         <a href="members.html">實驗室成員</a>
       </div>
     </div>
