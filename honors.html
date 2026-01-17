@@ -36,15 +36,18 @@
 
         /* ============================
            2. 內容區塊設定 (強制靠左)
+           【這次的修正重點】
            ============================ */
         .midcontent {
             float: none !important;
             display: block !important; 
             width: 100% !important;
             
+            /* 【修改】移除原本的置中與寬度限制，讓它貼齊左邊 */
             margin: 0 !important;
             max-width: none !important; 
             
+            /* 確保文字靠左 */
             text-align: left !important;
         }
         
@@ -52,7 +55,7 @@
         #news {
             display: block !important;
             text-align: left !important;    
-            padding-left: 20px !important;
+            padding-left: 20px !important;  /* 左邊縮排，不用太多，讓點點靠左 */
             padding-right: 20px !important; 
             margin-top: 20px !important;    
             line-height: 1.8;
@@ -62,10 +65,7 @@
         #news li {
             text-align: left !important;    
             margin-bottom: 15px;            
-            list-style-position: outside; 
-            
-            /* 【修改】在這裡增加 padding-left 來拉開數字與文字的距離 */
-            padding-left: 15px !important; 
+            list-style-position: outside; /* 點點在文字框外，對齊更整齊 */ 
         }
 
         /* ============================
