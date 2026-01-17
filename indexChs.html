@@ -10,7 +10,16 @@
 
     <style>
         /* ============================
-           1. 電腦版：標題置中設定
+           1. 選單層級修正 (Menu Z-Index Fix)
+           【這就是解決按鈕浮在菜單上的關鍵】
+           ============================ */
+        .overlaynav {
+            /* 設定極高的層級，確保它蓋過輪播圖按鈕 (按鈕是 100) */
+            z-index: 2000 !important; 
+        }
+
+        /* ============================
+           2. 電腦版：標題置中設定
            ============================ */
         #main-header {
             display: flex !important;
@@ -21,7 +30,7 @@
             padding-left: 0 !important;   
             padding-right: 0 !important;
             position: relative; 
-            min-height: 80px; /* 確保有一點高度 */
+            min-height: 80px;
         }
         
         #logo {
@@ -37,10 +46,10 @@
             width: 100% !important;
             margin-left: auto !important;
             margin-right: auto !important;
-            padding: 5px 10px !important; /* 確保文字有點呼吸空間 */
+            padding: 5px 10px !important;
         }
 
-        /* 漢堡按鈕預設樣式 (桌機版這裡只是定義位置) */
+        /* 漢堡按鈕圖示 */
         .openoverlaynav {
             position: absolute !important;
             right: 20px;
@@ -48,40 +57,37 @@
             transform: translateY(-50%);
             z-index: 1000;
             cursor: pointer;
-            font-size: 30px; /* 按鈕大一點比較好按 */
+            font-size: 30px;
         }
 
         /* ============================
-           【關鍵修正】手機版專用設定 (Mobile Fix)
-           解決重疊問題的策略：按鈕放右上，文字往下推
+           3. 手機版專用設定 (Mobile Fix)
            ============================ */
         @media only screen and (max-width: 800px) {
             
-            /* 1. 漢堡按鈕移到右上角，不要垂直置中 */
+            /* 漢堡按鈕移到右上角 */
             .openoverlaynav {
-                top: 15px !important;       /* 距離頂部 15px */
-                right: 20px !important;     /* 距離右邊 20px */
-                transform: none !important; /* 移除垂直置中效果 */
+                top: 15px !important;       
+                right: 20px !important;     
+                transform: none !important; 
             }
 
-            /* 2. 標題區域往下推，避免碰到上面的按鈕 */
+            /* 標題區域往下推，避免碰到按鈕 */
             #main-header {
-                padding-top: 50px !important; /* 上方留出 50px 給按鈕 */
+                padding-top: 50px !important; 
                 padding-bottom: 20px !important;
             }
 
-            /* 3. 確保文字不會因為 padding 而太窄，保持適當寬度 */
             #logo {
                 padding: 0 10px !important;
             }
             
-            /* 調整手機版文字大小，避免太擁擠 */
             #logo h1 { font-size: 1.5em !important; }
             #logo h3 { font-size: 1em !important; }
         }
 
         /* ============================
-           2. 輪播圖設定 (Carousel Styles)
+           4. 輪播圖設定 (Carousel Styles)
            ============================ */
         .spn-carousel-container {
             position: relative;
@@ -93,6 +99,7 @@
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
             background-color: #fff;
             min-height: 200px;
+            /* 這裡不需要設定 z-index，預設是 0，會被選單的 2000 蓋過去 */
         }
 
         .spn-carousel-track {
@@ -109,7 +116,7 @@
             height: auto !important;
         }
 
-        /* 左右按鈕 */
+        /* 左右按鈕 (z-index: 100) */
         .spn-prev, .spn-next {
             cursor: pointer;
             position: absolute;
@@ -125,7 +132,7 @@
             user-select: none;
             background-color: rgba(0,0,0,0.3);
             border: none;
-            z-index: 100;
+            z-index: 100; /* 比選單的 2000 低，所以會被蓋住 */
         }
 
         .spn-next {
@@ -137,7 +144,7 @@
             background-color: rgba(0,0,0,0.8);
         }
 
-        /* 暫停/播放按鈕 */
+        /* 暫停/播放按鈕 (z-index: 100) */
         .spn-play-pause {
             position: absolute;
             bottom: 15px;
@@ -150,7 +157,7 @@
             cursor: pointer;
             font-size: 14px;
             border-radius: 20px;
-            z-index: 100;
+            z-index: 100; /* 比選單的 2000 低 */
             transition: background 0.3s;
         }
 
