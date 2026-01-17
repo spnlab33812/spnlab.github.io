@@ -1,29 +1,135 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>SPN LAB</title>
+	<title>SPN LAB - 指導教授</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta http-equiv="Content-Language" content="zh-tw,en">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="style.css" rel="stylesheet" type="text/css">
+    
+    <style>
+        /* ============================
+           1. 電腦版選單強制一行
+           ============================ */
+        .Big-overlaynav-content {
+            display: flex !important;       
+            justify-content: center !important; 
+            flex-wrap: nowrap !important;   
+            width: 100% !important;         
+        }
+
+        .Big-overlaynav-content a {
+            width: auto !important;         
+            flex: 1 1 auto !important;      
+            display: block !important;
+            float: none !important;         
+            margin: 0 !important;           
+            white-space: nowrap !important; 
+            padding: 10px 0 !important;     
+        }
+
+        .Big-overlaynav-content a:hover {
+            background-color: coral !important;
+            width: auto !important; 
+        }
+
+        /* ============================
+           2. 選單層級修正
+           ============================ */
+        .overlaynav {
+            z-index: 2000 !important;
+        }
+
+        /* ============================
+           3. 電腦版：標題置中設定
+           ============================ */
+        #main-header {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            justify-content: center !important;
+            text-align: center !important; 
+            padding-left: 0 !important;   
+            padding-right: 0 !important;
+            position: relative; 
+            min-height: 80px;
+        }
+        
+        #logo {
+            width: 100% !important;        
+            max-width: 100% !important;    
+            margin: 0 auto !important;     
+            float: none !important;        
+            display: block !important;
+        }
+
+        #logo h1, #logo h3 {
+            text-align: center !important;
+            width: 100% !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+            padding: 5px 10px !important;
+        }
+
+        /* 漢堡按鈕圖示 */
+        .openoverlaynav {
+            position: absolute !important;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            cursor: pointer;
+            font-size: 30px;
+        }
+
+        /* ============================
+           4. 手機版專用設定
+           ============================ */
+        @media only screen and (max-width: 800px) {
+            .openoverlaynav {
+                top: 15px !important;       
+                right: 20px !important;     
+                transform: none !important; 
+            }
+
+            #main-header {
+                padding-top: 50px !important; 
+                padding-bottom: 20px !important;
+            }
+
+            #logo { padding: 0 10px !important; }
+            #logo h1 { font-size: 1.5em !important; }
+            #logo h3 { font-size: 1em !important; }
+        }
+
+        /* ============================
+           5. 指導教授頁面專屬 CSS
+           (從原本表格內的 style 移出來的，保持乾淨)
+           ============================ */
+        td ul {
+            list-style-position: inside;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* 教授照片 RWD 設定 */
+        .responsive-img {
+            width: 90%;
+            max-width: 350px;
+            height: auto;
+            display: block;
+            margin: auto;
+        }
+        
+        @media (max-width: 600px) {
+            .responsive-img {
+                max-width: 100%;
+                width: 100%;
+            }
+        }
+    </style>
 </head>
-
-<link href="style.css" rel="stylesheet" type="text/css">
-
-<body>
-<div class="main">
-
-	<!DOCTYPE html>
-<html>
-
-<head>
-	<title>SPN LAB</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta http-equiv="Content-Language" content="zh-tw,en">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-
-<link href="style.css" rel="stylesheet" type="text/css">
-<link href="style15.css" rel="stylesheet" type="text/css">
 
 <body>
 <div class="main">
@@ -33,11 +139,9 @@
         <h1><a href="index.html">感測與光觸媒奈米材料實驗室</a></h1>
         <h3><a href="index.html">Sensing and Photocatalysis Nanomaterials Laboratory</a></h3>
       </div>
-      <!-- 漢堡按鈕 (手機版才會顯示) -->
       <span class="openoverlaynav" onclick="openNav()">&#9776;</span>
     </header>
 
-    <!-- 桌機版選單 -->
     <div class="Big-overlaynav">
       <div class="Big-overlaynav-content">
         <a href="news.html">最新消息</a>
@@ -46,12 +150,11 @@
         <a href="paper.html">論文發表</a>
         <a href="research.html">研究方向</a>
         <a href="result.html">研究成果</a>
+        <a href="honors.html">榮譽事項</a>
         <a href="members.html">實驗室成員</a>
-        <a href="index.html">回到首頁</a>
       </div>
     </div>
 
-    <!-- 手機版 overlay 選單 (只保留一個) -->
     <div id="myNav" class="overlaynav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
       <div class="overlaynav-content">
@@ -61,166 +164,133 @@
         <a href="paper.html">論文發表</a>
         <a href="research.html">研究方向</a>
         <a href="result.html">研究成果</a>
+        <a href="honors.html">榮譽事項</a>
         <a href="members.html">實驗室成員</a>
-        <a href="index.html">回到首頁</a>
       </div>
     </div>
 
-    <!-- 子標題列 -->
     <header id="sub-header">
       <h5><a href="https://mse.site.nthu.edu.tw/" target="_blank">&#10148 清大材料</a></h5>
     </header>
 
-  </div>
+</div>
 
-  <!-- JS 控制開關 -->
-  <script>
+<script>
     function openNav() {
       document.getElementById("myNav").style.height = "100%";
     }
     function closeNav() {
       document.getElementById("myNav").style.height = "0%";
     }
-  </script>
-
+</script>
 
 	<section>
 		<div>
-
 			<div class="content" id="profcontent">
-					<table cellspacing="2" cellpadding="10">
-  						<tr>
-    						<th colspan="2">指導教授</th>
-  						</tr>
+				<table cellspacing="2" cellpadding="10">
+					<tr>
+						<th colspan="2">指導教授</th>
+					</tr>
 
-  						<style>
-						td ul {
-    						list-style-position: inside;
-    						margin: 0;
-    						padding: 0;
-							}
-							.responsive-img {
-    						width: 90%;
-    						max-width: 350px;
-    						height: auto;
-    						display: block;
-    						margin: auto;
-  							}
-							@media (max-width: 600px) {
-                           .responsive-img {
-                            max-width: 100%;
-                            width: 100%;
-                            }
-                            }
-						</style>
-						<tr> 
-							<td> 
-  								<img src="img/網頁相片.jpg" class="responsive-img"> 
-							</td>
-							<td>
-								<ul style="list-style-type: none;margin: 0;padding: 0;">
-									<li>姓名：林鶴南 (Heh-Nan Lin)</li>
-									<li>辦公室：材料實驗館 201室</li>
-									<li>電話：(03)5715131 轉33811</li>
-									<li>傳真：(03)5722366</li>
-									<li>電子信箱 : hnlin@mx.nthu.edu.tw</li>
-									<li>skype ID: heh.nan.lin</li>
-								</ul>
-							</td>
-						</tr>
-						<tr>
-							<th>學歷</th>			
-							<td>
-								<ul style="list-style-position: inside; margin: 0; padding: 0;">
-									<li>美國Brown大學物理博士(1992)</li>
-									<li>台灣大學電機工程學士(1983) </li>
-								</ul>
-							</td>
-						</tr>
-						<tr>
-							<th>經歷</th>			
-							<td>
-								<ul style="list-style-position: inside; margin: 0; padding: 0;">
-									<li>清華大學工學院副院長, 2022/8 ~ 2025/7</li>
-									<li>清華大學工學院學士班主任, 2022/8 ~ 2025/7</li>
-									<li>清大性別平等教育委員會副主任委員，2019/8 ~ 2020/7</li>
-									<li>清華大學工學院學士班執行副班主任，2018/8 ~ 2019/7</li>
-									<li>清華大學材料科學工程學系副系主任，2012/8 ~ 2015/7</li>
-									<li>台灣顯微鏡學會理事，2006/8 ~ 2008/7</li>
-									<li>清華大學材料科學工程學系教授，2006/8 ~ 至今</li>
-									<li>清華大學材料科學工程學系副教授 ，2001/8 ~ 2006/7</li>
-									<li>清華大學材料科學工程學系助理教授，2000/2 ~2001/7</li>
-									<li>國科會精密儀器發展中心工程師兼課長，1996/11~ 2000/1</li>
-									<li>國科會精密儀器發展中心副研究員，1995/7 ~ 1996/11</li>
-									<li>中央研究院物理所博士後研究，1992/8 ~ 1995/7</li>
-									<li>台灣大學物理系助教，1985/9 ~ 1986/7</li>
-								</ul>
-							</td>
-						</tr>
-						<tr>
-							<th>研究領域</th>				
-							<td>氣體感測器、光觸媒、奈米材料、掃描探針顯微術、奈米微影</td>
-						</tr>
-						<tr>
-							<th>學術榮譽</th>			
-							<td>
-								<ul style="list-style-position: inside; margin: 0; padding: 0;">
-									<li> 2024年材料年會壁報論文優等，「低溫合成金銅奈米粒子修飾氧化鋅奈米柱應用於二氧化氮氣體感測」，葉晁銘等</li>
-									<li> 2023年第20屆國家新創獎－學研新創獎環境科技與能源應用類，作品名稱「具智慧演算法之手機操控多晶片可攜式氣體感測器」</li>
-									<li> 2023年華立創新材料大賽銀質獎，作品名稱「具智慧演算法之手機操控可攜式氣體感測器」</li>
-									<li> 2023年材料年會壁報論文特優，「Hydrothermal synthesis of indium oxide nanobricks for for highly sensitive and selective ozone gas sensing」，劉承恩等</li>
-									<li>2022年材料年會壁報論文特優，「Fabrication of Au/ZIF-8/ZnO heterostructure for highly sensitive and selective NO2 sensing and real time monitoring at room temperature」， Thangapandian Murugesan等</li>
-									<li>2020年國際智慧感測器研討會(International Conference on Smart Sensors) Best Poster Award，
-
-										「Synthesis of MoS2/ZnO nanocomposite for NO2 sensing and development of nanocomposite-based portable gas sensor」，R. R. Kumar等
-									<li>2015年材料年會壁報論文佳作獎，「Room temperature NO gas sensors created by atomic force microscopy nanolithography」， 洪力揚等</li>
-									<li>2013年材料年會壁報論文優等獎，「Single titanium oxide nanodot ultraviolet light sensor created by atomic force microscopy nano-oxidation」， 洪力揚等</li>
-									<li>2013年材料年會壁報論文佳作獎，「Enhanced photocatalytic activity of bent ZnO nanowires」，張展豪等</li>
-									<li>2011年台灣奈米影像競賽掃描式電子顯微鏡(SEM)影像組佳作，「大崩壞」， 林峻霆(國研院儀科中心)等</li>
-									<li>2011年物理年會壁報論文優良獎，「Fabrication of Nitric Oxide Gas Sensors Based on Single ZnO Nanowires」，鄭宜驊等</li>
-									<li>2010年化學感測器年會壁報論文佳作，「單一金奈米線奈米感測器化學吸附動力學研究 」，林佛儒等</li>
-									<li>2010年物理年會壁報論文優良獎，「Far-field and near-field optical studies of localized surface plasmons and surface plasmon polaritons in lithographically fabricated single gold nanowires」，陳香安等</li>
-									<li>2008年化學感測器年會壁報論文優勝，「Chemical Sensor Based on Single Gold Nanowire」，林欣瑜等</li>
-									<li>2007年材料年會壁報論文優等獎，「Surface-Roughness-Catalyzed Growth of Large-Scale Vertically Aligned Zinc Oxide Nanowires by Thermal Evaporation without Metal Catalysts」，何恕德等</li>
-									<li>2005年材料年會壁報論文優等，「金屬奈米線區域表面電漿共振特性研究」，廖健順等</li>
-									<li>2003年材料年會壁報論文第二名，「利用原子力顯微術在聚甲基丙烯酸甲酯薄膜上製作微影圖案」，林俊羽等</li>
-									<li>2002年材料年會壁報論文第三名，「掃描探針顯微術於微影成像上的應用」，賴信文等</li>
-									<li>2001年材料年會壁報論文第三名，「碳化鎢/鈷合金之奈米壓痕量測」，施孟君等</li>
-									<li>國科會2001年甲等獎助 (工程處材料學門)</li>
-									<li>國科會2000年甲等獎助 (工程處光電學門)</li>
-								</ul>
-							</td>
-						</tr>
-						<tr>
-							<th>學術活動</th>			
-							<td>
-								<ul style="list-style-position: inside; margin: 0; padding: 0;">
-									<li>擔任台灣奈米會刊(台灣奈米技術產業發展協會出版)編輯</li>
-									<li>擔任國科會材料學門、光電學門、物理學門、生物學門計畫審查</li>
-									<li>擔任 "Chemistry of Materials" , "Journal of Physical Chemistry" , "Langmuir" , " Journal of Applied Physics" , " Materials Chemistry and Physics" , "Microscopy Research and Technique" , "Journal of Manufacturing Science and Engineering" 等國際期刊及"科儀新知"國內期刊論文審查</li>
-								</ul>
-							</td>
-						</tr>
-					</table>
+					<tr> 
+						<td> 
+							<img src="img/網頁相片.jpg" class="responsive-img"> 
+						</td>
+						<td>
+							<ul style="list-style-type: none;margin: 0;padding: 0;">
+								<li>姓名：林鶴南 (Heh-Nan Lin)</li>
+								<li>辦公室：材料實驗館 201室</li>
+								<li>電話：(03)5715131 轉33811</li>
+								<li>傳真：(03)5722366</li>
+								<li>電子信箱 : hnlin@mx.nthu.edu.tw</li>
+								<li>skype ID: heh.nan.lin</li>
+							</ul>
+						</td>
+					</tr>
+					<tr>
+						<th>學歷</th>			
+						<td>
+							<ul style="list-style-position: inside; margin: 0; padding: 0;">
+								<li>美國Brown大學物理博士(1992)</li>
+								<li>台灣大學電機工程學士(1983) </li>
+							</ul>
+						</td>
+					</tr>
+					<tr>
+						<th>經歷</th>			
+						<td>
+							<ul style="list-style-position: inside; margin: 0; padding: 0;">
+								<li>清華大學工學院副院長, 2022/8 ~ 2025/7</li>
+								<li>清華大學工學院學士班主任, 2022/8 ~ 2025/7</li>
+								<li>清大性別平等教育委員會副主任委員，2019/8 ~ 2020/7</li>
+								<li>清華大學工學院學士班執行副班主任，2018/8 ~ 2019/7</li>
+								<li>清華大學材料科學工程學系副系主任，2012/8 ~ 2015/7</li>
+								<li>台灣顯微鏡學會理事，2006/8 ~ 2008/7</li>
+								<li>清華大學材料科學工程學系教授，2006/8 ~ 至今</li>
+								<li>清華大學材料科學工程學系副教授 ，2001/8 ~ 2006/7</li>
+								<li>清華大學材料科學工程學系助理教授，2000/2 ~2001/7</li>
+								<li>國科會精密儀器發展中心工程師兼課長，1996/11~ 2000/1</li>
+								<li>國科會精密儀器發展中心副研究員，1995/7 ~ 1996/11</li>
+								<li>中央研究院物理所博士後研究，1992/8 ~ 1995/7</li>
+								<li>台灣大學物理系助教，1985/9 ~ 1986/7</li>
+							</ul>
+						</td>
+					</tr>
+					<tr>
+						<th>研究領域</th>				
+						<td>氣體感測器、光觸媒、奈米材料、掃描探針顯微術、奈米微影</td>
+					</tr>
+					<tr>
+						<th>學術榮譽</th>			
+						<td>
+							<ul style="list-style-position: inside; margin: 0; padding: 0;">
+								<li> 2024年材料年會壁報論文優等，「低溫合成金銅奈米粒子修飾氧化鋅奈米柱應用於二氧化氮氣體感測」，葉晁銘等</li>
+								<li> 2023年第20屆國家新創獎－學研新創獎環境科技與能源應用類，作品名稱「具智慧演算法之手機操控多晶片可攜式氣體感測器」</li>
+								<li> 2023年華立創新材料大賽銀質獎，作品名稱「具智慧演算法之手機操控可攜式氣體感測器」</li>
+								<li> 2023年材料年會壁報論文特優，「Hydrothermal synthesis of indium oxide nanobricks for for highly sensitive and selective ozone gas sensing」，劉承恩等</li>
+								<li>2022年材料年會壁報論文特優，「Fabrication of Au/ZIF-8/ZnO heterostructure for highly sensitive and selective NO2 sensing and real time monitoring at room temperature」， Thangapandian Murugesan等</li>
+								<li>2020年國際智慧感測器研討會(International Conference on Smart Sensors) Best Poster Award，
+									「Synthesis of MoS2/ZnO nanocomposite for NO2 sensing and development of nanocomposite-based portable gas sensor」，R. R. Kumar等</li>
+								<li>2015年材料年會壁報論文佳作獎，「Room temperature NO gas sensors created by atomic force microscopy nanolithography」， 洪力揚等</li>
+								<li>2013年材料年會壁報論文優等獎，「Single titanium oxide nanodot ultraviolet light sensor created by atomic force microscopy nano-oxidation」， 洪力揚等</li>
+								<li>2013年材料年會壁報論文佳作獎，「Enhanced photocatalytic activity of bent ZnO nanowires」，張展豪等</li>
+								<li>2011年台灣奈米影像競賽掃描式電子顯微鏡(SEM)影像組佳作，「大崩壞」， 林峻霆(國研院儀科中心)等</li>
+								<li>2011年物理年會壁報論文優良獎，「Fabrication of Nitric Oxide Gas Sensors Based on Single ZnO Nanowires」，鄭宜驊等</li>
+								<li>2010年化學感測器年會壁報論文佳作，「單一金奈米線奈米感測器化學吸附動力學研究 」，林佛儒等</li>
+								<li>2010年物理年會壁報論文優良獎，「Far-field and near-field optical studies of localized surface plasmons and surface plasmon polaritons in lithographically fabricated single gold nanowires」，陳香安等</li>
+								<li>2008年化學感測器年會壁報論文優勝，「Chemical Sensor Based on Single Gold Nanowire」，林欣瑜等</li>
+								<li>2007年材料年會壁報論文優等獎，「Surface-Roughness-Catalyzed Growth of Large-Scale Vertically Aligned Zinc Oxide Nanowires by Thermal Evaporation without Metal Catalysts」，何恕德等</li>
+								<li>2005年材料年會壁報論文優等，「金屬奈米線區域表面電漿共振特性研究」，廖健順等</li>
+								<li>2003年材料年會壁報論文第二名，「利用原子力顯微術在聚甲基丙烯酸甲酯薄膜上製作微影圖案」，林俊羽等</li>
+								<li>2002年材料年會壁報論文第三名，「掃描探針顯微術於微影成像上的應用」，賴信文等</li>
+								<li>2001年材料年會壁報論文第三名，「碳化鎢/鈷合金之奈米壓痕量測」，施孟君等</li>
+								<li>國科會2001年甲等獎助 (工程處材料學門)</li>
+								<li>國科會2000年甲等獎助 (工程處光電學門)</li>
+							</ul>
+						</td>
+					</tr>
+					<tr>
+						<th>學術活動</th>			
+						<td>
+							<ul style="list-style-position: inside; margin: 0; padding: 0;">
+								<li>擔任台灣奈米會刊(台灣奈米技術產業發展協會出版)編輯</li>
+								<li>擔任國科會材料學門、光電學門、物理學門、生物學門計畫審查</li>
+								<li>擔任 "Chemistry of Materials" , "Journal of Physical Chemistry" , "Langmuir" , " Journal of Applied Physics" , " Materials Chemistry and Physics" , "Microscopy Research and Technique" , "Journal of Manufacturing Science and Engineering" 等國際期刊及"科儀新知"國內期刊論文審查</li>
+							</ul>
+						</td>
+					</tr>
+				</table>
 			</div>
-
-
 		</div>
 	</section>
 
-
-
 	<aside>
-
 	</aside>
-
-
-
 
 	<footer id="main-footer">
 		<hr>
 		<p>
-			電話：(03) 5715131-33812 &nbsp &nbsp 地址：材料實驗館 206 室 
+			電話：(03) 5715131-33812 &nbsp &nbsp 地址：材料實驗館 206 室 
 		<br>
 			Copyright &copy; 2019 國立清華大學材料系	感測與光觸媒奈米材料實驗室
 		</p>
@@ -229,28 +299,4 @@
 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 <script src="myScript.js"></script>
 </body>
-
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
