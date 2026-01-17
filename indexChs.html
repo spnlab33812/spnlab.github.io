@@ -10,24 +10,43 @@
 
     <style>
         /* ============================
-           1. 標題置中設定 (Header Centering)
+           1. 標題暴力置中設定 (Header Centering)
            ============================ */
         #main-header {
-            text-align: center !important; /* 強制文字置中 */
-            padding-left: 0 !important;    /* 移除原本靠左的留白 */
+            /* 使用 Flexbox 強制置中 */
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            justify-content: center !important;
+            
+            text-align: center !important; 
+            padding-left: 0 !important;   
+            padding-right: 0 !important;
+            position: relative; /* 讓漢堡選單可以定位 */
         }
         
         #logo {
-            width: 100% !important;        /*讓 Logo 區塊佔滿寬度 */
-            margin: 0 auto;                /* 確保區塊置中 */
-            display: block;
+            width: 100% !important;        /* 強制佔滿 100% 寬度 */
+            max-width: 100% !important;    /* 覆蓋原本可能的 80% 設定 */
+            margin: 0 auto !important;     /* 區塊置中 */
+            float: none !important;        /* 移除任何浮動 */
+            display: block !important;
         }
 
-        /* 手機版漢堡選單維持在右邊，不受置中影響 */
+        #logo h1, #logo h3 {
+            text-align: center !important;
+            width: 100% !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+
+        /* 手機版漢堡選單：絕對定位在右上角 */
         .openoverlaynav {
-            position: absolute;
+            position: absolute !important;
             right: 20px;
-            top: 20px;
+            top: 50%;
+            transform: translateY(-50%); /* 垂直置中 */
+            z-index: 1000;
         }
 
         /* ============================
@@ -56,7 +75,7 @@
             flex-shrink: 0;
             object-fit: contain;
             display: block;
-            height: auto !important; /* 強制高度自動，避免圖片消失 */
+            height: auto !important; /* 強制高度自動 */
         }
 
         /* 左右按鈕 */
