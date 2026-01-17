@@ -10,16 +10,30 @@
 
     <style>
         /* ============================
-           1. 選單層級修正 (Menu Z-Index Fix)
-           【這就是解決按鈕浮在菜單上的關鍵】
+           1. 表格置中設定 (Table Centering)
+           【這是這次新增的】
            ============================ */
-        .overlaynav {
-            /* 設定極高的層級，確保它蓋過輪播圖按鈕 (按鈕是 100) */
-            z-index: 2000 !important; 
+        .midcontent {
+            float: none !important;         /* 取消原本的靠左浮動 */
+            width: 100% !important;         /* 容器寬度設為 100% */
+            display: flex !important;       /* 使用 Flexbox 排版 */
+            justify-content: center !important; /* 內容水平置中 */
+            margin: 0 !important;           /* 清除多餘邊距 */
+        }
+        
+        .midcontent table {
+            margin: 20px auto !important;   /* 表格本身上下留白，左右自動置中 */
         }
 
         /* ============================
-           2. 電腦版：標題置中設定
+           2. 選單層級修正 (Menu Z-Index Fix)
+           ============================ */
+        .overlaynav {
+            z-index: 2000 !important; /* 確保選單蓋過所有東西 */
+        }
+
+        /* ============================
+           3. 電腦版：標題置中設定
            ============================ */
         #main-header {
             display: flex !important;
@@ -61,10 +75,9 @@
         }
 
         /* ============================
-           3. 手機版專用設定 (Mobile Fix)
+           4. 手機版專用設定 (Mobile Fix)
            ============================ */
         @media only screen and (max-width: 800px) {
-            
             /* 漢堡按鈕移到右上角 */
             .openoverlaynav {
                 top: 15px !important;       
@@ -72,22 +85,19 @@
                 transform: none !important; 
             }
 
-            /* 標題區域往下推，避免碰到按鈕 */
+            /* 標題區域往下推 */
             #main-header {
                 padding-top: 50px !important; 
                 padding-bottom: 20px !important;
             }
 
-            #logo {
-                padding: 0 10px !important;
-            }
-            
+            #logo { padding: 0 10px !important; }
             #logo h1 { font-size: 1.5em !important; }
             #logo h3 { font-size: 1em !important; }
         }
 
         /* ============================
-           4. 輪播圖設定 (Carousel Styles)
+           5. 輪播圖設定 (Carousel Styles)
            ============================ */
         .spn-carousel-container {
             position: relative;
@@ -99,7 +109,6 @@
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
             background-color: #fff;
             min-height: 200px;
-            /* 這裡不需要設定 z-index，預設是 0，會被選單的 2000 蓋過去 */
         }
 
         .spn-carousel-track {
@@ -116,7 +125,7 @@
             height: auto !important;
         }
 
-        /* 左右按鈕 (z-index: 100) */
+        /* 左右按鈕 */
         .spn-prev, .spn-next {
             cursor: pointer;
             position: absolute;
@@ -132,7 +141,7 @@
             user-select: none;
             background-color: rgba(0,0,0,0.3);
             border: none;
-            z-index: 100; /* 比選單的 2000 低，所以會被蓋住 */
+            z-index: 100;
         }
 
         .spn-next {
@@ -144,7 +153,7 @@
             background-color: rgba(0,0,0,0.8);
         }
 
-        /* 暫停/播放按鈕 (z-index: 100) */
+        /* 暫停/播放按鈕 */
         .spn-play-pause {
             position: absolute;
             bottom: 15px;
@@ -157,7 +166,7 @@
             cursor: pointer;
             font-size: 14px;
             border-radius: 20px;
-            z-index: 100; /* 比選單的 2000 低 */
+            z-index: 100;
             transition: background 0.3s;
         }
 
