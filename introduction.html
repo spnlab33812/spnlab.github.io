@@ -35,34 +35,14 @@
         }
 
         /* ============================
-           2. 內容區塊設定 (讓簡介文字排版舒適)
-           ============================ */
-        .content {
-            float: none !important;
-            display: block !important; 
-            width: 100% !important;
-            margin: 0 auto !important;
-            max-width: 1000px; /* 限制最大寬度，閱讀較舒適 */
-            padding: 20px;     /* 留一點邊距 */
-            line-height: 1.8;  /* 增加行高，提升閱讀性 */
-            text-align: justify; /* 左右對齊 */
-        }
-        
-        .content h1 {
-            text-align: center; /* 標題置中 */
-            margin-bottom: 30px;
-            color: steelblue;
-        }
-
-        /* ============================
-           3. 選單層級修正
+           2. 選單層級修正
            ============================ */
         .overlaynav {
             z-index: 2000 !important;
         }
 
         /* ============================
-           4. 電腦版：標題置中設定
+           3. 電腦版：網站大標題置中設定
            ============================ */
         #main-header {
             display: flex !important;
@@ -104,7 +84,7 @@
         }
 
         /* ============================
-           5. 手機版專用設定
+           4. 手機版專用設定
            ============================ */
         @media only screen and (max-width: 800px) {
             .openoverlaynav {
@@ -180,7 +160,6 @@
 
 	<section>
 		<div>
-
             <div class="content">
 				<h1>感測與光觸媒奈米材料實驗室</h1>
 				<p>
