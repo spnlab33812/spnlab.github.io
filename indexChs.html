@@ -10,7 +10,7 @@
 
     <style>
         /* ============================
-           1. 標題暴力置中設定 (Header Centering)
+           1. 標題置中設定 (Header Centering)
            ============================ */
         #main-header {
             /* 使用 Flexbox 強制置中 */
@@ -26,10 +26,10 @@
         }
         
         #logo {
-            width: 100% !important;        /* 強制佔滿 100% 寬度 */
-            max-width: 100% !important;    /* 覆蓋原本可能的 80% 設定 */
-            margin: 0 auto !important;     /* 區塊置中 */
-            float: none !important;        /* 移除任何浮動 */
+            width: 100% !important;        
+            max-width: 100% !important;    
+            margin: 0 auto !important;     
+            float: none !important;        
             display: block !important;
         }
 
@@ -40,13 +40,28 @@
             margin-right: auto !important;
         }
 
-        /* 手機版漢堡選單：絕對定位在右上角 */
+        /* 漢堡按鈕基本位置 (桌機版會被 display:none 藏起來，這裡只設定位置) */
         .openoverlaynav {
             position: absolute !important;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%); /* 垂直置中 */
-            z-index: 1000;
+            right: 20px;            /* 靠右 20px */
+            top: 50%;               /* 垂直置中 */
+            transform: translateY(-50%); 
+            z-index: 1000;          /* 確保在最上層 */
+            cursor: pointer;
+        }
+
+        /* ============================
+           【關鍵修正】手機版專用設定 (Mobile Fix)
+           ============================ */
+        @media only screen and (max-width: 800px) {
+            #main-header {
+                /* 左右各留 60px 的空間
+                   padding-right: 讓文字不要碰到右邊的漢堡按鈕
+                   padding-left : 為了視覺平衡，左邊也要留一樣多，這樣文字才會在正中間 
+                */
+                padding-left: 60px !important;
+                padding-right: 60px !important;
+            }
         }
 
         /* ============================
@@ -75,7 +90,7 @@
             flex-shrink: 0;
             object-fit: contain;
             display: block;
-            height: auto !important; /* 強制高度自動 */
+            height: auto !important;
         }
 
         /* 左右按鈕 */
