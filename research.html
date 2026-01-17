@@ -42,7 +42,7 @@
         }
 
         /* ============================
-           3. 電腦版：標題置中設定
+           3. 電腦版：網站大標題置中設定 (Logo)
            ============================ */
         #main-header {
             display: flex !important;
@@ -103,18 +103,12 @@
             #logo h3 { font-size: 1em !important; }
         }
 
-        /* 讓內容區塊稍微置中，比較好看，但不影響圖片大小 */
+        /* 讓內容區塊寬度適中，但我不對 h1 做任何設定，保留原狀 */
         .content {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
-        }
-        
-        .content h1 {
-            text-align: center; /* 讓「研究方向」四個字置中 */
-            margin-bottom: 30px;
-            color: steelblue;
         }
     </style>
 </head>
@@ -178,7 +172,7 @@
 				<h1>研究方向</h1>
 				
 				<div id="research">
-                    <table>
+					<table>
 						<tr>
 							<th>奈米材料</th>
 							<td><img src="img/zno_nr.jpg"><figcaption>氧化鋅奈米線</figcaption></td>
