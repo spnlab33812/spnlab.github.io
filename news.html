@@ -50,12 +50,14 @@
             text-align: left !important;
         }
         
-        /* 列表樣式設定 */
+        /* 【關鍵修正】列表樣式設定 
+           原本可能是 40px，現在改為 20px 以匹配 honors.html
+        */
         #news {
             display: block !important;
             text-align: left !important;    
-            padding-left: 40px !important;  /* 左側留出編號的空間 */
-            padding-right: 20px !important; /* 右側留白 */
+            padding-left: 20px !important;  /* 修改這裡：改成 20px */
+            padding-right: 20px !important; 
             margin-top: 20px !important;    
             line-height: 1.8;
             font-size: 16px;
@@ -136,7 +138,7 @@
             #logo h3 { font-size: 1em !important; }
             
             #news {
-                padding-left: 25px !important; 
+                padding-left: 20px !important; /* 手機版也同步為 20px */
                 padding-right: 10px !important;
             }
         }
