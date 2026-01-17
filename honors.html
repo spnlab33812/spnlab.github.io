@@ -35,23 +35,29 @@
         }
 
         /* ============================
-           2. 內容區塊設定 (修正靠左對齊)
+           2. 內容區塊設定 (強制靠左)
+           【這次的修正重點】
            ============================ */
         .midcontent {
             float: none !important;
-            width: 100% !important;
             display: block !important; 
-            margin: 0 auto !important;
-            max-width: 1000px;
+            width: 100% !important;
+            
+            /* 【修改】移除原本的置中與寬度限制，讓它貼齊左邊 */
+            margin: 0 !important;
+            max-width: none !important; 
+            
+            /* 確保文字靠左 */
+            text-align: left !important;
         }
         
         /* 列表樣式設定 */
         #news {
             display: block !important;
-            text-align: left !important;    /* 強制文字靠左 */
-            padding-left: 40px !important;  /* 左側留出編號的空間 */
-            padding-right: 20px !important; /* 右側留白 */
-            margin-top: 20px !important;    /* 上方留一點白，因為標題刪掉了 */
+            text-align: left !important;    
+            padding-left: 20px !important;  /* 左邊縮排，不用太多，讓點點靠左 */
+            padding-right: 20px !important; 
+            margin-top: 20px !important;    
             line-height: 1.8;
             font-size: 16px;
         }
@@ -59,7 +65,7 @@
         #news li {
             text-align: left !important;    
             margin-bottom: 15px;            
-            list-style-position: outside;   
+            list-style-position: outside; /* 點點在文字框外，對齊更整齊 */ 
         }
 
         /* ============================
@@ -131,7 +137,7 @@
             #logo h3 { font-size: 1em !important; }
             
             #news {
-                padding-left: 25px !important; 
+                padding-left: 20px !important; 
                 padding-right: 10px !important;
             }
         }
