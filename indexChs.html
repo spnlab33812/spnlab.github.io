@@ -7,7 +7,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link href="style.css" rel="stylesheet" type="text/css">
-    <link href="style15.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -93,10 +92,8 @@
                 <tr><td>實驗室</td>			<td>材料實驗館206室</td></tr>
                 <tr><td>實驗室電話</td>			<td>(03)5715131 轉33812</td></tr>
             </table>
-
-            <table cellspacing="2" cellpadding="10">
-                <tr><td><br><br><br><br><br><br><br><br><br><br><br><br><br></td></tr>
-            </table>
+            
+            <br><br><br><br>
         </div>
     </div>
 </section>
@@ -126,26 +123,23 @@
     const playBtn = document.getElementById("playPauseBtn");
 
     function showSlides(n) {
-        // 循環邏輯
         if (n >= totalSlides) { slideIndex = 0; }
         else if (n < 0) { slideIndex = totalSlides - 1; }
         else { slideIndex = n; }
 
-        // 移動圖片
         let offset = -slideIndex * 100; 
         track.style.transform = `translateX(${offset}%)`;
     }
 
     function plusSlides(n) {
         showSlides(slideIndex + n);
-        // 如果目前是播放狀態，重置計時器，避免手動切換後馬上自動跳
         if(isPlaying) resetTimer();
     }
 
     function startAutoPlay() {
         autoPlayTimer = setInterval(function() {
             plusSlides(1);
-        }, 3000); // 這裡設定3秒換一張
+        }, 3000);
     }
 
     function togglePlay() {
@@ -165,7 +159,6 @@
         startAutoPlay();
     }
 
-    // 啟動自動播放
     startAutoPlay();
 </script>
 
