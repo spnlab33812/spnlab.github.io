@@ -469,42 +469,84 @@ section:after {
 }
 
 /* =========================================
-   NEW SLIDER STYLES (加在 style.css 最下方)
-   這會覆蓋過 style15.css 的舊動畫行為
+   NEW SLIDER STYLES (修復版)
    ========================================= */
 
 /* 輪播圖外框 */
 .spn-carousel-container {
     position: relative;
-    max-width: 1000px; /* 電腦版最大寬度，可自行調整 */
-    width: 100%;       /* 手機版會自動填滿 */
-    margin: 20px auto; /* 上下留白，左右置中 */
-    overflow: hidden;  /* 隱藏超出範圍的圖片 */
+    max-width: 1000px;
+    width: 100%;
+    margin: 20px auto;
+    overflow: hidden;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    background-color: #fff;
+    background-color: #fff; /* 確保有背景色 */
+    min-height: 200px;      /* 確保容器有最小高度，避免消失 */
 }
 
 /* 圖片軌道 */
 .spn-carousel-track {
-    display: flex; /* 橫向排列 */
+    display: flex;
     width: 100%;
-    transition: transform 0.5s ease-in-out; /* JavaScript 切換時的滑順效果 */
-    /* 注意：這裡沒有 animation，所以不會自己亂跑 */
+    transition: transform 0.5s ease-in-out;
 }
 
-/* 圖片本體 */
-/* 修改這一段：圖片本體 */
+/* 圖片本體 - 這裡做了修正 */
 .spn-carousel-track img {
     width: 100%;
     flex-shrink: 0;
-    object-fit: contain; /* 保持圖片比例 */
+    object-fit: contain;
     display: block;
-    
-    /* 關鍵修改：加上 !important 強制覆蓋 style15.css 的設定 */
+    /* 強制設定高度為自動，解決消失問題 */
     height: auto !important; 
-    
-    /* 備用方案：如果圖片掛掉，至少會顯示一個灰色區塊證明位置是對的 */
-    background-color: #f0f0f0; 
-    min-height: 100px; /* 確保至少有高度 */
+}
+
+/* 左右按鈕 */
+.spn-prev, .spn-next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    transition: 0.3s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0,0,0,0.3);
+    border: none;
+    z-index: 100;
+}
+
+.spn-next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.spn-prev:hover, .spn-next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* 暫停/播放按鈕 */
+.spn-play-pause {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 20px;
+    z-index: 100;
+    transition: background 0.3s;
+}
+
+.spn-play-pause:hover {
+    background-color: rgba(0, 0, 0, 0.9);
 }
