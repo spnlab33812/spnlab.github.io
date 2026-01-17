@@ -1,42 +1,105 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>SPN LAB</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta http-equiv="Content-Language" content="zh-tw,en">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPN LAB</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Language" content="zh-tw,en">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="style15.css" rel="stylesheet" type="text/css">
+
+    <style>
+        /* 輪播圖容器：限制範圍，隱藏超出部分 */
+        .carousel-container {
+            position: relative;
+            max-width: 1000px; /* 你可以根據需求調整最大寬度 */
+            width: 100%;
+            margin: 20px auto; /* 上下留白，置中 */
+            overflow: hidden;
+            border-radius: 8px; /* 稍微圓角比較好看，可刪除 */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* 圖片軌道：設定為橫向排列，並加入滑動動畫 */
+        .carousel-slide {
+            display: flex;
+            width: 100%;
+            transition: transform 0.5s ease-in-out; 
+        }
+
+        /* 圖片本體 */
+        .carousel-slide img {
+            width: 100%;
+            flex-shrink: 0;
+            object-fit: contain; /* 保持圖片比例完整顯示 */
+            background-color: #fff; /* 若圖片比例不同，補白底 */
+        }
+
+        /* 上一張 / 下一張 按鈕 */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
+            transition: 0.3s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            background-color: rgba(0,0,0,0.3); /* 半透明黑底 */
+            border: none;
+            z-index: 100;
+        }
+
+        /* 下一張按鈕靠右 */
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        /* 滑鼠移過去變深色 */
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        /* 暫停/播放按鈕 */
+        .play-pause {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            cursor: pointer;
+            font-size: 14px;
+            border-radius: 20px;
+            z-index: 100;
+            transition: background 0.3s;
+        }
+
+        .play-pause:hover {
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+    </style>
 </head>
-
-<link href="style.css" rel="stylesheet" type="text/css">
-<link href="style15.css" rel="stylesheet" type="text/css">
-
-<body>
-<!DOCTYPE html>
-<html>
-
-<head>
-	<title>SPN LAB</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta http-equiv="Content-Language" content="zh-tw,en">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-
-<link href="style.css" rel="stylesheet" type="text/css">
-<link href="style15.css" rel="stylesheet" type="text/css">
 
 <body>
 <div class="main">
 
-	<header id="main-header">
+    <header id="main-header">
       <div id="logo">
         <h1><a href="index.html">感測與光觸媒奈米材料實驗室</a></h1>
         <h3><a href="index.html">Sensing and Photocatalysis Nanomaterials Laboratory</a></h3>
       </div>
-      <!-- 漢堡按鈕 (手機版才會顯示) -->
       <span class="openoverlaynav" onclick="openNav()">&#9776;</span>
     </header>
 
-    <!-- 桌機版選單 -->
     <div class="Big-overlaynav">
       <div class="Big-overlaynav-content">
         <a href="news.html">最新消息</a>
@@ -50,7 +113,6 @@
       </div>
     </div>
 
-    <!-- 手機版 overlay 選單 (只保留一個) -->
     <div id="myNav" class="overlaynav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
       <div class="overlaynav-content">
@@ -65,148 +127,134 @@
       </div>
     </div>
 
-    <!-- 子標題列 -->
     <header id="sub-header">
       <h5><a href="https://mse.site.nthu.edu.tw/" target="_blank">&#10148 清大材料</a></h5>
     </header>
 
-  </div>
+</div>
 
-  <!-- JS 控制開關 -->
-  <script>
+<script>
     function openNav() {
       document.getElementById("myNav").style.height = "100%";
     }
     function closeNav() {
       document.getElementById("myNav").style.height = "0%";
     }
-  </script>
+</script>
 
-	
-		<body>
-			
+<section>
+    <div class="carousel-container">
+        <div class="carousel-slide" id="carouselSlide">
+            <img src="img/新創獎頒獎1.png" alt="新創獎頒獎">
+            <img src="img/華立1.png" alt="華立">
+            <img src="img/Innozone1.png" alt="Innozone">
+            <img src="img/新創獎獎狀1.png" alt="新創獎獎狀">
+            <img src="img/2024材料年會獎狀.png" alt="2024材料年會獎狀">
+            <img src="img/年會獎狀1.png" alt="年會獎狀">
+        </div>
 
-	<section>
-		
-			<div   class="container">
-				<div  class= "wrapper">
-					<img src="img/新創獎頒獎1.png">
-					<img src="img/華立1.png"> 
-					<img src="img/Innozone1.png">	
-					<img src="img/新創獎獎狀1.png">	
-					<img src="img/2024材料年會獎狀.png">
-					<img src="img/年會獎狀1.png">
-					<img src="img/新創獎頒獎1.png">
-				</div>
-			</div>
-		 <!-- 手機版輪播圖片 -->
-            <div class="carousel-container">
-                <div class="carousel-slide">
-                <img src="img/新創獎頒獎1.png" alt="新創獎頒獎">
-                <img src="img/華立1.png" alt="華立">
-                <img src="img/Innozone1.png" alt="Innozone">
-                <img src="img/新創獎獎狀1.png" alt="新創獎獎狀">
-      			<img src="img/2024材料年會獎狀.png" alt="2024材料年會獎狀">
-      			<img src="img/年會獎狀1.png" alt="年會獎狀">
-				<img src="img/新創獎頒獎1.png">
-    			</div>
-  			</div>
-	
-		</body>
-		</section>
+        <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
+        <button class="next" onclick="plusSlides(1)">&#10095;</button>
+        
+        <button id="playPauseBtn" class="play-pause" onclick="togglePlay()">&#10074;&#10074; 暫停</button>
+    </div>
+</section>
 
-	<section>
-		<div>
-				
-			
-				
-				<div class="midcontent">
+<section>
+    <div>
+        <div class="midcontent">
+            <table cellspacing="2" cellpadding="10">
+                <tr><td colspan="2">感測與光觸媒奈米材料實驗室</td></tr>
+                <tr><td>指導教授</td>          <td>林鶴南(Heh-Nan Lin)</td></tr>
+                <tr><td>辦公室</td>           <td>材料實驗館201室</td></tr>
+                <tr><td>辦公室電話</td>         <td>(03)5715131 轉33811</td></tr>
+                <tr><td>電子信箱</td>          <td>hnlin@mx.nthu.edu.tw</td></tr>
+                <tr><td>實驗室</td>           <td>材料實驗館206室</td></tr>
+                <tr><td>實驗室電話</td>         <td>(03)5715131 轉33812</td></tr>
+            </table>
 
-					<table cellspacing="2" cellpadding="10">
-					
-						<tr><td colspan="2">感測與光觸媒奈米材料實驗室</td></tr>
-						<tr><td>指導教授</td>			<td>林鶴南(Heh-Nan Lin)</td></tr>
-						<tr><td>辦公室</td>			<td>材料實驗館201室</td></tr>
-						<tr><td>辦公室電話</td>			<td>(03)5715131 轉33811</td></tr>
-						<tr><td>電子信箱</td>			<td>hnlin@mx.nthu.edu.tw</td></tr>
-						<tr><td>實驗室</td>			<td>材料實驗館206室</td></tr>
-						<tr><td>實驗室電話</td>			<td>(03)5715131 轉33812</td></tr>
-						<br></br>
-						<br></br>
-						
-						
-					</table>
+            <table cellspacing="2" cellpadding="10">
+                <tr><td><br><br><br><br><br><br></td></tr>
+            </table>
+        </div>
+    </div>
+</section>
 
-					<table cellspacing="2" cellpadding="10">
-						
-						<br></br>
-						<br></br>
-						<br></br>
-						<br></br>
-						<br></br>
-						<br></br>
-						<br></br>
-						<br></br>
-						<br></br>
-						<br></br>
-						<br></br>
-						<br></br>
-						<br></br>
-						
-					</table>
+<aside>
+</aside>
 
-				</div>
+<footer id="main-footer">
+    <hr>
+    <p>
+        電話：(03) 5715131-33812 &nbsp &nbsp 地址：材料實驗館 206 室 
+    <br>
+        Copyright &copy; 2019 國立清華大學材料系  感測與光觸媒奈米材料實驗室
+    </p>
+</footer>
 
-				<div>
-				</div>
-
-				
-
-
-		</div>
-	</section>
-
-
-
-	<aside>
-
-	</aside>
-
-
-
-
-	<footer id="main-footer">
-		<hr>
-		<p>
-			電話：(03) 5715131-33812 &nbsp &nbsp 地址：材料實驗館 206 室 
-		<br>
-			Copyright &copy; 2019 國立清華大學材料系	感測與光觸媒奈米材料實驗室
-		</p>
-	</footer>
-</div>
 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 <script src="myScript.js"></script>
+
+<script>
+    let slideIndex = 0;
+    let autoPlayTimer;
+    let isPlaying = true; // 預設狀態為播放
+    const slidesContainer = document.getElementById("carouselSlide");
+    const slides = slidesContainer.getElementsByTagName("img");
+    const totalSlides = slides.length;
+    const playPauseBtn = document.getElementById("playPauseBtn");
+
+    // 顯示指定圖片的函數
+    function showSlides(n) {
+        // 循環邏輯：超過最後一張回到第一張
+        if (n >= totalSlides) { slideIndex = 0; }
+        // 小於第一張跳到最後一張
+        else if (n < 0) { slideIndex = totalSlides - 1; }
+        else { slideIndex = n; }
+
+        // 計算位移量 (translateX)
+        let offset = -slideIndex * 100; 
+        slidesContainer.style.transform = `translateX(${offset}%)`;
+    }
+
+    // 上一張/下一張按鈕功能
+    function plusSlides(n) {
+        showSlides(slideIndex + n);
+        // 如果目前是播放狀態，重置計時器，避免手動切換後馬上又自動跳轉
+        if(isPlaying) {
+            resetTimer();
+        }
+    }
+
+    // 啟動自動播放
+    function startAutoPlay() {
+        autoPlayTimer = setInterval(function() {
+            plusSlides(1);
+        }, 3000); // 3000 = 3秒切換一次，可自行修改
+    }
+
+    // 暫停/播放切換功能
+    function togglePlay() {
+        if (isPlaying) {
+            clearInterval(autoPlayTimer);
+            playPauseBtn.innerHTML = "&#9658; 播放"; // 變更文字為播放
+            isPlaying = false;
+        } else {
+            startAutoPlay();
+            playPauseBtn.innerHTML = "&#10074;&#10074; 暫停"; // 變更文字為暫停
+            isPlaying = true;
+        }
+    }
+
+    // 重置計時器
+    function resetTimer() {
+        clearInterval(autoPlayTimer);
+        startAutoPlay();
+    }
+
+    // 頁面載入後自動開始播放
+    startAutoPlay();
+</script>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
