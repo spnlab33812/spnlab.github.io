@@ -10,7 +10,7 @@
 
     <style>
         /* ============================
-           1. 電腦版選單強制一行 (Menu Single Line Fix)
+           1. 電腦版選單強制一行
            ============================ */
         .Big-overlaynav-content {
             display: flex !important;       
@@ -35,20 +35,20 @@
         }
 
         /* ============================
-           2. 表格與內容置中設定
+           2. 內容區塊設定 (修正靠左對齊)
            ============================ */
         .midcontent {
             float: none !important;
             width: 100% !important;
-            /* 讓內容區塊本身置中，但文字保持靠左閱讀比較舒服，若要文字也置中可加 text-align: center */
             display: block !important; 
             margin: 0 auto !important;
-            max-width: 1000px; /* 限制內容最大寬度，閱讀體驗較佳 */
+            max-width: 1000px; /* 限制最大寬度，避免在寬螢幕太散 */
         }
         
-        /* 讓列表文字保持適當間距 */
+        /* 【關鍵修正】列表樣式設定 */
         #news {
-            padding: 20px;
+            text-align: left !important; /* 強制文字靠左 */
+            padding: 20px 40px !important; /* 上下20px, 左右40px (左邊留白比較好看) */
             line-height: 1.8;
             font-size: 16px;
         }
@@ -124,6 +124,11 @@
             #logo { padding: 0 10px !important; }
             #logo h1 { font-size: 1.5em !important; }
             #logo h3 { font-size: 1em !important; }
+            
+            /* 手機版列表邊距調整，避免太擠 */
+            #news {
+                padding: 20px 20px !important; 
+            }
         }
     </style>
 </head>
@@ -183,6 +188,10 @@
 
 <section>
     <div>
+        <div class="midcontent" style="text-align: center; margin-bottom: 10px;">
+            <h2>榮譽事項 (Honors & Awards)</h2>
+        </div>
+
         <div class="midcontent">
             <ol id="news">
                 <li><a href=" https://innoaward.taiwan-healthcare.org/news_detail.php?REFDOCTYPID=0ppom83g7ixumxv6&REFDOCID=0t8fi4vi8db91r3b">賀!!本實驗室榮獲2025年國家新創獎-新創精進獎 環境科技與能源應用類，作品「具智慧演算法之手機操控多晶片可攜式氣體感測器」。(2026/1/6)</a></li>
