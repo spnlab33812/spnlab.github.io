@@ -42,19 +42,24 @@
             width: 100% !important;
             display: block !important; 
             margin: 0 auto !important;
-            max-width: 1000px; /* 限制最大寬度，避免在寬螢幕太散 */
+            max-width: 1000px;
         }
         
         /* 【關鍵修正】列表樣式設定 */
         #news {
-            text-align: left !important; /* 強制文字靠左 */
-            padding: 20px 40px !important; /* 上下20px, 左右40px (左邊留白比較好看) */
+            display: block !important;
+            text-align: left !important;    /* 強制文字靠左 */
+            padding-left: 40px !important;  /* 左側留出編號的空間 */
+            padding-right: 20px !important; /* 右側留白 */
+            margin: 0 !important;           /* 移除多餘外距 */
             line-height: 1.8;
             font-size: 16px;
         }
 
         #news li {
-            margin-bottom: 15px; /* 每個項目之間留點空隙 */
+            text-align: left !important;    /* 強制每一項都靠左 */
+            margin-bottom: 15px;            /* 每個項目之間留點空隙 */
+            list-style-position: outside;   /* 讓編號在文字框外面，對齊更整齊 */
         }
 
         /* ============================
@@ -125,9 +130,9 @@
             #logo h1 { font-size: 1.5em !important; }
             #logo h3 { font-size: 1em !important; }
             
-            /* 手機版列表邊距調整，避免太擠 */
             #news {
-                padding: 20px 20px !important; 
+                padding-left: 25px !important; /* 手機版左邊縮排少一點 */
+                padding-right: 10px !important;
             }
         }
     </style>
@@ -189,7 +194,7 @@
 <section>
     <div>
         <div class="midcontent" style="text-align: center; margin-bottom: 10px;">
-            <h2>榮譽事項 (Honors & Awards)</h2>
+            <h2>榮譽事項</h2>
         </div>
 
         <div class="midcontent">
