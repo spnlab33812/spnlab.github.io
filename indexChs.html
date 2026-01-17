@@ -7,6 +7,107 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link href="style.css" rel="stylesheet" type="text/css">
+
+    <style>
+        /* ============================
+           1. 標題置中設定 (Header Centering)
+           ============================ */
+        #main-header {
+            text-align: center !important; /* 強制文字置中 */
+            padding-left: 0 !important;    /* 移除原本靠左的留白 */
+        }
+        
+        #logo {
+            width: 100% !important;        /*讓 Logo 區塊佔滿寬度 */
+            margin: 0 auto;                /* 確保區塊置中 */
+            display: block;
+        }
+
+        /* 手機版漢堡選單維持在右邊，不受置中影響 */
+        .openoverlaynav {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+        }
+
+        /* ============================
+           2. 輪播圖設定 (Carousel Styles)
+           ============================ */
+        .spn-carousel-container {
+            position: relative;
+            max-width: 1000px;
+            width: 100%;
+            margin: 20px auto;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            background-color: #fff;
+            min-height: 200px;
+        }
+
+        .spn-carousel-track {
+            display: flex;
+            width: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .spn-carousel-track img {
+            width: 100%;
+            flex-shrink: 0;
+            object-fit: contain;
+            display: block;
+            height: auto !important; /* 強制高度自動，避免圖片消失 */
+        }
+
+        /* 左右按鈕 */
+        .spn-prev, .spn-next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
+            transition: 0.3s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            background-color: rgba(0,0,0,0.3);
+            border: none;
+            z-index: 100;
+        }
+
+        .spn-next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .spn-prev:hover, .spn-next:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        /* 暫停/播放按鈕 */
+        .spn-play-pause {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            cursor: pointer;
+            font-size: 14px;
+            border-radius: 20px;
+            z-index: 100;
+            transition: background 0.3s;
+        }
+
+        .spn-play-pause:hover {
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+    </style>
 </head>
 
 <body>
