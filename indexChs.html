@@ -10,30 +10,115 @@
 
     <style>
         /* ============================
-           1. 表格置中設定 (Table Centering)
-           【這是這次新增的】
+           1. 輪播圖設定 (Carousel Styles)
+           【這次的修正重點】
+           ============================ */
+        .spn-carousel-container {
+            position: relative;
+            max-width: 1000px;
+            width: 100%;
+            margin: 20px auto;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            background-color: #fff;
+            min-height: 200px;
+            
+            /* 【關鍵修改】底部增加 50px 的留白空間，給按鈕專用 */
+            padding-bottom: 50px !important; 
+        }
+
+        .spn-carousel-track {
+            display: flex;
+            width: 100%;
+            height: 100%; /* 確保軌道高度正確 */
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .spn-carousel-track img {
+            width: 100%;
+            flex-shrink: 0;
+            object-fit: contain;
+            display: block;
+            height: auto !important;
+            max-height: 500px; /* 限制圖片最大高度，避免太長 */
+        }
+
+        /* 暫停/播放按鈕 */
+        .spn-play-pause {
+            position: absolute;
+            /* 把按鈕定位在剛剛留出來的 50px 空白區內 */
+            bottom: 10px !important; 
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            cursor: pointer;
+            font-size: 14px;
+            border-radius: 20px;
+            z-index: 100;
+            transition: background 0.3s;
+        }
+
+        .spn-play-pause:hover {
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        /* 左右按鈕 */
+        .spn-prev, .spn-next {
+            cursor: pointer;
+            position: absolute;
+            /* 調整一下左右按鈕的位置，讓它們置中於圖片區域，而不是包含留白區 */
+            top: 45%; 
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
+            transition: 0.3s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            background-color: rgba(0,0,0,0.3);
+            border: none;
+            z-index: 100;
+        }
+
+        .spn-next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .spn-prev:hover, .spn-next:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        /* ============================
+           2. 表格置中設定 (Table Centering)
            ============================ */
         .midcontent {
-            float: none !important;         /* 取消原本的靠左浮動 */
-            width: 100% !important;         /* 容器寬度設為 100% */
-            display: flex !important;       /* 使用 Flexbox 排版 */
-            justify-content: center !important; /* 內容水平置中 */
-            margin: 0 !important;           /* 清除多餘邊距 */
+            float: none !important;
+            width: 100% !important;
+            display: flex !important;
+            justify-content: center !important;
+            margin: 0 !important;
         }
         
         .midcontent table {
-            margin: 20px auto !important;   /* 表格本身上下留白，左右自動置中 */
+            margin: 20px auto !important;
         }
 
         /* ============================
-           2. 選單層級修正 (Menu Z-Index Fix)
+           3. 選單層級修正 (Menu Z-Index Fix)
            ============================ */
         .overlaynav {
-            z-index: 2000 !important; /* 確保選單蓋過所有東西 */
+            z-index: 2000 !important;
         }
 
         /* ============================
-           3. 電腦版：標題置中設定
+           4. 電腦版：標題置中設定
            ============================ */
         #main-header {
             display: flex !important;
@@ -75,17 +160,15 @@
         }
 
         /* ============================
-           4. 手機版專用設定 (Mobile Fix)
+           5. 手機版專用設定 (Mobile Fix)
            ============================ */
         @media only screen and (max-width: 800px) {
-            /* 漢堡按鈕移到右上角 */
             .openoverlaynav {
                 top: 15px !important;       
                 right: 20px !important;     
                 transform: none !important; 
             }
 
-            /* 標題區域往下推 */
             #main-header {
                 padding-top: 50px !important; 
                 padding-bottom: 20px !important;
@@ -94,84 +177,6 @@
             #logo { padding: 0 10px !important; }
             #logo h1 { font-size: 1.5em !important; }
             #logo h3 { font-size: 1em !important; }
-        }
-
-        /* ============================
-           5. 輪播圖設定 (Carousel Styles)
-           ============================ */
-        .spn-carousel-container {
-            position: relative;
-            max-width: 1000px;
-            width: 100%;
-            margin: 20px auto;
-            overflow: hidden;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            background-color: #fff;
-            min-height: 200px;
-        }
-
-        .spn-carousel-track {
-            display: flex;
-            width: 100%;
-            transition: transform 0.5s ease-in-out;
-        }
-
-        .spn-carousel-track img {
-            width: 100%;
-            flex-shrink: 0;
-            object-fit: contain;
-            display: block;
-            height: auto !important;
-        }
-
-        /* 左右按鈕 */
-        .spn-prev, .spn-next {
-            cursor: pointer;
-            position: absolute;
-            top: 50%;
-            width: auto;
-            padding: 16px;
-            margin-top: -22px;
-            color: white;
-            font-weight: bold;
-            font-size: 24px;
-            transition: 0.3s ease;
-            border-radius: 0 3px 3px 0;
-            user-select: none;
-            background-color: rgba(0,0,0,0.3);
-            border: none;
-            z-index: 100;
-        }
-
-        .spn-next {
-            right: 0;
-            border-radius: 3px 0 0 3px;
-        }
-
-        .spn-prev:hover, .spn-next:hover {
-            background-color: rgba(0,0,0,0.8);
-        }
-
-        /* 暫停/播放按鈕 */
-        .spn-play-pause {
-            position: absolute;
-            bottom: 15px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: rgba(0, 0, 0, 0.6);
-            color: white;
-            border: none;
-            padding: 8px 20px;
-            cursor: pointer;
-            font-size: 14px;
-            border-radius: 20px;
-            z-index: 100;
-            transition: background 0.3s;
-        }
-
-        .spn-play-pause:hover {
-            background-color: rgba(0, 0, 0, 0.9);
         }
     </style>
 </head>
