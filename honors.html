@@ -5,203 +5,203 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta http-equiv="Content-Language" content="zh-tw,en">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link href="style.css" rel="stylesheet" type="text/css">
+    
+    <link href="style.css" rel="stylesheet" type="text/css">
 
-    <style>
-        /* ============================
-           1. 電腦版選單強制一行
-           ============================ */
-        .Big-overlaynav-content {
-            display: flex !important;       
-            justify-content: center !important; 
-            flex-wrap: nowrap !important;   
-            width: 100% !important;         
-        }
+    <style>
+        /* ============================
+           1. 電腦版選單強制一行
+           ============================ */
+        .Big-overlaynav-content {
+            display: flex !important;       
+            justify-content: center !important; 
+            flex-wrap: nowrap !important;   
+            width: 100% !important;         
+        }
 
-        .Big-overlaynav-content a {
-            width: auto !important;         
-            flex: 1 1 auto !important;      
-            display: block !important;
-            float: none !important;         
-            margin: 0 !important;           
-            white-space: nowrap !important; 
-            padding: 10px 0 !important;     
-        }
+        .Big-overlaynav-content a {
+            width: auto !important;         
+            flex: 1 1 auto !important;      
+            display: block !important;
+            float: none !important;         
+            margin: 0 !important;           
+            white-space: nowrap !important; 
+            padding: 10px 0 !important;     
+        }
 
-        .Big-overlaynav-content a:hover {
-            background-color: coral !important;
-            width: auto !important; 
-        }
+        .Big-overlaynav-content a:hover {
+            background-color: coral !important;
+            width: auto !important; 
+        }
 
-        /* ============================
-           2. 內容區塊設定 (強制靠左)
-           【這次的修正重點】
-           ============================ */
-        .midcontent {
-            float: none !important;
-            display: block !important; 
-            width: 100% !important;
+        /* ============================
+           2. 內容區塊設定 (強制靠左)
+           ============================ */
+        .midcontent {
+            float: none !important;
+            display: block !important; 
+            width: 100% !important;
+            
+            margin: 0 !important;
+            max-width: none !important; 
+            
+            text-align: left !important;
+        }
+        
+        /* 列表樣式設定 */
+        #news {
+            display: block !important;
+            text-align: left !important;    
+            padding-left: 20px !important;
+            padding-right: 20px !important; 
+            margin-top: 20px !important;    
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        #news li {
+            text-align: left !important;    
+            margin-bottom: 15px;            
+            list-style-position: outside; 
             
-            /* 【修改】移除原本的置中與寬度限制，讓它貼齊左邊 */
-            margin: 0 !important;
-            max-width: none !important; 
-            
-            /* 確保文字靠左 */
-            text-align: left !important;
-        }
-        
-        /* 列表樣式設定 */
-        #news {
-            display: block !important;
-            text-align: left !important;    
-            padding-left: 20px !important;  /* 左邊縮排，不用太多，讓點點靠左 */
-            padding-right: 20px !important; 
-            margin-top: 20px !important;    
-            line-height: 1.8;
-            font-size: 16px;
-        }
+            /* 【修改】在這裡增加 padding-left 來拉開數字與文字的距離 */
+            padding-left: 15px !important; 
+        }
 
-        #news li {
-            text-align: left !important;    
-            margin-bottom: 15px;            
-            list-style-position: outside; /* 點點在文字框外，對齊更整齊 */ 
-        }
+        /* ============================
+           3. 選單層級修正
+           ============================ */
+        .overlaynav {
+            z-index: 2000 !important;
+        }
 
-        /* ============================
-           3. 選單層級修正
-           ============================ */
-        .overlaynav {
-            z-index: 2000 !important;
-        }
+        /* ============================
+           4. 電腦版：標題置中設定
+           ============================ */
+        #main-header {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            justify-content: center !important;
+            text-align: center !important; 
+            padding-left: 0 !important;   
+            padding-right: 0 !important;
+            position: relative; 
+            min-height: 80px;
+        }
+        
+        #logo {
+            width: 100% !important;        
+            max-width: 100% !important;    
+            margin: 0 auto !important;     
+            float: none !important;        
+            display: block !important;
+        }
 
-        /* ============================
-           4. 電腦版：標題置中設定
-           ============================ */
-        #main-header {
-            display: flex !important;
-            flex-direction: column !important;
-            align-items: center !important;
-            justify-content: center !important;
-            text-align: center !important; 
-            padding-left: 0 !important;   
-            padding-right: 0 !important;
-            position: relative; 
-            min-height: 80px;
-        }
-        
-        #logo {
-            width: 100% !important;        
-            max-width: 100% !important;    
-            margin: 0 auto !important;     
-            float: none !important;        
-            display: block !important;
-        }
+        #logo h1, #logo h3 {
+            text-align: center !important;
+            width: 100% !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+            padding: 5px 10px !important;
+        }
 
-        #logo h1, #logo h3 {
-            text-align: center !important;
-            width: 100% !important;
-            margin-left: auto !important;
-            margin-right: auto !important;
-            padding: 5px 10px !important;
-        }
+        /* 漢堡按鈕圖示 */
+        .openoverlaynav {
+            position: absolute !important;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            cursor: pointer;
+            font-size: 30px;
+        }
 
-        /* 漢堡按鈕圖示 */
-        .openoverlaynav {
-            position: absolute !important;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 1000;
-            cursor: pointer;
-            font-size: 30px;
-        }
+        /* ============================
+           5. 手機版專用設定
+           ============================ */
+        @media only screen and (max-width: 800px) {
+            .openoverlaynav {
+                top: 15px !important;       
+                right: 20px !important;     
+                transform: none !important; 
+            }
 
-        /* ============================
-           5. 手機版專用設定
-           ============================ */
-        @media only screen and (max-width: 800px) {
-            .openoverlaynav {
-                top: 15px !important;       
-                right: 20px !important;     
-                transform: none !important; 
-            }
+            #main-header {
+                padding-top: 50px !important; 
+                padding-bottom: 20px !important;
+            }
 
-            #main-header {
-                padding-top: 50px !important; 
-                padding-bottom: 20px !important;
-            }
-
-            #logo { padding: 0 10px !important; }
-            #logo h1 { font-size: 1.5em !important; }
-            #logo h3 { font-size: 1em !important; }
-            
-            #news {
-                padding-left: 20px !important; 
-                padding-right: 10px !important;
-            }
-        }
-    </style>
+            #logo { padding: 0 10px !important; }
+            #logo h1 { font-size: 1.5em !important; }
+            #logo h3 { font-size: 1em !important; }
+            
+            #news {
+                padding-left: 20px !important; 
+                padding-right: 10px !important;
+            }
+        }
+    </style>
 </head>
 
 <body>
 <div class="main">
 
 	<header id="main-header">
-      <div id="logo">
-        <h1><a href="index.html">感測與光觸媒奈米材料實驗室</a></h1>
-        <h3><a href="index.html">Sensing and Photocatalysis Nanomaterials Laboratory</a></h3>
-      </div>
-      <span class="openoverlaynav" onclick="openNav()">&#9776;</span>
-    </header>
+      <div id="logo">
+        <h1><a href="index.html">感測與光觸媒奈米材料實驗室</a></h1>
+        <h3><a href="index.html">Sensing and Photocatalysis Nanomaterials Laboratory</a></h3>
+      </div>
+      <span class="openoverlaynav" onclick="openNav()">&#9776;</span>
+    </header>
 
-    <div class="Big-overlaynav">
-      <div class="Big-overlaynav-content">
-        <a href="news.html">最新消息</a>
-        <a href="introduction.html">實驗室簡介</a>
-        <a href="professor.html">指導教授</a>
-        <a href="paper.html">論文發表</a>
-        <a href="research.html">研究方向</a>
-        <a href="result.html">研究成果</a>
-        <a href="honors.html">榮譽事項</a>
-        <a href="members.html">實驗室成員</a>
-      </div>
-    </div>
+    <div class="Big-overlaynav">
+      <div class="Big-overlaynav-content">
+        <a href="news.html">最新消息</a>
+        <a href="introduction.html">實驗室簡介</a>
+        <a href="professor.html">指導教授</a>
+        <a href="paper.html">論文發表</a>
+        <a href="research.html">研究方向</a>
+        <a href="result.html">研究成果</a>
+        <a href="honors.html">榮譽事項</a>
+        <a href="members.html">實驗室成員</a>
+      </div>
+    </div>
 
-    <div id="myNav" class="overlaynav">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <div class="overlaynav-content">
-        <a href="news.html">最新消息</a>
-        <a href="introduction.html">實驗室簡介</a>
-        <a href="professor.html">指導教授</a>
-        <a href="paper.html">論文發表</a>
-        <a href="research.html">研究方向</a>
-        <a href="result.html">研究成果</a>
-        <a href="honors.html">榮譽事項</a>
-        <a href="members.html">實驗室成員</a>
-      </div>
-    </div>
+    <div id="myNav" class="overlaynav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <div class="overlaynav-content">
+        <a href="news.html">最新消息</a>
+        <a href="introduction.html">實驗室簡介</a>
+        <a href="professor.html">指導教授</a>
+        <a href="paper.html">論文發表</a>
+        <a href="research.html">研究方向</a>
+        <a href="result.html">研究成果</a>
+        <a href="honors.html">榮譽事項</a>
+        <a href="members.html">實驗室成員</a>
+      </div>
+    </div>
 
-    <header id="sub-header">
-      <h5><a href="https://mse.site.nthu.edu.tw/" target="_blank">&#10148 清大材料</a></h5>
-    </header>
+    <header id="sub-header">
+      <h5><a href="https://mse.site.nthu.edu.tw/" target="_blank">&#10148 清大材料</a></h5>
+    </header>
 
 </div>
 
 <script>
-    function openNav() {
-        document.getElementById("myNav").style.height = "100%";
-    }
-    function closeNav() {
-        document.getElementById("myNav").style.height = "0%";
-    }
+    function openNav() {
+        document.getElementById("myNav").style.height = "100%";
+    }
+    function closeNav() {
+        document.getElementById("myNav").style.height = "0%";
+    }
 </script>
 
 <section>
-    <div>
-        <div class="midcontent">
-            <ol id="news">
-                <li>2025年國家新創獎–新創精進獎 環境科技與能源應用類，作品「具智慧演算法之手機操控多晶片可攜式氣體感測器」</li>	
+    <div>
+        <div class="midcontent">
+            <ol id="news">
+                <li>2025年國家新創獎–新創精進獎 環境科技與能源應用類，作品「具智慧演算法之手機操控多晶片可攜式氣體感測器」</li>	
 				<li>2025年材料年會壁報論文優等，「氧化鎳/氧化銦奈米複合材料應用於臭氧及二氧化氮感測」，吳昶昕等</li>
 				<li>2025年華立創新材料大賽銅質獎，作品「以氧化銦奈米複合材料為基礎之商品化高靈敏度光激發式臭氧感測模組」</li>
 				<li>2024年材料年會壁報論文優等，「低溫合成金銅奈米粒子修飾氧化鋅奈米柱應用於二氧化氮氣體感測」，葉晁銘等</li>
@@ -223,27 +223,24 @@
 				<li>2003年材料年會壁報論文分組第二名，「利用原子力顯微術在聚甲基丙烯酸甲酯薄膜上製作微影圖案」，林俊羽等</li>
 				<li>2002年材料年會壁報論文分組第三名，「掃描探針顯微術於微影成像上的應用」，賴信文等</li>
 				<li>2001年材料年會壁報論文分組第三名，「碳化鎢/鈷合金之奈米壓痕量測」，施孟君等</li>
-            </ol>
-        </div>
-    </div>
+            </ol>
+        </div>
+    </div>
 </section>
 
 <aside>
 </aside>
 
 <footer id="main-footer">
-    <hr>
-    <p>
-        電話：(03) 5715131-33812 &nbsp &nbsp 地址：材料實驗館 206 室 
-    <br>
-        Copyright &copy; 2019 國立清華大學材料系	感測與光觸媒奈米材料實驗室
-    </p>
+    <hr>
+    <p>
+        電話：(03) 5715131-33812 &nbsp &nbsp 地址：材料實驗館 206 室 
+    <br>
+        Copyright &copy; 2019 國立清華大學材料系	感測與光觸媒奈米材料實驗室
+    </p>
 </footer>
 
 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 <script src="myScript.js"></script>
 </body>
 </html>
-
-
-
