@@ -5,298 +5,306 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta http-equiv="Content-Language" content="zh-tw,en">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link href="style.css" rel="stylesheet" type="text/css">
+    
+    <link href="style.css" rel="stylesheet" type="text/css">
 
-    <style>
-        /* ============================
-           1. 電腦版選單強制一行 (強力修復)
-           ============================ */
-        .Big-overlaynav-content {
-            display: flex !important;       
-            justify-content: center !important; 
-            flex-wrap: nowrap !important;   /* 禁止換行 */
-            width: 100% !important;         
-            margin: 0 auto !important;
-        }
+    <style>
+        /* -----------------------------------------------------------
+           1. 修復大標題置中 (Header Centering)
+           問題：大標題跑到左邊
+           解法：強制父層 Flexbox 置中，子層文字置中
+        ----------------------------------------------------------- */
+        #main-header {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;   /* 水平置中關鍵 */
+            justify-content: center !important;
+            text-align: center !important;    /* 文字置中 */
+            width: 100% !important;
+            padding: 0 !important;
+            min-height: 80px;
+            position: relative;
+        }
 
-        .Big-overlaynav-content a {
-            width: auto !important;         /* 取消固定寬度 */
-            flex: 1 1 auto !important;      /* 自動分配空間 */
-            display: block !important;
-            float: none !important;         
-            margin: 0 !important;           
-            white-space: nowrap !important; /* 禁止文字折行 */
-            padding: 10px 0 !important;     
-            text-align: center !important;
-        }
+        #logo {
+            width: 100% !important;
+            margin: 0 auto !important;        /* 區塊置中 */
+            float: none !important;           /* 清除浮動 */
+            display: block !important;
+            text-align: center !important;
+        }
 
-        .Big-overlaynav-content a:hover {
-            background-color: coral !important;
-        }
+        #logo h1, #logo h3 {
+            text-align: center !important;
+            width: 100% !important;
+            margin: 0 auto !important;
+            display: block !important;
+        }
 
-        /* ============================
-           2. 大標題置中設定 (強力修復)
-           ============================ */
-        #main-header {
-            display: flex !important;
-            flex-direction: column !important;
-            align-items: center !important; /* 確保水平置中 */
-            justify-content: center !important;
-            text-align: center !important; 
-            padding-left: 0 !important;   
-            padding-right: 0 !important;
-            width: 100% !important;
-            position: relative; 
-            min-height: 80px;
-        }
-        
-        #logo {
-            width: 100% !important;        
-            margin: 0 auto !important;     
-            float: none !important;        
-            display: block !important;
-            text-align: center !important;
-        }
+        /* -----------------------------------------------------------
+           2. 修復選單強制一行 (Nav Single Line)
+           問題：選單變成兩行
+           解法：強制不換行 (nowrap)
+        ----------------------------------------------------------- */
+        .Big-overlaynav-content {
+            display: flex !important;
+            justify-content: center !important;
+            flex-wrap: nowrap !important;     /* 【絕對禁止換行】 */
+            width: 100% !important;
+            margin: 0 auto !important;
+        }
 
-        #logo h1, #logo h3 {
-            text-align: center !important;
-            width: 100% !important;
-            margin: 0 auto !important;
-            padding: 5px 0 !important;
-            display: block !important;
-        }
+        .Big-overlaynav-content a {
+            width: auto !important;           /* 寬度自動，不要固定 % */
+            flex: 1 1 auto !important;        /* 自動分配空間 */
+            display: block !important;
+            float: none !important;
+            margin: 0 !important;
+            white-space: nowrap !important;   /* 選單文字不折行 */
+            padding: 10px 0 !important;
+            text-align: center !important;
+        }
 
-        /* 漢堡按鈕圖示 */
-        .openoverlaynav {
-            position: absolute !important;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 1000;
-            cursor: pointer;
-            font-size: 30px;
-        }
+        .Big-overlaynav-content a:hover {
+            background-color: coral !important;
+        }
 
-        /* ============================
-           3. 內容列表設定 (粗體、行距小)
-           ============================ */
-        .midcontent {
-            float: none !important;
-            display: block !important; 
-            width: 100% !important;
-            margin: 0 !important;
-            max-width: none !important; 
-            text-align: left !important;
-        }
-        
-        #news {
-            display: block !important;
-            text-align: left !important;    
-            padding-left: 20px !important;  
-            padding-right: 20px !important; 
-            margin-top: 20px !important;    
-        }
+        /* 選單層級，避免被蓋住 */
+        .overlaynav {
+            z-index: 2000 !important;
+        }
 
-        /* 針對列表項目 (li) 和裡面的連結 (a) 同時設定 */
-        #news li, #news li a {
-            text-align: left !important;    
-            
-            /* 修改 1：強力粗體 */
-            font-weight: 700 !important;   
-            
-            /* 修改 2：行高變小 (文字上下緊湊) */
-            line-height: 1.3 !important;    
-            font-size: 16px;
-            color: black; /* 確保連結顏色也是黑色，若需藍色可移除這行 */
-        }
+        /* 漢堡按鈕 (手機版用) */
+        .openoverlaynav {
+            position: absolute !important;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            cursor: pointer;
+            font-size: 30px;
+        }
 
-        #news li {
-            list-style-position: outside; 
-            /* 修改 3：項目間距變小 */
-            margin-bottom: 4px !important;  
-        }
+        /* -----------------------------------------------------------
+           3. 修復內文列表 (News List)
+           問題：沒粗體、行距跑掉、太寬
+           解法：強制設定 font-weight 和 line-height
+        ----------------------------------------------------------- */
+        .midcontent {
+            display: block !important;
+            float: none !important;
+            width: 100% !important;
+            margin: 0 !important;
+            max-width: none !important;
+            text-align: left !important;
+        }
 
-        /* ============================
-           4. 選單層級修正
-           ============================ */
-        .overlaynav {
-            z-index: 2000 !important;
-        }
+        #news {
+            display: block !important;
+            text-align: left !important;
+            padding-left: 20px !important;
+            padding-right: 20px !important;
+            margin-top: 20px !important;
+        }
 
-        /* ============================
-           5. 手機版專用設定
-           ============================ */
-        @media only screen and (max-width: 800px) {
-            .openoverlaynav {
-                top: 15px !important;       
-                right: 20px !important;     
-                transform: none !important; 
-            }
+        /* 針對 li 本身以及裡面的連結 a 設定 */
+        #news li, #news li a {
+            /* 【字體加粗】 */
+            font-weight: bold !important; 
+            font-weight: 700 !important; 
 
-            #main-header {
-                padding-top: 50px !important; 
-                padding-bottom: 20px !important;
-            }
+            /* 【行距縮小】 */
+            line-height: 1.4 !important;  
+            
+            /* 其他設定 */
+            font-size: 16px !important;
+            text-align: left !important;
+            color: black;
+            text-decoration: none; /* 連結不加底線 */
+        }
+        
+        #news li a:hover {
+            color: blue; /* 滑鼠移過去變色 */
+            text-decoration: underline;
+        }
 
-            #logo { padding: 0 10px !important; }
-            #logo h1 { font-size: 1.5em !important; }
-            #logo h3 { font-size: 1em !important; }
-            
-            #news {
-                padding-left: 20px !important; 
-                padding-right: 10px !important;
-            }
-        }
-    </style>
+        #news li {
+            list-style-position: outside;
+            /* 【項目間距】 */
+            margin-bottom: 8px !important; 
+        }
+
+        /* -----------------------------------------------------------
+           4. 手機版修正
+        ----------------------------------------------------------- */
+        @media only screen and (max-width: 800px) {
+            .openoverlaynav {
+                top: 15px !important;
+                right: 20px !important;
+                transform: none !important;
+            }
+            #main-header {
+                padding-top: 50px !important;
+                padding-bottom: 20px !important;
+            }
+            #logo { padding: 0 10px !important; }
+            #logo h1 { font-size: 1.5em !important; }
+            #logo h3 { font-size: 1em !important; }
+            
+            #news {
+                padding-left: 25px !important; /* 手機版左邊留多一點給數字 */
+                padding-right: 10px !important;
+            }
+        }
+    </style>
 </head>
 
 <body>
 <div class="main">
 
 	<header id="main-header">
-      <div id="logo">
-        <h1><a href="index.html">感測與光觸媒奈米材料實驗室</a></h1>
-        <h3><a href="index.html">Sensing and Photocatalysis Nanomaterials Laboratory</a></h3>
-      </div>
-      <span class="openoverlaynav" onclick="openNav()">&#9776;</span>
-    </header>
+      <div id="logo">
+        <h1><a href="index.html">感測與光觸媒奈米材料實驗室</a></h1>
+        <h3><a href="index.html">Sensing and Photocatalysis Nanomaterials Laboratory</a></h3>
+      </div>
+      <span class="openoverlaynav" onclick="openNav()">&#9776;</span>
+    </header>
 
-        <div class="Big-overlaynav">
-      <div class="Big-overlaynav-content">
-        <a href="news.html">最新消息</a>
-        <a href="introduction.html">實驗室簡介</a>
-        <a href="honors.html">榮譽事項</a>         <a href="professor.html">指導教授</a>
-        <a href="paper.html">論文發表</a>
-        <a href="research.html">研究方向</a>
-        <a href="result.html">研究成果</a>
-        <a href="members.html">實驗室成員</a>
-      </div>
-    </div>
+    <div class="Big-overlaynav">
+      <div class="Big-overlaynav-content">
+        <a href="news.html">最新消息</a>
+        <a href="introduction.html">實驗室簡介</a>
+        <a href="honors.html">榮譽事項</a> <a href="professor.html">指導教授</a>
+        <a href="paper.html">論文發表</a>
+        <a href="research.html">研究方向</a>
+        <a href="result.html">研究成果</a>
+        <a href="members.html">實驗室成員</a>
+      </div>
+    </div>
 
-        <div id="myNav" class="overlaynav">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <div class="overlaynav-content">
-        <a href="news.html">最新消息</a>
-        <a href="introduction.html">實驗室簡介</a>
-        <a href="honors.html">榮譽事項</a>         <a href="professor.html">指導教授</a>
-        <a href="paper.html">論文發表</a>
-        <a href="research.html">研究方向</a>
-        <a href="result.html">研究成果</a>
-        <a href="members.html">實驗室成員</a>
-      </div>
-    </div>
+    <div id="myNav" class="overlaynav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <div class="overlaynav-content">
+        <a href="news.html">最新消息</a>
+        <a href="introduction.html">實驗室簡介</a>
+        <a href="honors.html">榮譽事項</a> <a href="professor.html">指導教授</a>
+        <a href="paper.html">論文發表</a>
+        <a href="research.html">研究方向</a>
+        <a href="result.html">研究成果</a>
+        <a href="members.html">實驗室成員</a>
+      </div>
+    </div>
 
-    <header id="sub-header">
-      <h5><a href="https://mse.site.nthu.edu.tw/" target="_blank">&#10148 清大材料</a></h5>
-    </header>
+    <header id="sub-header">
+      <h5><a href="https://mse.site.nthu.edu.tw/" target="_blank">&#10148 清大材料</a></h5>
+    </header>
 
 </div>
 
 <script>
-    function openNav() {
-        document.getElementById("myNav").style.height = "100%";
-    }
-    function closeNav() {
-        document.getElementById("myNav").style.height = "0%";
-    }
+    function openNav() {
+        document.getElementById("myNav").style.height = "100%";
+    }
+    function closeNav() {
+        document.getElementById("myNav").style.height = "0%";
+    }
 </script>
 
 <section>
-    <div>
-        <div class="midcontent">
-            <ol id="news">
-                <li><a href=" https://innoaward.taiwan-healthcare.org/news_detail.php?REFDOCTYPID=0ppom83g7ixumxv6&REFDOCID=0t8fi4vi8db91r3b">賀!!本實驗室榮獲2025年國家新創獎-新創精進獎 環境科技與能源應用類，作品「具智慧演算法之手機操控多晶片可攜式氣體感測器」。(2026/1/6)</a></li>
-                <li><a href="https://innoaward.taiwan-healthcare.org/news_detail.php?REFDOCTYPID=0lmxlu04gimxds3l&REFDOCID=0t6a04jsw4bny1q9">本實驗室「商品化高靈敏度光激發臭氧感測器及感測模組」參加2025年台灣醫療科技展-InnoZone創新技術特展。(2025/12/4)</a></li>
-                <li>賀!!碩士班學姊吳昶昕榮獲2025材料年會壁報論文優等(2025/11/15)</li>
-                <li><a href="https://www.mrst.org.tw/page.aspx?pid=497&lang=cht">賀!!本實驗室榮獲2025華立創新材料大賽銅質獎，作品「以氧化銦奈米複合材料為基礎之商品化高靈敏度光激發式臭氧感測模組」。(2025/11/14)</a></li>
-                <li>賀!!碩士班學長葉晁銘畢業口試通過(2025/08/28)</li>
-                <li>賀!!碩士班學長吳尚儒、高沛君畢業口試通過(2025/07/24)</li>
-                <li>賀!!碩士班學長葉晁銘榮獲2024材料年會壁報論文優等(2024/11/25)</li>
-                <li>賀!!碩士班學長劉祐丞、林諺瓏畢業口試通過 (2024/07/23)</li>
-                <li>賀!!碩士班學長劉承恩、徐子軒畢業口試通過 (2024/07/18)</li>
-                <li><a href="https://innoaward.taiwan-healthcare.org/award_detail.php?REFDOCID=0s6o31cs3dc5ir1o">賀!!本實驗室榮獲第20屆國家新創獎學研新創組，作品「具智慧演算法之手機操控多晶片可攜式氣體感測器」。(2023/12/27)</a></li>
-                <li><a href="https://innoaward.taiwan-healthcare.org/news_detail.php?REFDOCTYPID=0lmxlu04gimxds3l&REFDOCID=0s4ih9lyq3mux56b">本實驗室可攜式氣體感測器參加2023年台灣醫療科技展-InnoZone創新技術特展，展期2023年11月30日至12月3日。(2023/11/30)</a></li>
-                <li>賀!!碩士班學長劉承恩榮獲2023材料年會壁報論文特優 (2023/11/19)</li>
-                <li><a href="https://www.mrst.org.tw/page.aspx?pid=467&lang=cht">賀!!本實驗室榮獲2023華立創新材料大賽銀質獎，作品「具智慧演算法之手機操控可攜式氣體感測器」。(2023/11/18)</a></li>
-                <li>賀!!碩士班學長尤偉丞、林冠穎畢業口試通過 (2023/07/27)</li>
-                <li>賀!!碩士班學長王大輔、洪承彬畢業口試通過 (2023/07/19)</li>
-                <li>賀!!博士班學長Thangapandian Murugesan畢業口試通過 (2023/5/22)</li>
-                <li>賀!!博士班學長Thangapandian Murugesan榮獲2022材料年會壁報論文特優 (2022/11/19)</li>
-                <li>賀!!碩士班學長高宇翔、學姐施宣如畢業口試通過 (2022/07/27)</li>
-                <li>賀!!博士班學長Rishi Ranjan Kumar畢業口試通過 (2022/07/19)</li>
-                <li>賀!!碩士班學長張庭維、陳伯証畢業口試通過 (2021/08/13)</li>
-                <li><a href="" target="_blank" Onclick="window.open('https://imgur.com/Dr8oD4g'),window.open('https://imgur.com/Rr7DwEY')" >本實驗室NO2氣體感測器參加國立臺灣科學教育館「在萬物相聯中對話-民生公共物聯網特展」，展期2020年12月18日至2021年5月9日。(展場照片連結)(2020/12/18)</a></li>
-                <li>賀!!博士班學長Rishi Ranjan Kumar榮獲2020材料年會研究生英文報告競賽佳作 (2020/11/07)</li>
-                <li><a href="https://www.icsstw.org/ICSS_2020/Home/AwardList"> 賀!!博士班學長Rishi Ranjan Kumar榮獲International Conference on Smart Sensors (ICSS) 2020 國際智慧感測器研討會Best Poster Award (2020/10/20) </a></li>
-                <li>賀!!碩士班學長顏敏修、徐正軒、許哲銘畢業口試通過 (2020/07/27)</li>
-                <li>賀!!博士班學長Rishi Ranjan Kumar榮獲第21屆工學院研究生論文競賽壁報展示組 第一名(2020/5/25)</li>
-                <li>賀!!碩士班學長Sachin畢業口試通過 (2020/01/09)</li>
-                <li><a href="http://web3.nmns.edu.tw/Project/Air/page1.php">  本實驗室NO2氣體感測器參加國家自然科學博物館網住好空氣特展，展期2019年12月11日至2020年6月7日。(2019/12/11)</a></li>
-                <li><a href="https://udn.com/news/story/7240/4206944"> 本實驗室參加2019資訊月環保署國產化感測元件展示，參展作品「手機操控NO2感測器」(2019/12/05)</a></li>
-                <li><a href="https://www.tairos.tw/visitorProductDetail.asp?no=48554">本實驗室參加2019台灣機器人與智慧自動化展，參展作品「手機操控可攜式氮氧化物氣體感測器」(2019/08/21)</a></li>
-                <li>賀!!碩士班學長陳煜杰、陳昱仁畢業口試通過 (2019/07/16)</li>
-                <li>賀!!碩士班學長姐朱昌珮、呂文忠、葉上銘畢業口試通過 (2018/07/16)</li>
-                <li>本實驗室徵求碩士級專任助理，工作內容為氣體感測器技術開發，工作期間為三個月至一年，意者請跟林老師聯絡(2018/05/31)</li>
-                <li>本實驗室自即日起更名為感測與光觸媒奈米材料實驗室 (2017/10/03)</li>
-                <li><a href="https://www.tca.org.tw/tca_news1.php?n=993&a=y">本實驗室參加2017國際發明展，參展作品「手機操控可攜式低濃度氣體感測器」(2017/09/28)</a></li>
-                <li>賀!!博士班學長洪力揚畢業口試通過 (2016/09/27)</li>
-                <li>賀!!碩士班學長柯賢文、蔡承恩畢業口試通過 (2016/07/27)</li>
-                <li>賀!!碩士班學長陳建華畢業口試通過 (2016/05/16)</li>
-                <li>賀!!洪力揚榮獲2015材料年會壁報論文佳作!!(2015/11/21)</li>
-                <li>賀!!碩士班學長江茂源畢業口試通過 (2015/07/8)</li>
-                <li>賀!!碩士班學長姊張永祥、王俐雲、洪千雅畢業口試通過 (2014/07/25)</li>				
-                <li>賀!!博士班學長張展豪畢業口試通過 (2014/07/15)</li>
-                <li>賀!!洪力揚榮獲2013材料年會壁報論文優等!!(2013/10/23)</li>
-                <li>賀!!張展豪榮獲2013材料年會壁報論文佳作!!(2013/10/23)</li>
-                <li>賀!!張耕銘榮獲102學年度大學部研究論文競賽優等!!(2013/10/05)</li>
-                <li>賀!!劉人溥榮獲102學年度大學部研究論文競賽佳作!!(2013/10/05)</li>
-                <li>賀!!碩士班學長陳薇宇、陳信宏畢業口試通過 (2013/7/17)</li>
-                <li>賀!!碩士班學長羅盛永、洪力揚畢業口試通過 (2012/7/25)</li>
-                <li>賀!!碩士班學長王景弘畢業口試通過 (2011/7/21)</li>
-                <li>賀!!碩士班學長李彥錞、黃小倩畢業口試通過 (2011/7/5)</li>
-                <li>賀!!鄭宜驊榮獲2011年物理年會壁報論文優良獎 (2011/1/27)</li>					
-                <li>賀!!碩士班學姊鄭宜驊畢業口試通過 (2011/1/18)</li>
-                <li>賀!!博士班學姊陳香安畢業口試通過 (2010/11/27)</li>
-                <li>賀!!碩二學長林佛儒、黃博雍、龍俊良畢業口試通過 (2010/6/17)</li>
-                <li>賀!!黃博雍榮獲第十一屆工學院研究生論文競賽壁報展示組 佳作（2010/5/25）</li>
-                <li>賀!!林佛儒榮獲2010年第十六屆化學感測器科技研討會 壁報組佳作（2010/5/23）</li>
-                <li>賀!!陳香安榮獲2010年物理年會壁報論文優良獎(2010/5/18)</li>
-                <li>賀!!博士班學姊林欣瑜畢業口試通過(2009/10/16)</li>
-                <li>賀!!博士班學長何恕德畢業口試通過(2009/8/31)</li>
-                <li>賀!!碩二學長蕭景倫畢業口試通過(2009/6/9)</li>
-                <li>林欣瑜赴美國聖母大學化學與生醫分子學系訪問研究半年(2009/3/13)</li>				
-                <li>賀!!林欣瑜獲國科會97年度補助博士生赴國外研究獎學金(2008/11/28)</li>
-                <li>賀!!碩二學長黃志翰畢業口試通過(2008/6/18)</li>
-                <li>賀!!黃志翰榮獲工學院研究生論文競賽壁報展示組佳作(2008/6/13)</li>
-                <li>何恕德赴美國西北大學材料系訪問研究一年(2008/6/4)</li>
-                <li>賀!!林欣瑜獲2008年第十四屆化學感測器年會壁報論文優勝(2008/5/14)</li>
-                <li>賀!!黃志翰榮獲工學院壁報論文競賽材料系初審第一名(2008/4/23)</li>
-                <li>賀!!何恕德榮獲96年度菁英留學計畫－專案擴增留學獎學金(2007/11/30)</li>
-                <li>美國亞歷桑納州立大學曾安培教授來訪(2007/11/25)</li>
-                <li>賀!!何恕德榮獲2007材料年會壁報論文優等!!(2007/11/20)</li>
-                <li>美國西北大學張邦衡教授來訪(2007/09/10)</li>
-                <li>賀!!何恕德學長與陳香安學姊通過博士班資格考(2007/06/25)</li>
-                <li>賀!!恭賀碩二學長姊畢業口試通過 (2007/05/26)</li>
-                <li>賀!!蘇展祿榮獲台灣應用材料矽谷之旅以及聯華電子校園獎學金!!(2005/12/6)</li>
-                <li>賀!!廖健順榮獲2005材料年會壁報論文優等!!(2005/11/27)</li>
-                <li>本實驗室招收材料系及相關科系背景大三專題生(2005/10/06)</li>
-                <li>本實驗室自即日起更名為掃描探針奈米技術實驗室 (2004/10/26)</li>	
-            </ol>
-        </div>
-    </div>
+    <div>
+        <div class="midcontent">
+            <ol id="news">
+                <li><a href=" https://innoaward.taiwan-healthcare.org/news_detail.php?REFDOCTYPID=0ppom83g7ixumxv6&REFDOCID=0t8fi4vi8db91r3b">賀!!本實驗室榮獲2025年國家新創獎-新創精進獎 環境科技與能源應用類，作品「具智慧演算法之手機操控多晶片可攜式氣體感測器」。(2026/1/6)</a></li>
+                <li><a href="https://innoaward.taiwan-healthcare.org/news_detail.php?REFDOCTYPID=0lmxlu04gimxds3l&REFDOCID=0t6a04jsw4bny1q9">本實驗室「商品化高靈敏度光激發臭氧感測器及感測模組」參加2025年台灣醫療科技展-InnoZone創新技術特展。(2025/12/4)</a></li>
+                <li>賀!!碩士班學姊吳昶昕榮獲2025材料年會壁報論文優等(2025/11/15)</li>
+                <li><a href="https://www.mrst.org.tw/page.aspx?pid=497&lang=cht">賀!!本實驗室榮獲2025華立創新材料大賽銅質獎，作品「以氧化銦奈米複合材料為基礎之商品化高靈敏度光激發式臭氧感測模組」。(2025/11/14)</a></li>
+                <li>賀!!碩士班學長葉晁銘畢業口試通過(2025/08/28)</li>
+                <li>賀!!碩士班學長吳尚儒、高沛君畢業口試通過(2025/07/24)</li>
+                <li>賀!!碩士班學長葉晁銘榮獲2024材料年會壁報論文優等(2024/11/25)</li>
+                <li>賀!!碩士班學長劉祐丞、林諺瓏畢業口試通過 (2024/07/23)</li>
+                <li>賀!!碩士班學長劉承恩、徐子軒畢業口試通過 (2024/07/18)</li>
+                <li><a href="https://innoaward.taiwan-healthcare.org/award_detail.php?REFDOCID=0s6o31cs3dc5ir1o">賀!!本實驗室榮獲第20屆國家新創獎學研新創組，作品「具智慧演算法之手機操控多晶片可攜式氣體感測器」。(2023/12/27)</a></li>
+                <li><a href="https://innoaward.taiwan-healthcare.org/news_detail.php?REFDOCTYPID=0lmxlu04gimxds3l&REFDOCID=0s4ih9lyq3mux56b">本實驗室可攜式氣體感測器參加2023年台灣醫療科技展-InnoZone創新技術特展，展期2023年11月30日至12月3日。(2023/11/30)</a></li>
+                <li>賀!!碩士班學長劉承恩榮獲2023材料年會壁報論文特優 (2023/11/19)</li>
+                <li><a href="https://www.mrst.org.tw/page.aspx?pid=467&lang=cht">賀!!本實驗室榮獲2023華立創新材料大賽銀質獎，作品「具智慧演算法之手機操控可攜式氣體感測器」。(2023/11/18)</a></li>
+                <li>賀!!碩士班學長尤偉丞、林冠穎畢業口試通過 (2023/07/27)</li>
+                <li>賀!!碩士班學長王大輔、洪承彬畢業口試通過 (2023/07/19)</li>
+                <li>賀!!博士班學長Thangapandian Murugesan畢業口試通過 (2023/5/22)</li>
+                <li>賀!!博士班學長Thangapandian Murugesan榮獲2022材料年會壁報論文特優 (2022/11/19)</li>
+                <li>賀!!碩士班學長高宇翔、學姐施宣如畢業口試通過 (2022/07/27)</li>
+                <li>賀!!博士班學長Rishi Ranjan Kumar畢業口試通過 (2022/07/19)</li>
+                <li>賀!!碩士班學長張庭維、陳伯証畢業口試通過 (2021/08/13)</li>
+                <li><a href="" target="_blank" Onclick="window.open('https://imgur.com/Dr8oD4g'),window.open('https://imgur.com/Rr7DwEY')" >本實驗室NO2氣體感測器參加國立臺灣科學教育館「在萬物相聯中對話-民生公共物聯網特展」，展期2020年12月18日至2021年5月9日。(展場照片連結)(2020/12/18)</a></li>
+                <li>賀!!博士班學長Rishi Ranjan Kumar榮獲2020材料年會研究生英文報告競賽佳作 (2020/11/07)</li>
+                <li><a href="https://www.icsstw.org/ICSS_2020/Home/AwardList"> 賀!!博士班學長Rishi Ranjan Kumar榮獲International Conference on Smart Sensors (ICSS) 2020 國際智慧感測器研討會Best Poster Award (2020/10/20) </a></li>
+                <li>賀!!碩士班學長顏敏修、徐正軒、許哲銘畢業口試通過 (2020/07/27)</li>
+                <li>賀!!博士班學長Rishi Ranjan Kumar榮獲第21屆工學院研究生論文競賽壁報展示組 第一名(2020/5/25)</li>
+                <li>賀!!碩士班學長Sachin畢業口試通過 (2020/01/09)</li>
+                <li><a href="http://web3.nmns.edu.tw/Project/Air/page1.php">  本實驗室NO2氣體感測器參加國家自然科學博物館網住好空氣特展，展期2019年12月11日至2020年6月7日。(2019/12/11)</a></li>
+                <li><a href="https://udn.com/news/story/7240/4206944"> 本實驗室參加2019資訊月環保署國產化感測元件展示，參展作品「手機操控NO2感測器」(2019/12/05)</a></li>
+                <li><a href="https://www.tairos.tw/visitorProductDetail.asp?no=48554">本實驗室參加2019台灣機器人與智慧自動化展，參展作品「手機操控可攜式氮氧化物氣體感測器」(2019/08/21)</a></li>
+                <li>賀!!碩士班學長陳煜杰、陳昱仁畢業口試通過 (2019/07/16)</li>
+                <li>賀!!碩士班學長姐朱昌珮、呂文忠、葉上銘畢業口試通過 (2018/07/16)</li>
+                <li>本實驗室徵求碩士級專任助理，工作內容為氣體感測器技術開發，工作期間為三個月至一年，意者請跟林老師聯絡(2018/05/31)</li>
+                <li>本實驗室自即日起更名為感測與光觸媒奈米材料實驗室 (2017/10/03)</li>
+                <li><a href="https://www.tca.org.tw/tca_news1.php?n=993&a=y">本實驗室參加2017國際發明展，參展作品「手機操控可攜式低濃度氣體感測器」(2017/09/28)</a></li>
+                <li>賀!!博士班學長洪力揚畢業口試通過 (2016/09/27)</li>
+                <li>賀!!碩士班學長柯賢文、蔡承恩畢業口試通過 (2016/07/27)</li>
+                <li>賀!!碩士班學長陳建華畢業口試通過 (2016/05/16)</li>
+                <li>賀!!洪力揚榮獲2015材料年會壁報論文佳作!!(2015/11/21)</li>
+                <li>賀!!碩士班學長江茂源畢業口試通過 (2015/07/8)</li>
+                <li>賀!!碩士班學長姊張永祥、王俐雲、洪千雅畢業口試通過 (2014/07/25)</li>				
+                <li>賀!!博士班學長張展豪畢業口試通過 (2014/07/15)</li>
+                <li>賀!!洪力揚榮獲2013材料年會壁報論文優等!!(2013/10/23)</li>
+                <li>賀!!張展豪榮獲2013材料年會壁報論文佳作!!(2013/10/23)</li>
+                <li>賀!!張耕銘榮獲102學年度大學部研究論文競賽優等!!(2013/10/05)</li>
+                <li>賀!!劉人溥榮獲102學年度大學部研究論文競賽佳作!!(2013/10/05)</li>
+                <li>賀!!碩士班學長陳薇宇、陳信宏畢業口試通過 (2013/7/17)</li>
+                <li>賀!!碩士班學長羅盛永、洪力揚畢業口試通過 (2012/7/25)</li>
+                <li>賀!!碩士班學長王景弘畢業口試通過 (2011/7/21)</li>
+                <li>賀!!碩士班學長李彥錞、黃小倩畢業口試通過 (2011/7/5)</li>
+                <li>賀!!鄭宜驊榮獲2011年物理年會壁報論文優良獎 (2011/1/27)</li>					
+                <li>賀!!碩士班學姊鄭宜驊畢業口試通過 (2011/1/18)</li>
+                <li>賀!!博士班學姊陳香安畢業口試通過 (2010/11/27)</li>
+                <li>賀!!碩二學長林佛儒、黃博雍、龍俊良畢業口試通過 (2010/6/17)</li>
+                <li>賀!!黃博雍榮獲第十一屆工學院研究生論文競賽壁報展示組 佳作（2010/5/25）</li>
+                <li>賀!!林佛儒榮獲2010年第十六屆化學感測器科技研討會 壁報組佳作（2010/5/23）</li>
+                <li>賀!!陳香安榮獲2010年物理年會壁報論文優良獎(2010/5/18)</li>
+                <li>賀!!博士班學姊林欣瑜畢業口試通過(2009/10/16)</li>
+                <li>賀!!博士班學長何恕德畢業口試通過(2009/8/31)</li>
+                <li>賀!!碩二學長蕭景倫畢業口試通過(2009/6/9)</li>
+                <li>林欣瑜赴美國聖母大學化學與生醫分子學系訪問研究半年(2009/3/13)</li>				
+                <li>賀!!林欣瑜獲國科會97年度補助博士生赴國外研究獎學金(2008/11/28)</li>
+                <li>賀!!碩二學長黃志翰畢業口試通過(2008/6/18)</li>
+                <li>賀!!黃志翰榮獲工學院研究生論文競賽壁報展示組佳作(2008/6/13)</li>
+                <li>何恕德赴美國西北大學材料系訪問研究一年(2008/6/4)</li>
+                <li>賀!!林欣瑜獲2008年第十四屆化學感測器年會壁報論文優勝(2008/5/14)</li>
+                <li>賀!!黃志翰榮獲工學院壁報論文競賽材料系初審第一名(2008/4/23)</li>
+                <li>賀!!何恕德榮獲96年度菁英留學計畫－專案擴增留學獎學金(2007/11/30)</li>
+                <li>美國亞歷桑納州立大學曾安培教授來訪(2007/11/25)</li>
+                <li>賀!!何恕德榮獲2007材料年會壁報論文優等!!(2007/11/20)</li>
+                <li>美國西北大學張邦衡教授來訪(2007/09/10)</li>
+                <li>賀!!何恕德學長與陳香安學姊通過博士班資格考(2007/06/25)</li>
+                <li>賀!!恭賀碩二學長姊畢業口試通過 (2007/05/26)</li>
+                <li>賀!!蘇展祿榮獲台灣應用材料矽谷之旅以及聯華電子校園獎學金!!(2005/12/6)</li>
+                <li>賀!!廖健順榮獲2005材料年會壁報論文優等!!(2005/11/27)</li>
+                <li>本實驗室招收材料系及相關科系背景大三專題生(2005/10/06)</li>
+                <li>本實驗室自即日起更名為掃描探針奈米技術實驗室 (2004/10/26)</li>	
+            </ol>
+        </div>
+    </div>
 </section>
 
 <aside>
 </aside>
 
 <footer id="main-footer">
-    <hr>
-    <p>
-        電話：(03) 5715131-33812 &nbsp &nbsp 地址：材料實驗館 206 室 
-    <br>
-        Copyright &copy; 2019 國立清華大學材料系	感測與光觸媒奈米材料實驗室
-    </p>
+    <hr>
+    <p>
+        電話：(03) 5715131-33812 &nbsp &nbsp 地址：材料實驗館 206 室 
+    <br>
+        Copyright &copy; 2019 國立清華大學材料系	感測與光觸媒奈米材料實驗室
+    </p>
 </footer>
 
 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
