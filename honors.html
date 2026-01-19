@@ -35,49 +35,50 @@
         }
 
         /* ============================
-           2. 內容區塊設定 (強制靠左)
-           【這次的修正重點】
+           2. 內容區塊設定
            ============================ */
         .midcontent {
             float: none !important;
             display: block !important; 
             width: 100% !important;
-            
-            /* 【修改】移除原本的置中與寬度限制，讓它貼齊左邊 */
             margin: 0 !important;
             max-width: none !important; 
-            
-            /* 確保文字靠左 */
             text-align: left !important;
         }
         
-        /* 列表樣式設定 */
+        /* 【關鍵修改區】只針對 id="news" 的列表進行設定 
+           這會影響所有的清單項目 (那76點)
+        */
         #news {
             display: block !important;
             text-align: left !important;    
-            padding-left: 20px !important;  /* 左邊縮排，不用太多，讓點點靠左 */
+            padding-left: 20px !important;  
             padding-right: 20px !important; 
             margin-top: 20px !important;    
-            line-height: 1.8;
+            
+            /* 修改 1：文字加粗 */
+            font-weight: bold !important;   
+            
+            /* 修改 2：縮小行高 (讓多行文字靠得緊一點) */
+            line-height: 1.4 !important;    
             font-size: 16px;
         }
 
         #news li {
             text-align: left !important;    
-            margin-bottom: 15px;            
-            list-style-position: outside; /* 點點在文字框外，對齊更整齊 */ 
+            list-style-position: outside; 
+            
+            /* 修改 3：縮小每一點之間的距離 (原本是 15px) */
+            margin-bottom: 8px !important;  
         }
 
         /* ============================
-           3. 選單層級修正
+           3. 其他通用設定 (選單、標題、手機版)
            ============================ */
         .overlaynav {
             z-index: 2000 !important;
         }
 
-        /* ============================
-           4. 電腦版：標題置中設定
-           ============================ */
         #main-header {
             display: flex !important;
             flex-direction: column !important;
@@ -106,7 +107,6 @@
             padding: 5px 10px !important;
         }
 
-        /* 漢堡按鈕圖示 */
         .openoverlaynav {
             position: absolute !important;
             right: 20px;
@@ -117,9 +117,6 @@
             font-size: 30px;
         }
 
-        /* ============================
-           5. 手機版專用設定
-           ============================ */
         @media only screen and (max-width: 800px) {
             .openoverlaynav {
                 top: 15px !important;       
