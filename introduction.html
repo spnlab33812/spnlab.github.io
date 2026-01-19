@@ -6,165 +6,165 @@
 	<meta http-equiv="Content-Language" content="zh-tw,en">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="style.css" rel="stylesheet" type="text/css">
-    
-    <style>
-        /* ============================
-           1. 電腦版選單強制一行
-           ============================ */
-        .Big-overlaynav-content {
-            display: flex !important;       
-            justify-content: center !important; 
-            flex-wrap: nowrap !important;   
-            width: 100% !important;         
-        }
+    <link href="style.css" rel="stylesheet" type="text/css">
+    
+    <style>
+        /* -----------------------------------------------------------
+           1. 強力修復：電腦版選單強制一行
+        ----------------------------------------------------------- */
+        .Big-overlaynav-content {
+            display: flex !important;       
+            justify-content: center !important; 
+            flex-wrap: nowrap !important;   /* 【關鍵】禁止換行 */
+            width: 100% !important;         
+            margin: 0 auto !important;
+        }
 
-        .Big-overlaynav-content a {
-            width: auto !important;         
-            flex: 1 1 auto !important;      
-            display: block !important;
-            float: none !important;         
-            margin: 0 !important;           
-            white-space: nowrap !important; 
-            padding: 10px 0 !important;     
-        }
+        .Big-overlaynav-content a {
+            width: auto !important;         /* 取消固定寬度 */
+            flex: 1 1 auto !important;      /* 自動分配空間 */
+            display: block !important;
+            float: none !important;         
+            margin: 0 !important;           
+            white-space: nowrap !important; /* 禁止文字折行 */
+            padding: 10px 0 !important;     
+            text-align: center !important;
+        }
 
-        .Big-overlaynav-content a:hover {
-            background-color: coral !important;
-            width: auto !important; 
-        }
+        .Big-overlaynav-content a:hover {
+            background-color: coral !important;
+            width: auto !important; 
+        }
 
-        /* ============================
-           2. 選單層級修正
-           ============================ */
-        .overlaynav {
-            z-index: 2000 !important;
-        }
+        /* -----------------------------------------------------------
+           2. 強力修復：大標題置中
+        ----------------------------------------------------------- */
+        #main-header {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important; /* 【關鍵】水平置中 */
+            justify-content: center !important;
+            text-align: center !important; 
+            padding-left: 0 !important;   
+            padding-right: 0 !important;
+            width: 100% !important;
+            position: relative; 
+            min-height: 80px;
+        }
+        
+        #logo {
+            width: 100% !important;        
+            margin: 0 auto !important;     
+            float: none !important;        
+            display: block !important;
+            text-align: center !important;
+        }
 
-        /* ============================
-           3. 電腦版：網站大標題置中設定
-           ============================ */
-        #main-header {
-            display: flex !important;
-            flex-direction: column !important;
-            align-items: center !important;
-            justify-content: center !important;
-            text-align: center !important; 
-            padding-left: 0 !important;   
-            padding-right: 0 !important;
-            position: relative; 
-            min-height: 80px;
-        }
-        
-        #logo {
-            width: 100% !important;        
-            max-width: 100% !important;    
-            margin: 0 auto !important;     
-            float: none !important;        
-            display: block !important;
-        }
+        #logo h1, #logo h3 {
+            text-align: center !important;
+            width: 100% !important;
+            margin: 0 auto !important;
+            padding: 5px 0 !important;
+            display: block !important;
+        }
 
-        #logo h1, #logo h3 {
-            text-align: center !important;
-            width: 100% !important;
-            margin-left: auto !important;
-            margin-right: auto !important;
-            padding: 5px 10px !important;
-        }
+        /* 選單層級修正 */
+        .overlaynav {
+            z-index: 2000 !important;
+        }
 
-        /* 漢堡按鈕圖示 */
-        .openoverlaynav {
-            position: absolute !important;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 1000;
-            cursor: pointer;
-            font-size: 30px;
-        }
+        /* 漢堡按鈕圖示 */
+        .openoverlaynav {
+            position: absolute !important;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            cursor: pointer;
+            font-size: 30px;
+        }
 
-        /* ============================
-           4. 手機版專用設定
-           ============================ */
-        @media only screen and (max-width: 800px) {
-            .openoverlaynav {
-                top: 15px !important;       
-                right: 20px !important;     
-                transform: none !important; 
-            }
+        /* -----------------------------------------------------------
+           3. 手機版專用設定
+        ----------------------------------------------------------- */
+        @media only screen and (max-width: 800px) {
+            .openoverlaynav {
+                top: 15px !important;       
+                right: 20px !important;     
+                transform: none !important; 
+            }
 
-            #main-header {
-                padding-top: 50px !important; 
-                padding-bottom: 20px !important;
-            }
+            #main-header {
+                padding-top: 50px !important; 
+                padding-bottom: 20px !important;
+            }
 
-            #logo { padding: 0 10px !important; }
-            #logo h1 { font-size: 1.5em !important; }
-            #logo h3 { font-size: 1em !important; }
-        }
-    </style>
+            #logo { padding: 0 10px !important; }
+            #logo h1 { font-size: 1.5em !important; }
+            #logo h3 { font-size: 1em !important; }
+        }
+    </style>
 </head>
 
 <body>
 <div class="main">
 
 	<header id="main-header">
-      <div id="logo">
-        <h1><a href="index.html">感測與光觸媒奈米材料實驗室</a></h1>
-        <h3><a href="index.html">Sensing and Photocatalysis Nanomaterials Laboratory</a></h3>
-      </div>
-      <span class="openoverlaynav" onclick="openNav()">&#9776;</span>
-    </header>
+      <div id="logo">
+        <h1><a href="index.html">感測與光觸媒奈米材料實驗室</a></h1>
+        <h3><a href="index.html">Sensing and Photocatalysis Nanomaterials Laboratory</a></h3>
+      </div>
+      <span class="openoverlaynav" onclick="openNav()">&#9776;</span>
+    </header>
 
-        <div class="Big-overlaynav">
-      <div class="Big-overlaynav-content">
-        <a href="news.html">最新消息</a>
-        <a href="introduction.html">實驗室簡介</a>
-        <a href="honors.html">榮譽事項</a>         <a href="professor.html">指導教授</a>
-        <a href="paper.html">論文發表</a>
-        <a href="research.html">研究方向</a>
-        <a href="result.html">研究成果</a>
-        <a href="members.html">實驗室成員</a>
-      </div>
-    </div>
+    <div class="Big-overlaynav">
+      <div class="Big-overlaynav-content">
+        <a href="news.html">最新消息</a>
+        <a href="introduction.html">實驗室簡介</a>
+        <a href="honors.html">榮譽事項</a> <a href="professor.html">指導教授</a>
+        <a href="paper.html">論文發表</a>
+        <a href="research.html">研究方向</a>
+        <a href="result.html">研究成果</a>
+        <a href="members.html">實驗室成員</a>
+      </div>
+    </div>
 
-        <div id="myNav" class="overlaynav">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <div class="overlaynav-content">
-        <a href="news.html">最新消息</a>
-        <a href="introduction.html">實驗室簡介</a>
-        <a href="honors.html">榮譽事項</a>         <a href="professor.html">指導教授</a>
-        <a href="paper.html">論文發表</a>
-        <a href="research.html">研究方向</a>
-        <a href="result.html">研究成果</a>
-        <a href="members.html">實驗室成員</a>
-      </div>
-    </div>
+    <div id="myNav" class="overlaynav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <div class="overlaynav-content">
+        <a href="news.html">最新消息</a>
+        <a href="introduction.html">實驗室簡介</a>
+        <a href="honors.html">榮譽事項</a> <a href="professor.html">指導教授</a>
+        <a href="paper.html">論文發表</a>
+        <a href="research.html">研究方向</a>
+        <a href="result.html">研究成果</a>
+        <a href="members.html">實驗室成員</a>
+      </div>
+    </div>
 
-    <header id="sub-header">
-      <h5><a href="https://mse.site.nthu.edu.tw/" target="_blank">&#10148 清大材料</a></h5>
-    </header>
+    <header id="sub-header">
+      <h5><a href="https://mse.site.nthu.edu.tw/" target="_blank">&#10148 清大材料</a></h5>
+    </header>
 
 </div>
 
 <script>
-    function openNav() {
-      document.getElementById("myNav").style.height = "100%";
-    }
-    function closeNav() {
-      document.getElementById("myNav").style.height = "0%";
-    }
+    function openNav() {
+      document.getElementById("myNav").style.height = "100%";
+    }
+    function closeNav() {
+      document.getElementById("myNav").style.height = "0%";
+    }
 </script>
 
 	<section>
 		<div>
-            <div class="content">
+            <div class="content">
 				<h1>感測與光觸媒奈米材料實驗室</h1>
 				<p>
 					本實驗室前名為掃描探針奈米技術實驗室，過去主要研究方向為掃描探針顯微術(SPM)，以及在奈米檢測及奈米微影的應用，在薄膜材料奈米表面電子及光學特性、奈米材料選區成長、奈米金屬點線光學特性等等，有諸多研究成果。近幾年來，因應能源及環境研究的蓬勃發展，實驗室的主要研究方向轉為氧化物奈米複合材料成長，及應用於感測及光觸媒，目前主要研究題目有，氮氧化物氣體感測、有機汙染物光分解、抗菌滅菌等等，竭誠歡迎優秀學子加入我們的行列。
 				</p>
 			</div>
-
 		</div>
 	</section>
 
