@@ -9,24 +9,26 @@
     <link href="style.css" rel="stylesheet" type="text/css">
     
     <style>
-        /* ============================
-           1. 電腦版選單強制一行
-           ============================ */
+        /* -----------------------------------------------------------
+           1. 強力修復：電腦版選單強制一行
+        ----------------------------------------------------------- */
         .Big-overlaynav-content {
             display: flex !important;       
             justify-content: center !important; 
-            flex-wrap: nowrap !important;   
+            flex-wrap: nowrap !important;   /* 禁止換行 */
             width: 100% !important;         
+            margin: 0 auto !important;
         }
 
         .Big-overlaynav-content a {
-            width: auto !important;         
-            flex: 1 1 auto !important;      
+            width: auto !important;         /* 取消固定寬度 */
+            flex: 1 1 auto !important;      /* 自動分配空間 */
             display: block !important;
             float: none !important;         
             margin: 0 !important;           
-            white-space: nowrap !important; 
+            white-space: nowrap !important; /* 禁止文字折行 */
             padding: 10px 0 !important;     
+            text-align: center !important;
         }
 
         .Big-overlaynav-content a:hover {
@@ -34,45 +36,63 @@
             width: auto !important; 
         }
 
-        /* ============================
-           2. 選單層級修正
-           ============================ */
-        .overlaynav {
-            z-index: 2000 !important;
-        }
-
-        /* ============================
-           3. 電腦版：標題置中設定
-           ============================ */
+        /* -----------------------------------------------------------
+           2. 強力修復：大標題置中
+        ----------------------------------------------------------- */
         #main-header {
             display: flex !important;
             flex-direction: column !important;
-            align-items: center !important;
+            align-items: center !important; /* 水平置中 */
             justify-content: center !important;
             text-align: center !important; 
             padding-left: 0 !important;   
             padding-right: 0 !important;
+            width: 100% !important;
             position: relative; 
             min-height: 80px;
         }
         
         #logo {
             width: 100% !important;        
-            max-width: 100% !important;    
             margin: 0 auto !important;     
             float: none !important;        
             display: block !important;
+            text-align: center !important;
         }
 
         #logo h1, #logo h3 {
             text-align: center !important;
             width: 100% !important;
-            margin-left: auto !important;
-            margin-right: auto !important;
-            padding: 5px 10px !important;
+            margin: 0 auto !important;
+            padding: 5px 0 !important;
+            display: block !important;
         }
 
-        /* 漢堡按鈕圖示 */
+        /* -----------------------------------------------------------
+           3. 本頁專屬樣式 (保留原設定)
+        ----------------------------------------------------------- */
+        td ul {
+            list-style-position: inside;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* 教授照片 RWD 設定 */
+        .responsive-img {
+            width: 90%;
+            max-width: 350px;
+            height: auto;
+            display: block;
+            margin: auto;
+        }
+
+        /* -----------------------------------------------------------
+           4. 其他通用設定 & 手機版
+        ----------------------------------------------------------- */
+        .overlaynav {
+            z-index: 2000 !important;
+        }
+
         .openoverlaynav {
             position: absolute !important;
             right: 20px;
@@ -83,9 +103,6 @@
             font-size: 30px;
         }
 
-        /* ============================
-           4. 手機版專用設定
-           ============================ */
         @media only screen and (max-width: 800px) {
             .openoverlaynav {
                 top: 15px !important;       
@@ -101,28 +118,8 @@
             #logo { padding: 0 10px !important; }
             #logo h1 { font-size: 1.5em !important; }
             #logo h3 { font-size: 1em !important; }
-        }
 
-        /* ============================
-           5. 指導教授頁面專屬 CSS
-           (從原本表格內的 style 移出來的，保持乾淨)
-           ============================ */
-        td ul {
-            list-style-position: inside;
-            margin: 0;
-            padding: 0;
-        }
-        
-        /* 教授照片 RWD 設定 */
-        .responsive-img {
-            width: 90%;
-            max-width: 350px;
-            height: auto;
-            display: block;
-            margin: auto;
-        }
-        
-        @media (max-width: 600px) {
+            /* 教授照片手機版 */
             .responsive-img {
                 max-width: 100%;
                 width: 100%;
@@ -146,11 +143,10 @@
       <div class="Big-overlaynav-content">
         <a href="news.html">最新消息</a>
         <a href="introduction.html">實驗室簡介</a>
-        <a href="professor.html">指導教授</a>
+        <a href="honors.html">榮譽事項</a> <a href="professor.html">指導教授</a>
         <a href="paper.html">論文發表</a>
         <a href="research.html">研究方向</a>
         <a href="result.html">研究成果</a>
-        <a href="honors.html">榮譽事項</a>
         <a href="members.html">實驗室成員</a>
       </div>
     </div>
@@ -160,11 +156,10 @@
       <div class="overlaynav-content">
         <a href="news.html">最新消息</a>
         <a href="introduction.html">實驗室簡介</a>
-        <a href="professor.html">指導教授</a>
+        <a href="honors.html">榮譽事項</a> <a href="professor.html">指導教授</a>
         <a href="paper.html">論文發表</a>
         <a href="research.html">研究方向</a>
         <a href="result.html">研究成果</a>
-        <a href="honors.html">榮譽事項</a>
         <a href="members.html">實驗室成員</a>
       </div>
     </div>
