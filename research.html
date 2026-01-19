@@ -9,24 +9,26 @@
     <link href="style.css" rel="stylesheet" type="text/css">
     
     <style>
-        /* ============================
-           1. 電腦版選單強制一行
-           ============================ */
+        /* -----------------------------------------------------------
+           1. 強力修復：電腦版選單強制一行
+        ----------------------------------------------------------- */
         .Big-overlaynav-content {
             display: flex !important;       
             justify-content: center !important; 
-            flex-wrap: nowrap !important;   
+            flex-wrap: nowrap !important;   /* 禁止換行 */
             width: 100% !important;         
+            margin: 0 auto !important;
         }
 
         .Big-overlaynav-content a {
-            width: auto !important;         
-            flex: 1 1 auto !important;      
+            width: auto !important;         /* 取消固定寬度 */
+            flex: 1 1 auto !important;      /* 自動分配空間 */
             display: block !important;
             float: none !important;         
             margin: 0 !important;           
-            white-space: nowrap !important; 
+            white-space: nowrap !important; /* 禁止文字折行 */
             padding: 10px 0 !important;     
+            text-align: center !important;
         }
 
         .Big-overlaynav-content a:hover {
@@ -34,45 +36,45 @@
             width: auto !important; 
         }
 
-        /* ============================
-           2. 選單層級修正
-           ============================ */
-        .overlaynav {
-            z-index: 2000 !important;
-        }
-
-        /* ============================
-           3. 電腦版：網站大標題置中設定 (Logo)
-           ============================ */
+        /* -----------------------------------------------------------
+           2. 強力修復：大標題置中
+        ----------------------------------------------------------- */
         #main-header {
             display: flex !important;
             flex-direction: column !important;
-            align-items: center !important;
+            align-items: center !important; /* 水平置中 */
             justify-content: center !important;
             text-align: center !important; 
             padding-left: 0 !important;   
             padding-right: 0 !important;
+            width: 100% !important;
             position: relative; 
             min-height: 80px;
         }
         
         #logo {
             width: 100% !important;        
-            max-width: 100% !important;    
             margin: 0 auto !important;     
             float: none !important;        
             display: block !important;
+            text-align: center !important;
         }
 
         #logo h1, #logo h3 {
             text-align: center !important;
             width: 100% !important;
-            margin-left: auto !important;
-            margin-right: auto !important;
-            padding: 5px 10px !important;
+            margin: 0 auto !important;
+            padding: 5px 0 !important;
+            display: block !important;
         }
 
-        /* 漢堡按鈕圖示 */
+        /* -----------------------------------------------------------
+           3. 其他通用設定 & 手機版
+        ----------------------------------------------------------- */
+        .overlaynav {
+            z-index: 2000 !important;
+        }
+
         .openoverlaynav {
             position: absolute !important;
             right: 20px;
@@ -83,9 +85,6 @@
             font-size: 30px;
         }
 
-        /* ============================
-           4. 手機版專用設定
-           ============================ */
         @media only screen and (max-width: 800px) {
             .openoverlaynav {
                 top: 15px !important;       
@@ -103,7 +102,7 @@
             #logo h3 { font-size: 1em !important; }
         }
 
-        /* 讓內容區塊寬度適中，但我不對 h1 做任何設定，保留原狀 */
+        /* 內容區塊微調 */
         .content {
             width: 100%;
             max-width: 1200px;
@@ -128,11 +127,10 @@
       <div class="Big-overlaynav-content">
         <a href="news.html">最新消息</a>
         <a href="introduction.html">實驗室簡介</a>
-        <a href="professor.html">指導教授</a>
+        <a href="honors.html">榮譽事項</a> <a href="professor.html">指導教授</a>
         <a href="paper.html">論文發表</a>
         <a href="research.html">研究方向</a>
         <a href="result.html">研究成果</a>
-        <a href="honors.html">榮譽事項</a>
         <a href="members.html">實驗室成員</a>
       </div>
     </div>
@@ -142,11 +140,10 @@
       <div class="overlaynav-content">
         <a href="news.html">最新消息</a>
         <a href="introduction.html">實驗室簡介</a>
-        <a href="professor.html">指導教授</a>
+        <a href="honors.html">榮譽事項</a> <a href="professor.html">指導教授</a>
         <a href="paper.html">論文發表</a>
         <a href="research.html">研究方向</a>
         <a href="result.html">研究成果</a>
-        <a href="honors.html">榮譽事項</a>
         <a href="members.html">實驗室成員</a>
       </div>
     </div>
@@ -193,10 +190,8 @@
 							<td><img src="img/anti.JPG"><figcaption>氧化鋅奈米線抗菌試驗</figcaption></td>
 							<td>抗菌實驗中，將100μl的大腸桿菌菌液做為測試標的物，滴附在銅氧化物與氧化鋅奈米複合材料試片上，使用光強度約為1 mW/cm2的藍光LED燈管，做為光觸媒反應系統的光源，透過序列稀釋法，計數存活的大腸桿菌菌落數，進而得知大腸桿菌存活率。</td>
 						</tr>
-											
 					</table>
 				</div>
-
 			</div>
 		</div>
 	</section>
