@@ -69,9 +69,25 @@
         }
 
         /* -----------------------------------------------------------
-           3. 本頁專屬樣式 (保留原設定：輪播圖、表格)
+           3. 強力修復：下方表格置中 (修正跑到右邊的問題)
         ----------------------------------------------------------- */
-        /* 輪播圖設定 */
+        .midcontent {
+            float: none !important;
+            width: 100% !important;
+            display: block !important;      /* 改回 block 比較穩定 */
+            text-align: center !important;  /* 讓內部元素置中 */
+            margin: 0 !important;
+        }
+        
+        .midcontent table {
+            margin: 20px auto !important;   /* 上下20px，左右自動(置中) */
+            display: inline-table !important; /* 確保表格本身置中 */
+            text-align: left !important;    /* 表格內的文字靠左對齊 */
+        }
+
+        /* -----------------------------------------------------------
+           4. 輪播圖樣式
+        ----------------------------------------------------------- */
         .spn-carousel-container {
             position: relative;
             max-width: 1000px;
@@ -101,7 +117,6 @@
             max-height: 500px;
         }
 
-        /* 暫停/播放按鈕 */
         .spn-play-pause {
             position: absolute;
             bottom: 10px !important; 
@@ -122,7 +137,6 @@
             background-color: rgba(0, 0, 0, 0.9);
         }
 
-        /* 左右按鈕 */
         .spn-prev, .spn-next {
             cursor: pointer;
             position: absolute;
@@ -150,21 +164,8 @@
             background-color: rgba(0,0,0,0.8);
         }
 
-        /* 表格置中 */
-        .midcontent {
-            float: none !important;
-            width: 100% !important;
-            display: flex !important;
-            justify-content: center !important;
-            margin: 0 !important;
-        }
-        
-        .midcontent table {
-            margin: 20px auto !important;
-        }
-
         /* -----------------------------------------------------------
-           4. 其他通用設定 & 手機版
+           5. 其他通用設定 & 手機版
         ----------------------------------------------------------- */
         .overlaynav {
             z-index: 2000 !important;
