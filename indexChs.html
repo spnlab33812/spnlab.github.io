@@ -69,20 +69,44 @@
         }
 
         /* -----------------------------------------------------------
-           3. 強力修復：下方表格置中 (修正跑到右邊的問題)
+           3. 【關鍵修復】下方表格強制置中 (Fix Table Alignment)
+           改用 Flexbox 佈局，這會無視原本的 float 設定
         ----------------------------------------------------------- */
-        .midcontent {
-            float: none !important;
+        /* 確保外層容器不浮動且佔滿 */
+        section > div {
             width: 100% !important;
-            display: block !important;      /* 改回 block 比較穩定 */
-            text-align: center !important;  /* 讓內部元素置中 */
+            float: none !important;
+            display: block !important;
+        }
+
+        .midcontent {
+            /* 強制清除浮動 */
+            float: none !important;
+            
+            /* 使用 Flexbox 進行絕對置中 */
+            display: flex !important;
+            flex-direction: column !important; /* 垂直排列內容 */
+            align-items: center !important;    /* 水平置中 */
+            justify-content: center !important;
+            
+            /* 寬度設定 */
+            width: 100% !important;
+            max-width: 100% !important;
             margin: 0 !important;
+            padding: 20px 0 !important;
         }
         
         .midcontent table {
-            margin: 20px auto !important;   /* 上下20px，左右自動(置中) */
-            display: inline-table !important; /* 確保表格本身置中 */
-            text-align: left !important;    /* 表格內的文字靠左對齊 */
+            /* 表格本身不浮動 */
+            float: none !important;
+            margin: 0 auto !important;
+            
+            /* 表格內容文字靠左 (比較好讀) */
+            text-align: left !important;
+            
+            /* 避免表格被擠壓 */
+            width: auto !important;
+            max-width: 95% !important;
         }
 
         /* -----------------------------------------------------------
