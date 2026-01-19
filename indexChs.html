@@ -5,41 +5,73 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta http-equiv="Content-Language" content="zh-tw,en">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link href="style.css" rel="stylesheet" type="text/css">
+    
+    <link href="style.css" rel="stylesheet" type="text/css">
 
     <style>
-        /* ============================
-           1. 電腦版選單強制一行 (Menu Single Line Fix)
-           【這是這次修正的重點】
-           ============================ */
+        /* -----------------------------------------------------------
+           1. 強力修復：電腦版選單強制一行
+        ----------------------------------------------------------- */
         .Big-overlaynav-content {
-            display: flex !important;       /* 使用 Flexbox 排版 */
-            justify-content: center !important; /* 內容置中 */
-            flex-wrap: nowrap !important;   /* 強制禁止換行 */
-            width: 100% !important;         /* 寬度佔滿 */
+            display: flex !important;       
+            justify-content: center !important; 
+            flex-wrap: nowrap !important;   /* 禁止換行 */
+            width: 100% !important;         
+            margin: 0 auto !important;
         }
 
         .Big-overlaynav-content a {
-            width: auto !important;         /* 取消原本的固定百分比寬度 */
-            flex: 1 1 auto !important;      /* 讓每個選項「平均分配」空間 */
+            width: auto !important;         /* 取消固定寬度 */
+            flex: 1 1 auto !important;      /* 自動分配空間 */
             display: block !important;
-            float: none !important;         /* 清除可能的浮動 */
-            margin: 0 !important;           /* 清除邊距，避免擠壓 */
-            white-space: nowrap !important; /* 禁止文字換行 */
-            padding: 10px 0 !important;     /* 上下留白 */
+            float: none !important;         
+            margin: 0 !important;           
+            white-space: nowrap !important; /* 禁止文字折行 */
+            padding: 10px 0 !important;     
+            text-align: center !important;
         }
 
-        /* 滑鼠移過去的效果 */
         .Big-overlaynav-content a:hover {
             background-color: coral !important;
-            /* 移除原本的寬度變化，避免造成排版跳動 */
             width: auto !important; 
         }
 
-        /* ============================
-           2. 輪播圖設定 (Carousel Styles)
-           ============================ */
+        /* -----------------------------------------------------------
+           2. 強力修復：大標題置中
+        ----------------------------------------------------------- */
+        #main-header {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important; /* 水平置中 */
+            justify-content: center !important;
+            text-align: center !important; 
+            padding-left: 0 !important;   
+            padding-right: 0 !important;
+            width: 100% !important;
+            position: relative; 
+            min-height: 80px;
+        }
+        
+        #logo {
+            width: 100% !important;        
+            margin: 0 auto !important;     
+            float: none !important;        
+            display: block !important;
+            text-align: center !important;
+        }
+
+        #logo h1, #logo h3 {
+            text-align: center !important;
+            width: 100% !important;
+            margin: 0 auto !important;
+            padding: 5px 0 !important;
+            display: block !important;
+        }
+
+        /* -----------------------------------------------------------
+           3. 本頁專屬樣式 (保留原設定：輪播圖、表格)
+        ----------------------------------------------------------- */
+        /* 輪播圖設定 */
         .spn-carousel-container {
             position: relative;
             max-width: 1000px;
@@ -118,9 +150,7 @@
             background-color: rgba(0,0,0,0.8);
         }
 
-        /* ============================
-           3. 表格置中設定 (Table Centering)
-           ============================ */
+        /* 表格置中 */
         .midcontent {
             float: none !important;
             width: 100% !important;
@@ -133,45 +163,13 @@
             margin: 20px auto !important;
         }
 
-        /* ============================
-           4. 選單層級修正 (Menu Z-Index Fix)
-           ============================ */
+        /* -----------------------------------------------------------
+           4. 其他通用設定 & 手機版
+        ----------------------------------------------------------- */
         .overlaynav {
             z-index: 2000 !important;
         }
 
-        /* ============================
-           5. 電腦版：標題置中設定
-           ============================ */
-        #main-header {
-            display: flex !important;
-            flex-direction: column !important;
-            align-items: center !important;
-            justify-content: center !important;
-            text-align: center !important; 
-            padding-left: 0 !important;   
-            padding-right: 0 !important;
-            position: relative; 
-            min-height: 80px;
-        }
-        
-        #logo {
-            width: 100% !important;        
-            max-width: 100% !important;    
-            margin: 0 auto !important;     
-            float: none !important;        
-            display: block !important;
-        }
-
-        #logo h1, #logo h3 {
-            text-align: center !important;
-            width: 100% !important;
-            margin-left: auto !important;
-            margin-right: auto !important;
-            padding: 5px 10px !important;
-        }
-
-        /* 漢堡按鈕圖示 */
         .openoverlaynav {
             position: absolute !important;
             right: 20px;
@@ -182,9 +180,6 @@
             font-size: 30px;
         }
 
-        /* ============================
-           6. 手機版專用設定 (Mobile Fix)
-           ============================ */
         @media only screen and (max-width: 800px) {
             .openoverlaynav {
                 top: 15px !important;       
@@ -215,32 +210,30 @@
             <span class="openoverlaynav" onclick="openNav()">&#9776;</span>
     </header>
 
-        <div class="Big-overlaynav">
-      <div class="Big-overlaynav-content">
-        <a href="news.html">最新消息</a>
-        <a href="introduction.html">實驗室簡介</a>
-        <a href="professor.html">指導教授</a>
-        <a href="paper.html">論文發表</a>
-        <a href="research.html">研究方向</a>
-        <a href="result.html">研究成果</a>
-        <a href="honors.html">榮譽事項</a>
-        <a href="members.html">實驗室成員</a>
-      </div>
-    </div>
+    <div class="Big-overlaynav">
+      <div class="Big-overlaynav-content">
+        <a href="news.html">最新消息</a>
+        <a href="introduction.html">實驗室簡介</a>
+        <a href="honors.html">榮譽事項</a> <a href="professor.html">指導教授</a>
+        <a href="paper.html">論文發表</a>
+        <a href="research.html">研究方向</a>
+        <a href="result.html">研究成果</a>
+        <a href="members.html">實驗室成員</a>
+      </div>
+    </div>
 
-        <div id="myNav" class="overlaynav">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <div class="overlaynav-content">
-        <a href="news.html">最新消息</a>
-        <a href="introduction.html">實驗室簡介</a>
-        <a href="professor.html">指導教授</a>
-        <a href="paper.html">論文發表</a>
-        <a href="research.html">研究方向</a>
-        <a href="result.html">研究成果</a>
-        <a href="honors.html">榮譽事項</a>
-        <a href="members.html">實驗室成員</a>
-      </div>
-    </div>
+    <div id="myNav" class="overlaynav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <div class="overlaynav-content">
+        <a href="news.html">最新消息</a>
+        <a href="introduction.html">實驗室簡介</a>
+        <a href="honors.html">榮譽事項</a> <a href="professor.html">指導教授</a>
+        <a href="paper.html">論文發表</a>
+        <a href="research.html">研究方向</a>
+        <a href="result.html">研究成果</a>
+        <a href="members.html">實驗室成員</a>
+      </div>
+    </div>
 
         <header id="sub-header">
       <h5><a href="https://mse.site.nthu.edu.tw/" target="_blank">&#10148 清大材料</a></h5>
@@ -249,121 +242,117 @@
 </div>
 
 <script>
-    function openNav() {
-        document.getElementById("myNav").style.height = "100%";
-    }
-    function closeNav() {
-        document.getElementById("myNav").style.height = "0%";
-    }
+    function openNav() {
+        document.getElementById("myNav").style.height = "100%";
+    }
+    function closeNav() {
+        document.getElementById("myNav").style.height = "0%";
+    }
 </script>
 			
 <section>
-    <div class="spn-carousel-container">
-        <div class="spn-carousel-track" id="spnTrack">
+    <div class="spn-carousel-container">
+        <div class="spn-carousel-track" id="spnTrack">
 			<img src="img/2025年國家新創精進獎-1.png" alt="2025年國家新創精進獎">
 			<img src="img/2025年華立創新材料大賽銅質獎.png" alt="2025年華立創新材料大賽銅質獎">
 			<img src="img/2025年材料年會壁報論文優等.png" alt="2025年材料年會壁報論文優等">
-            <img src="img/新創獎頒獎1.png" alt="新創獎頒獎">
-            <img src="img/華立1.png" alt="華立">
-            <img src="img/Innozone1.png" alt="Innozone">
-            <img src="img/新創獎獎狀1.png" alt="新創獎獎狀">
-            <img src="img/2024材料年會獎狀.png" alt="2024材料年會獎狀">
-            <img src="img/年會獎狀1.png" alt="年會獎狀">
-        </div>
+            <img src="img/新創獎頒獎1.png" alt="新創獎頒獎">
+            <img src="img/華立1.png" alt="華立">
+            <img src="img/Innozone1.png" alt="Innozone">
+            <img src="img/新創獎獎狀1.png" alt="新創獎獎狀">
+            <img src="img/2024材料年會獎狀.png" alt="2024材料年會獎狀">
+            <img src="img/年會獎狀1.png" alt="年會獎狀">
+        </div>
 
-        <button class="spn-prev" onclick="plusSlides(-1)">&#10094;</button>
-        <button class="spn-next" onclick="plusSlides(1)">&#10095;</button>
-        
-        <button id="playPauseBtn" class="spn-play-pause" onclick="togglePlay()">&#10074;&#10074; 暫停</button>
-    </div>
+        <button class="spn-prev" onclick="plusSlides(-1)">&#10094;</button>
+        <button class="spn-next" onclick="plusSlides(1)">&#10095;</button>
+        
+        <button id="playPauseBtn" class="spn-play-pause" onclick="togglePlay()">&#10074;&#10074; 暫停</button>
+    </div>
 </section>
 
 <section>
-    <div>
-        <div class="midcontent">
-            <table cellspacing="2" cellpadding="10">
-                <tr><td colspan="2">感測與光觸媒奈米材料實驗室</td></tr>
-                <tr><td>指導教授</td>			<td>林鶴南(Heh-Nan Lin)</td></tr>
-                <tr><td>辦公室</td>			<td>材料實驗館201室</td></tr>
-                <tr><td>辦公室電話</td>			<td>(03)5715131 轉33811</td></tr>
-                <tr><td>電子信箱</td>			<td>hnlin@mx.nthu.edu.tw</td></tr>
-                <tr><td>實驗室</td>			<td>材料實驗館206室</td></tr>
-                <tr><td>實驗室電話</td>			<td>(03)5715131 轉33812</td></tr>
-            </table>
+    <div>
+        <div class="midcontent">
+            <table cellspacing="2" cellpadding="10">
+                <tr><td colspan="2">感測與光觸媒奈米材料實驗室</td></tr>
+                <tr><td>指導教授</td>			<td>林鶴南(Heh-Nan Lin)</td></tr>
+                <tr><td>辦公室</td>			<td>材料實驗館201室</td></tr>
+                <tr><td>辦公室電話</td>			<td>(03)5715131 轉33811</td></tr>
+                <tr><td>電子信箱</td>			<td>hnlin@mx.nthu.edu.tw</td></tr>
+                <tr><td>實驗室</td>			<td>材料實驗館206室</td></tr>
+                <tr><td>實驗室電話</td>			<td>(03)5715131 轉33812</td></tr>
+            </table>
 
-            <br><br><br><br>
-            
-        </div>
-    </div>
+            <br><br><br><br>
+            
+        </div>
+    </div>
 </section>
 
 <aside>
 </aside>
 
 <footer id="main-footer">
-    <hr>
-    <p>
-        電話：(03) 5715131-33812 &nbsp &nbsp 地址：材料實驗館 206 室 
-    <br>
-        Copyright &copy; 2019 國立清華大學材料系	感測與光觸媒奈米材料實驗室
-    </p>
+    <hr>
+    <p>
+        電話：(03) 5715131-33812 &nbsp &nbsp 地址：材料實驗館 206 室 
+    <br>
+        Copyright &copy; 2019 國立清華大學材料系	感測與光觸媒奈米材料實驗室
+    </p>
 </footer>
 
 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 <script src="myScript.js"></script>
 
 <script>
-    let slideIndex = 0;
-    let autoPlayTimer;
-    let isPlaying = true; 
-    const track = document.getElementById("spnTrack");
-    const slides = track.getElementsByTagName("img");
-    const totalSlides = slides.length;
-    const playBtn = document.getElementById("playPauseBtn");
+    let slideIndex = 0;
+    let autoPlayTimer;
+    let isPlaying = true; 
+    const track = document.getElementById("spnTrack");
+    const slides = track.getElementsByTagName("img");
+    const totalSlides = slides.length;
+    const playBtn = document.getElementById("playPauseBtn");
 
-    function showSlides(n) {
-        if (n >= totalSlides) { slideIndex = 0; }
-        else if (n < 0) { slideIndex = totalSlides - 1; }
-        else { slideIndex = n; }
+    function showSlides(n) {
+        if (n >= totalSlides) { slideIndex = 0; }
+        else if (n < 0) { slideIndex = totalSlides - 1; }
+        else { slideIndex = n; }
 
-        let offset = -slideIndex * 100; 
-        track.style.transform = `translateX(${offset}%)`;
-    }
+        let offset = -slideIndex * 100; 
+        track.style.transform = `translateX(${offset}%)`;
+    }
 
-    function plusSlides(n) {
-        showSlides(slideIndex + n);
-        if(isPlaying) resetTimer();
-    }
+    function plusSlides(n) {
+        showSlides(slideIndex + n);
+        if(isPlaying) resetTimer();
+    }
 
-    function startAutoPlay() {
-        autoPlayTimer = setInterval(function() {
-            plusSlides(1);
-        }, 3000);
-    }
+    function startAutoPlay() {
+        autoPlayTimer = setInterval(function() {
+            plusSlides(1);
+        }, 3000);
+    }
 
-    function togglePlay() {
-        if (isPlaying) {
-            clearInterval(autoPlayTimer);
-            playBtn.innerHTML = "&#9658; 播放";
-            isPlaying = false;
-        } else {
-            startAutoPlay();
-            playBtn.innerHTML = "&#10074;&#10074; 暫停";
-            isPlaying = true;
-        }
-    }
+    function togglePlay() {
+        if (isPlaying) {
+            clearInterval(autoPlayTimer);
+            playBtn.innerHTML = "&#9658; 播放";
+            isPlaying = false;
+        } else {
+            startAutoPlay();
+            playBtn.innerHTML = "&#10074;&#10074; 暫停";
+            isPlaying = true;
+        }
+    }
 
-    function resetTimer() {
-        clearInterval(autoPlayTimer);
-        startAutoPlay();
-    }
+    function resetTimer() {
+        clearInterval(autoPlayTimer);
+        startAutoPlay();
+    }
 
-    startAutoPlay();
+    startAutoPlay();
 </script>
 
 </body>
 </html>
-
-
-
-
