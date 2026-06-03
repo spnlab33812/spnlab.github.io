@@ -6,204 +6,204 @@
 	<meta http-equiv="Content-Language" content="zh-tw,en">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="style.css" rel="stylesheet" type="text/css">
-    <link href="style15.css" rel="stylesheet" type="text/css">
-    
-    <style>
-        /* -----------------------------------------------------------
-           1. 強力修復：電腦版選單強制一行
-        ----------------------------------------------------------- */
-        .Big-overlaynav-content {
-            display: flex !important;       
-            justify-content: center !important; 
-            flex-wrap: nowrap !important;   /* 禁止換行 */
-            width: 100% !important;         
-            margin: 0 auto !important;
-        }
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="style15.css" rel="stylesheet" type="text/css">
+    
+    <style>
+        /* -----------------------------------------------------------
+           1. 強力修復：電腦版選單強制一行
+        ----------------------------------------------------------- */
+        .Big-overlaynav-content {
+            display: flex !important;       
+            justify-content: center !important; 
+            flex-wrap: nowrap !important;   /* 禁止換行 */
+            width: 100% !important;         
+            margin: 0 auto !important;
+        }
 
-        .Big-overlaynav-content a {
-            width: auto !important;         /* 取消固定寬度 */
-            flex: 1 1 auto !important;      /* 自動分配空間 */
-            display: block !important;
-            float: none !important;         
-            margin: 0 !important;           
-            white-space: nowrap !important; /* 禁止文字折行 */
-            padding: 10px 0 !important;     
-            text-align: center !important;
-        }
+        .Big-overlaynav-content a {
+            width: auto !important;         /* 取消固定寬度 */
+            flex: 1 1 auto !important;      /* 自動分配空間 */
+            display: block !important;
+            float: none !important;         
+            margin: 0 !important;           
+            white-space: nowrap !important; /* 禁止文字折行 */
+            padding: 10px 0 !important;     
+            text-align: center !important;
+        }
 
-        .Big-overlaynav-content a:hover {
-            background-color: coral !important;
-            width: auto !important; 
-        }
+        .Big-overlaynav-content a:hover {
+            background-color: coral !important;
+            width: auto !important; 
+        }
 
-        /* -----------------------------------------------------------
-           2. 強力修復：大標題置中
-        ----------------------------------------------------------- */
-        #main-header {
-            display: flex !important;
-            flex-direction: column !important;
-            align-items: center !important; /* 水平置中 */
-            justify-content: center !important;
-            text-align: center !important; 
-            padding-left: 0 !important;   
-            padding-right: 0 !important;
-            width: 100% !important;
-            position: relative; 
-            min-height: 80px;
-        }
-        
-        #logo {
-            width: 100% !important;        
-            margin: 0 auto !important;     
-            float: none !important;        
-            display: block !important;
-            text-align: center !important;
-        }
+        /* -----------------------------------------------------------
+           2. 強力修復：大標題置中
+        ----------------------------------------------------------- */
+        #main-header {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important; /* 水平置中 */
+            justify-content: center !important;
+            text-align: center !important; 
+            padding-left: 0 !important;   
+            padding-right: 0 !important;
+            width: 100% !important;
+            position: relative; 
+            min-height: 80px;
+        }
+        
+        #logo {
+            width: 100% !important;        
+            margin: 0 auto !important;     
+            float: none !important;        
+            display: block !important;
+            text-align: center !important;
+        }
 
-        #logo h1, #logo h3 {
-            text-align: center !important;
-            width: 100% !important;
-            margin: 0 auto !important;
-            padding: 5px 0 !important;
-            display: block !important;
-        }
+        #logo h1, #logo h3 {
+            text-align: center !important;
+            width: 100% !important;
+            margin: 0 auto !important;
+            padding: 5px 0 !important;
+            display: block !important;
+        }
 
-        /* -----------------------------------------------------------
-           3. 本頁專屬樣式 (保留原設定)
-        ----------------------------------------------------------- */
-        table {
-            margin: 0 auto;
-        }
-        
-        #now_member img {
-            width: 75%;
-            border-radius: 10px;
-            padding: 5px;
-        }
+        /* -----------------------------------------------------------
+           3. 本頁專屬樣式 (保留原設定)
+        ----------------------------------------------------------- */
+        table {
+            margin: 0 auto;
+        }
+        
+        #now_member img {
+            width: 75%;
+            border-radius: 10px;
+            padding: 5px;
+        }
 
-        .tablink2 {
-            background-color: gray;
-            color: white;
-            float: left;
-            border: none;
-            outline: none;
-            cursor: pointer;
-            padding: 14px 16px;
-            font-size: 17px;
-            width: 33.333333%;
-        }
+        .tablink2 {
+            background-color: gray;
+            color: white;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            font-size: 17px;
+            width: 33.333333%;
+        }
 
-        .tablink2:hover {
-            background-color: steelblue;
-            color: white;
-        }
+        .tablink2:hover {
+            background-color: steelblue;
+            color: white;
+        }
 
-        .tabcontent2 {
-            margin-top: 16pt;
-            color: black;
-            display: none;
-            padding: 50px;
-            text-align: center;
-        }
+        .tabcontent2 {
+            margin-top: 16pt;
+            color: black;
+            display: none;
+            padding: 50px;
+            text-align: center;
+        }
 
-        #now_member { background-color: white; }
-        #old_member { background-color: white; }
-        #group_photos { background-color: white; }
-        
-        /* 讓已畢業成員表格文字靠左 */
-        #old_member.tabcontent2 td {
-            text-align: left;
-        }
+        #now_member { background-color: white; }
+        #old_member { background-color: white; }
+        #group_photos { background-color: white; }
+        
+        /* 讓已畢業成員表格文字靠左 */
+        #old_member.tabcontent2 td {
+            text-align: left;
+        }
 
-        /* -----------------------------------------------------------
-           4. 其他通用設定 & 手機版
-        ----------------------------------------------------------- */
-        .overlaynav {
-            z-index: 2000 !important;
-        }
+        /* -----------------------------------------------------------
+           4. 其他通用設定 & 手機版
+        ----------------------------------------------------------- */
+        .overlaynav {
+            z-index: 2000 !important;
+        }
 
-        .openoverlaynav {
-            position: absolute !important;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 1000;
-            cursor: pointer;
-            font-size: 30px;
-        }
+        .openoverlaynav {
+            position: absolute !important;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            cursor: pointer;
+            font-size: 30px;
+        }
 
-        @media only screen and (max-width: 800px) {
-            .openoverlaynav {
-                top: 15px !important;       
-                right: 20px !important;     
-                transform: none !important; 
-            }
+        @media only screen and (max-width: 800px) {
+            .openoverlaynav {
+                top: 15px !important;       
+                right: 20px !important;     
+                transform: none !important; 
+            }
 
-            #main-header {
-                padding-top: 50px !important; 
-                padding-bottom: 20px !important;
-            }
+            #main-header {
+                padding-top: 50px !important; 
+                padding-bottom: 20px !important;
+            }
 
-            #logo { padding: 0 10px !important; }
-            #logo h1 { font-size: 1.5em !important; }
-            #logo h3 { font-size: 1em !important; }
-            
-            /* 本頁 RWD */
-            .tablink2 { width: 100%; }
-        }
-    </style>
+            #logo { padding: 0 10px !important; }
+            #logo h1 { font-size: 1.5em !important; }
+            #logo h3 { font-size: 1em !important; }
+            
+            /* 本頁 RWD */
+            .tablink2 { width: 100%; }
+        }
+    </style>
 </head>
 
 <body>
 <div class="main">
 
 	<header id="main-header">
-      <div id="logo">
-        <h1><a href="index.html">感測與光觸媒奈米材料實驗室</a></h1>
-        <h3><a href="index.html">Sensing and Photocatalysis Nanomaterials Laboratory</a></h3>
-      </div>
-      <span class="openoverlaynav" onclick="openNav()">&#9776;</span>
-    </header>
+      <div id="logo">
+        <h1><a href="index.html">感測與光觸媒奈米材料實驗室</a></h1>
+        <h3><a href="index.html">Sensing and Photocatalysis Nanomaterials Laboratory</a></h3>
+      </div>
+      <span class="openoverlaynav" onclick="openNav()">&#9776;</span>
+    </header>
 
-    <div class="Big-overlaynav">
-      <div class="Big-overlaynav-content">
-        <a href="news.html">最新消息</a>
-        <a href="introduction.html">實驗室簡介</a>
-        <a href="honors.html">榮譽事項</a> <a href="professor.html">指導教授</a>
-        <a href="paper.html">論文發表</a>
-        <a href="research.html">研究方向</a>
-        <a href="result.html">研究成果</a>
-        <a href="members.html">實驗室成員</a>
-      </div>
-    </div>
+    <div class="Big-overlaynav">
+      <div class="Big-overlaynav-content">
+        <a href="news.html">最新消息</a>
+        <a href="introduction.html">實驗室簡介</a>
+        <a href="honors.html">榮譽事項</a> <a href="professor.html">指導教授</a>
+        <a href="paper.html">論文發表</a>
+        <a href="research.html">研究方向</a>
+        <a href="result.html">研究成果</a>
+        <a href="members.html">實驗室成員</a>
+      </div>
+    </div>
 
-    <div id="myNav" class="overlaynav">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <div class="overlaynav-content">
-        <a href="news.html">最新消息</a>
-        <a href="introduction.html">實驗室簡介</a>
-        <a href="honors.html">榮譽事項</a> <a href="professor.html">指導教授</a>
-        <a href="paper.html">論文發表</a>
-        <a href="research.html">研究方向</a>
-        <a href="result.html">研究成果</a>
-        <a href="members.html">實驗室成員</a>
-      </div>
-    </div>
+    <div id="myNav" class="overlaynav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <div class="overlaynav-content">
+        <a href="news.html">最新消息</a>
+        <a href="introduction.html">實驗室簡介</a>
+        <a href="honors.html">榮譽事項</a> <a href="professor.html">指導教授</a>
+        <a href="paper.html">論文發表</a>
+        <a href="research.html">研究方向</a>
+        <a href="result.html">研究成果</a>
+        <a href="members.html">實驗室成員</a>
+      </div>
+    </div>
 
-    <header id="sub-header">
-      <h5><a href="https://mse.site.nthu.edu.tw/" target="_blank">&#10148 清大材料</a></h5>
-    </header>
+    <header id="sub-header">
+      <h5><a href="https://mse.site.nthu.edu.tw/" target="_blank">&#10148 清大材料</a></h5>
+    </header>
 
 </div>
 
 <script>
-    function openNav() {
-      document.getElementById("myNav").style.height = "100%";
-    }
-    function closeNav() {
-      document.getElementById("myNav").style.height = "0%";
-    }
+    function openNav() {
+      document.getElementById("myNav").style.height = "100%";
+    }
+    function closeNav() {
+      document.getElementById("myNav").style.height = "0%";
+    }
 </script>
 
 	<section>
@@ -213,61 +213,58 @@
 				<button class="tablink2" onclick="openMember('group_photos', this, 'steelblue')">生活寫真</button>
 
 <div id="now_member" class="tabcontent2">
-	<h1>實驗室成員</h1>
-	
-	<!-- 在這裡補上團體照的標籤 -->
-	<img src="img/你的照片檔名.jpg" alt="實驗室團體照">
-	
-	<table cellspacing="2" cellpadding="10">
-		<tr>
-			<th>身分</th>
-			<th>姓名</th>
-			<th>電子信箱</th>
-			<th>其他</th>
-		</tr>
-		
-		<!-- 碩二生 (共 2 位) -->
-		<tr>
-			<th rowspan="2">碩二生</th>
-			<td>徐景程</td>
-			<td><a href="mailto:zxc565611@gmail.com">E-mail</a></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>徐偉翔</td>
-			<td><a href="mailto:ad587920@gmail.com">E-mail</a></td>
-			<td></td>
-		</tr>
-		
-		<!-- 碩一生 (共 5 位) -->
-		<tr>
-			<th rowspan="5">碩一生</th>
-			<td>李承宇</td>
-			<td><a href="mailto:David710630@gmail.com">E-mail</a></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>黃彰敏</td>
-			<td><a href="mailto:johnny7915112@gmail.com">E-mail</a></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>黃憶文</td>
-			<td><a href="mailto:iwenhuang129@gmail.com">E-mail</a></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>林宜嫺</td>
-			<td><a href="mailto:Jennifer756776@gmail.com">E-mail</a></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>周霖</td>
-			<td><a href="mailto:linchou0520@gmail.com">E-mail</a></td>
-			<td></td>
-		</tr>
-	</table>
-</div>
+						<h1>實驗室成員</h1>
+						
+							<table cellspacing="2" cellpadding="10">
+								<tr>
+									<th>身分</th>
+									<th>姓名</th>
+									<th>電子信箱</th>
+									<th>其他</th>
+								</tr>
+								
+								<tr>
+									<th rowspan="1">博士生</th>
+									<td>江哲宇</td>
+									<td><a href="mailto:jheyujiang@gmail.com">E-mail</a></td>
+								</tr>
+								
+								<tr>
+									<th rowspan="2">碩二生</th>
+									<td>徐景程</td>
+									<td><a href="mailto:zxc565611@gmail.com">E-mail</a></td>
+								</tr>
+
+								<tr>
+									<td>徐偉翔</td>
+									<td><a href="mailto:ad587920@gmail.com">E-mail</a></td>
+								</tr>
+								
+								<tr>
+									<th rowspan="5">碩一生</th>
+									<td>李承宇</td>
+									<td><a href="mailto:David710630@gmail.com">E-mail</a></td>
+								</tr>
+								
+								<tr>
+									<td>黃彰敏</td>
+									<td><a href="mailto:johnny7915112@gmail.com">E-mail</a></td>
+								</tr>
+
+								<tr>
+									<td>黃憶文</td>
+									<td><a href="mailto:iwenhuang129@gmail.com">E-mail</a></td>
+								</tr>
+								<tr>
+									<td>林宜嫺</td>
+									<td><a href="mailto:Jennifer756776@gmail.com">E-mail</a></td>
+								</tr>
+								<tr>
+									<td>周霖</td>
+									<td><a href="mailto:linchou0520@gmail.com">E-mail</a></td>
+								</tr>
+
+							</table>
 
 <div id="old_member" class="tabcontent2">
 							<h1>已畢業成員</h1>
@@ -451,56 +448,53 @@
 </div>
 
 <script>
-    // Tab 切換功能
-    function openMember(cityName, elmnt, color) {
-        var i, tabcontent, tablinks;
-        tabcontent = document.getElementsByClassName("tabcontent2");
-        for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-        }
-        tablinks = document.getElementsByClassName("tablink2");
-        for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].style.backgroundColor = "";
-        }
-        document.getElementById(cityName).style.display = "block";
-        elmnt.style.backgroundColor = color;
-    }
-    // 預設開啟第一頁
-    document.getElementById("defaultOpen").click();
+    // Tab 切換功能
+    function openMember(cityName, elmnt, color) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent2");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink2");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].style.backgroundColor = "";
+        }
+        document.getElementById(cityName).style.display = "block";
+        elmnt.style.backgroundColor = color;
+    }
+    // 預設開啟第一頁
+    document.getElementById("defaultOpen").click();
 
-    // 輪播圖 (SlideShow)
-    var slideIndex = 1;
-    showSlides(slideIndex);
+    // 輪播圖 (SlideShow)
+    var slideIndex = 1;
+    showSlides(slideIndex);
 
-    function plusSlides(n) {
-        showSlides(slideIndex += n);
-    }
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
 
-    function currentSlide(n) {
-        showSlides(slideIndex = n);
-    }
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
 
-    function showSlides(n) {
-        var i;
-        var slides = document.getElementsByClassName("mySlides");
-        var dots = document.getElementsByClassName("dot");
-        if (n > slides.length) {slideIndex = 1}    
-        if (n < 1) {slideIndex = slides.length}
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";  
-        }
-        for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[slideIndex-1].style.display = "block";  
-        dots[slideIndex-1].className += " active";
-    }
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
+    }
 </script>
 
 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 <script src="myScript.js"></script>
 </body>
 </html>
-
-
-
